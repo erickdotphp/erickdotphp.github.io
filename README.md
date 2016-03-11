@@ -1,1 +1,3 @@
-# erickdotphp.github.io
+# Erick的博客源码
+=============
+放一些学习笔记
