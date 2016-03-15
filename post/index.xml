@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Erick Blog</title>
+    <title>Posts on Erick BLog</title>
     <link>http://erickdotphp.github.io/post/</link>
-    <description>Recent content in Posts on Erick Blog</description>
+    <description>Recent content in Posts on Erick BLog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>erickdotphp@gmail.com (erickdotphp)</managingEditor>
-    <webMaster>erickdotphp@gmail.com (erickdotphp)</webMaster>
+    <managingEditor>example &lt;at&gt; example &lt;dot&gt; com (your name)</managingEditor>
+    <webMaster>example &lt;at&gt; example &lt;dot&gt; com (your name)</webMaster>
     <lastBuildDate>Mon, 14 Mar 2016 18:22:14 +0800</lastBuildDate>
     <atom:link href="http://erickdotphp.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
-    <item>
-      <title>Git多分支处理</title>
-      <link>http://erickdotphp.github.io/blog/2016/03/14/git%E5%A4%9A%E5%88%86%E6%94%AF%E5%A4%84%E7%90%86/</link>
-      <pubDate>Mon, 14 Mar 2016 18:22:14 +0800</pubDate>
-      <author>erickdotphp@gmail.com (erickdotphp)</author>
-      <guid>http://erickdotphp.github.io/blog/2016/03/14/git%E5%A4%9A%E5%88%86%E6%94%AF%E5%A4%84%E7%90%86/</guid>
-      <description>&lt;p&gt;如果需要在同一套代码中控制多个远程版本&lt;/p&gt;
+      
+        
+          <item>
+            <title>Git多分支处理</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/14/git%E5%A4%9A%E5%88%86%E6%94%AF%E5%A4%84%E7%90%86/</link>
+            <pubDate>Mon, 14 Mar 2016 18:22:14 +0800</pubDate>
+            <author>example &lt;at&gt; example &lt;dot&gt; com (your name)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/14/git%E5%A4%9A%E5%88%86%E6%94%AF%E5%A4%84%E7%90%86/</guid>
+            <description>&lt;p&gt;如果需要在同一套代码中控制多个远程版本&lt;/p&gt;
 
 &lt;p&gt;###查看当前的远端
 &lt;code&gt;$ git remote -v&lt;/code&gt;&lt;/p&gt;
@@ -32,15 +34,19 @@
 &lt;p&gt;###推送远端
 &lt;code&gt;$ git push inter master&lt;/code&gt;&lt;/p&gt;
 </description>
-    </item>
+          </item>
+        
+      
     
-    <item>
-      <title>Git的常用么命令</title>
-      <link>http://erickdotphp.github.io/blog/2016/03/14/git%E7%9A%84%E5%B8%B8%E7%94%A8%E4%B9%88%E5%91%BD%E4%BB%A4/</link>
-      <pubDate>Mon, 14 Mar 2016 18:22:14 +0800</pubDate>
-      <author>erickdotphp@gmail.com (erickdotphp)</author>
-      <guid>http://erickdotphp.github.io/blog/2016/03/14/git%E7%9A%84%E5%B8%B8%E7%94%A8%E4%B9%88%E5%91%BD%E4%BB%A4/</guid>
-      <description>
+      
+        
+          <item>
+            <title>Git的常用么命令</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/14/git%E7%9A%84%E5%B8%B8%E7%94%A8%E4%B9%88%E5%91%BD%E4%BB%A4/</link>
+            <pubDate>Mon, 14 Mar 2016 18:22:14 +0800</pubDate>
+            <author>example &lt;at&gt; example &lt;dot&gt; com (your name)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/14/git%E7%9A%84%E5%B8%B8%E7%94%A8%E4%B9%88%E5%91%BD%E4%BB%A4/</guid>
+            <description>
 
 &lt;h2 id=&#34;生成密钥:1c1ef82aae62aeea8eedcb5f455b129b&#34;&gt;生成密钥&lt;/h2&gt;
 
@@ -105,15 +111,19 @@ git push  #此时主干中也合并了new-feature的代码&lt;/p&gt;
 
 &lt;p&gt;目前只知道怎么忽略单个文件&amp;hellip;&lt;/p&gt;
 </description>
-    </item>
+          </item>
+        
+      
     
-    <item>
-      <title>Centos7 上 安装 Composer</title>
-      <link>http://erickdotphp.github.io/blog/2016/03/14/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-composer/</link>
-      <pubDate>Mon, 14 Mar 2016 12:30:55 +0800</pubDate>
-      <author>erickdotphp@gmail.com (erickdotphp)</author>
-      <guid>http://erickdotphp.github.io/blog/2016/03/14/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-composer/</guid>
-      <description>&lt;p&gt;安装前请确保 环境中有PHP
+      
+        
+          <item>
+            <title>Centos7 上 安装 Composer</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/14/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-composer/</link>
+            <pubDate>Mon, 14 Mar 2016 12:30:55 +0800</pubDate>
+            <author>example &lt;at&gt; example &lt;dot&gt; com (your name)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/14/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-composer/</guid>
+            <description>&lt;p&gt;安装前请确保 环境中有PHP
 可以用php -v查看&lt;/p&gt;
 
 &lt;p&gt;###下载
@@ -125,15 +135,19 @@ git push  #此时主干中也合并了new-feature的代码&lt;/p&gt;
 &lt;p&gt;###配置环境变量
 &lt;code&gt;$ export PATH=$PATH:/usr/local/bin&lt;/code&gt;&lt;/p&gt;
 </description>
-    </item>
+          </item>
+        
+      
     
-    <item>
-      <title>Centos7 上 安装和配置 Sublime Text3</title>
-      <link>http://erickdotphp.github.io/blog/2016/03/14/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE-sublime-text3/</link>
-      <pubDate>Mon, 14 Mar 2016 12:30:55 +0800</pubDate>
-      <author>erickdotphp@gmail.com (erickdotphp)</author>
-      <guid>http://erickdotphp.github.io/blog/2016/03/14/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE-sublime-text3/</guid>
-      <description>&lt;p&gt;###下载最新的包
+      
+        
+          <item>
+            <title>Centos7 上 安装和配置 Sublime Text3</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/14/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE-sublime-text3/</link>
+            <pubDate>Mon, 14 Mar 2016 12:30:55 +0800</pubDate>
+            <author>example &lt;at&gt; example &lt;dot&gt; com (your name)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/14/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE-sublime-text3/</guid>
+            <description>&lt;p&gt;###下载最新的包
 &lt;a href=&#34;http://www.sublimetext.com/3&#34;&gt;http://www.sublimetext.com/3&lt;/a&gt;
 下载tarball
 &lt;code&gt;$ tar jxvf sublime_text_3_build_3083_x64.tar.bz2  -C /opt&lt;/code&gt;&lt;/p&gt;
@@ -178,15 +192,19 @@ OnlyShowIn=Unity;
 
 &lt;p&gt;这些都做完以后 sublime的快捷方式会出现在   应用程序=&amp;gt;编程 里面&lt;/p&gt;
 </description>
-    </item>
+          </item>
+        
+      
     
-    <item>
-      <title>Centos7 上 安装 mariadb</title>
-      <link>http://erickdotphp.github.io/blog/2016/03/14/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-mariadb/</link>
-      <pubDate>Mon, 14 Mar 2016 11:30:55 +0800</pubDate>
-      <author>erickdotphp@gmail.com (erickdotphp)</author>
-      <guid>http://erickdotphp.github.io/blog/2016/03/14/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-mariadb/</guid>
-      <description>&lt;p&gt;###全部删除MySQL/MariaDB
+      
+        
+          <item>
+            <title>Centos7 上 安装 mariadb</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/14/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-mariadb/</link>
+            <pubDate>Mon, 14 Mar 2016 11:30:55 +0800</pubDate>
+            <author>example &lt;at&gt; example &lt;dot&gt; com (your name)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/14/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-mariadb/</guid>
+            <description>&lt;p&gt;###全部删除MySQL/MariaDB
 MySQL 已经不再包含在 CentOS 7 的源中，而改用了 MariaDB;
 1、使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
 如果存在，使用rpm -e &amp;ndash;nodeps mariadb-*全部删除：
@@ -213,15 +231,19 @@ gpgcheck=1
 &lt;code&gt;$ service mysql start&lt;/code&gt;
 &lt;code&gt;$ mysql_secure_installation&lt;/code&gt;&lt;/p&gt;
 </description>
-    </item>
+          </item>
+        
+      
     
-    <item>
-      <title>Lumen 环境搭建</title>
-      <link>http://erickdotphp.github.io/blog/2016/03/14/lumen-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
-      <pubDate>Mon, 14 Mar 2016 11:30:55 +0800</pubDate>
-      <author>erickdotphp@gmail.com (erickdotphp)</author>
-      <guid>http://erickdotphp.github.io/blog/2016/03/14/lumen-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
-      <description>&lt;p&gt;###安装composer
+      
+        
+          <item>
+            <title>Lumen 环境搭建</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/14/lumen-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+            <pubDate>Mon, 14 Mar 2016 11:30:55 +0800</pubDate>
+            <author>example &lt;at&gt; example &lt;dot&gt; com (your name)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/14/lumen-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+            <description>&lt;p&gt;###安装composer
 &lt;code&gt;$ curl -sS https://getcomposer.org/installer | php -- --install-dir=lumen&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;####全局使用
@@ -271,15 +293,19 @@ location ~ (index|get|static|report|404|503)\.php$ {
 &lt;p&gt;###composer 重新加载类库
 php composer.phar dump-autoload&lt;/p&gt;
 </description>
-    </item>
+          </item>
+        
+      
     
-    <item>
-      <title>Centos7 上 安装 ZendServer</title>
-      <link>http://erickdotphp.github.io/blog/2016/03/14/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-zendserver/</link>
-      <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
-      <author>erickdotphp@gmail.com (erickdotphp)</author>
-      <guid>http://erickdotphp.github.io/blog/2016/03/14/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-zendserver/</guid>
-      <description>&lt;p&gt;###获取官方包
+      
+        
+          <item>
+            <title>Centos7 上 安装 ZendServer</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/14/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-zendserver/</link>
+            <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
+            <author>example &lt;at&gt; example &lt;dot&gt; com (your name)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/14/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-zendserver/</guid>
+            <description>&lt;p&gt;###获取官方包
 &lt;code&gt;$ wget http://downloads.zend.com/zendserver/8.5.1/ZendServer-8.5.1-RepositoryInstaller-linux.tar.gz&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;###关闭防火墙
@@ -323,15 +349,19 @@ fpm /usr/local/zend/etc/php-fpm.conf
 
 &lt;p&gt;其中fastcgi_read_timeout 300;是为了防止ngxin 504超时错误&lt;/p&gt;
 </description>
-    </item>
+          </item>
+        
+      
     
-    <item>
-      <title>Digital Ocean API整理</title>
-      <link>http://erickdotphp.github.io/blog/2016/03/14/digital-ocean-api%E6%95%B4%E7%90%86/</link>
-      <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
-      <author>erickdotphp@gmail.com (erickdotphp)</author>
-      <guid>http://erickdotphp.github.io/blog/2016/03/14/digital-ocean-api%E6%95%B4%E7%90%86/</guid>
-      <description>&lt;p&gt;###请求类型
+      
+        
+          <item>
+            <title>Digital Ocean API整理</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/14/digital-ocean-api%E6%95%B4%E7%90%86/</link>
+            <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
+            <author>example &lt;at&gt; example &lt;dot&gt; com (your name)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/14/digital-ocean-api%E6%95%B4%E7%90%86/</guid>
+            <description>&lt;p&gt;###请求类型
 GET 只读请求，不需要验证，不会影响查询对象
 DELETE 删除操作
 PUT 更新操作
@@ -362,15 +392,19 @@ HEAD 只返回GET查询的head部分用于查询metadata&lt;/p&gt;
 &lt;p&gt;####Floating IP
 公网可访问的静态IP，跟容器绑定&lt;/p&gt;
 </description>
-    </item>
+          </item>
+        
+      
     
-    <item>
-      <title>Linux常用命令</title>
-      <link>http://erickdotphp.github.io/blog/2016/03/14/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
-      <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
-      <author>erickdotphp@gmail.com (erickdotphp)</author>
-      <guid>http://erickdotphp.github.io/blog/2016/03/14/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
-      <description>
+      
+        
+          <item>
+            <title>Linux常用命令</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/14/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+            <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
+            <author>example &lt;at&gt; example &lt;dot&gt; com (your name)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/14/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+            <description>
 
 &lt;h1 id=&#34;linux:34fe9f2d9cc3cd7e319ca75e7da08332&#34;&gt;Linux&lt;/h1&gt;
 
@@ -392,15 +426,19 @@ scp -r username@servername:/var/www/remote_dir/（远程目录） /var/www/local
 scp  -r local_dir username@servername:remote_dir
 例如：scp -r test  root@192.168.0.101:/var/www/   把当前目录下的test目录上传到服务器的/var/www/ 目录&lt;/p&gt;
 </description>
-    </item>
+          </item>
+        
+      
     
-    <item>
-      <title>PHP SSH2 扩展</title>
-      <link>http://erickdotphp.github.io/blog/2016/03/14/php-ssh2-%E6%89%A9%E5%B1%95/</link>
-      <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
-      <author>erickdotphp@gmail.com (erickdotphp)</author>
-      <guid>http://erickdotphp.github.io/blog/2016/03/14/php-ssh2-%E6%89%A9%E5%B1%95/</guid>
-      <description>&lt;p&gt;###安装&lt;/p&gt;
+      
+        
+          <item>
+            <title>PHP SSH2 扩展</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/14/php-ssh2-%E6%89%A9%E5%B1%95/</link>
+            <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
+            <author>example &lt;at&gt; example &lt;dot&gt; com (your name)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/14/php-ssh2-%E6%89%A9%E5%B1%95/</guid>
+            <description>&lt;p&gt;###安装&lt;/p&gt;
 
 &lt;p&gt;####下载包
 wget &lt;a href=&#34;http://www.libssh2.org/download/libssh2-1.4.2.tar.gz&#34;&gt;http://www.libssh2.org/download/libssh2-1.4.2.tar.gz&lt;/a&gt;
@@ -452,15 +490,19 @@ stream_set_blocking($ret, true);
 echo (stream_get_contents($ret));
 &lt;/code&gt;&lt;/pre&gt;
 </description>
-    </item>
+          </item>
+        
+      
     
-    <item>
-      <title>这个博客是怎么搭建起来的</title>
-      <link>http://erickdotphp.github.io/blog/2016/03/11/%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E6%98%AF%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BA%E8%B5%B7%E6%9D%A5%E7%9A%84/</link>
-      <pubDate>Fri, 11 Mar 2016 18:22:14 +0800</pubDate>
-      <author>erickdotphp@gmail.com (erickdotphp)</author>
-      <guid>http://erickdotphp.github.io/blog/2016/03/11/%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E6%98%AF%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BA%E8%B5%B7%E6%9D%A5%E7%9A%84/</guid>
-      <description>
+      
+        
+          <item>
+            <title>这个博客是怎么搭建起来的</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/11/%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E6%98%AF%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BA%E8%B5%B7%E6%9D%A5%E7%9A%84/</link>
+            <pubDate>Fri, 11 Mar 2016 18:22:14 +0800</pubDate>
+            <author>example &lt;at&gt; example &lt;dot&gt; com (your name)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/11/%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E6%98%AF%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BA%E8%B5%B7%E6%9D%A5%E7%9A%84/</guid>
+            <description>
 
 &lt;h2 id=&#34;大概原理:32ab7241d48fcc174c877413a917f8cf&#34;&gt;大概原理&lt;/h2&gt;
 
@@ -527,7 +569,9 @@ hugo是用go语言写的，效率比较高&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;参考文章
 &lt;a href=&#34;http://www.gohugo.org/&#34;&gt;http://www.gohugo.org/&lt;/a&gt;&lt;/p&gt;
 </description>
-    </item>
+          </item>
+        
+      
     
   </channel>
 </rss>

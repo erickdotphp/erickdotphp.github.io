@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Centos7 上 安装 mariadb">
+    <meta name="author" content="&lt;authorname&gt;">
+
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>Centos7 上 安装 mariadb &middot; Erick BLog</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://erickdotphp.github.io/css/theme/cerulean.css">
+    
+
+    <link rel="stylesheet" href="http://erickdotphp.github.io/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://erickdotphp.github.io/css/style.css">
+
+
+    
+    <script src="http://erickdotphp.github.io/js/jquery.min-2.1.4.js"></script>
+    <script src="http://erickdotphp.github.io/js/bootstrap.min-3.3.5.js"></script>
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="Erick BLog" />
+</head>
+<body lang="en">
+    
+    <div class="container">
+    <div class="row">
+        <div class="navbar navbar-default " role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://erickdotphp.github.io">Erick BLog</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://erickdotphp.github.io">Home</a></li>
+                    <li><a href="http://erickdotphp.github.io/post/">Blog</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<h3>Centos7 上 安装 mariadb</h3>
+				<span class="label label-primary">14.03.2016</span> in 
+				 using tags
+				
+			</small>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<br>
+			<p>###全部删除MySQL/MariaDB
+MySQL 已经不再包含在 CentOS 7 的源中，而改用了 MariaDB;
+1、使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
+如果存在，使用rpm -e &ndash;nodeps mariadb-*全部删除：
+2、使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
+如果存在，使用yum remove mysql mysql-server mysql-libs compat-mysql51全部删除；</p>
+
+<p>###添加MariaDB的yum源
+1、创建 /etc/yum.repos.d/MariaDB.repo：
+2、添加yum源,该文件中添加如图所示内容：</p>
+
+<pre><code># MariaDB 10.1 CentOS repository list - created 2015-11-19 02:26 UTC
+# http://mariadb.org/mariadb/repositories/
+[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/10.0/centos7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+</code></pre>
+
+<p>###安装 MariaDB
+<code>$ yum install MariaDB-server MariaDB-client</code></p>
+
+<p>###启动、配置MariaDB
+<code>$ service mysql start</code>
+<code>$ mysql_secure_installation</code></p>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<hr>
+		</div>
+	</div>
+</div>
+
+    <div class="container">
+        <div class="row col-md-12">
+            <footer>
+                <div class="pull-left">
+                    <p>
+                        &copy; 2015 ~ &lt;authorname&gt; ~ Powered By <a href="http://hugo.spf13.com">Hugo</a> - version: 0.15 ~ <a href="http://erickdotphp.github.io/license">License</a>
+                    </p>
+                </div>
+
+                
+                <div class="pull-right">
+                    
+                        <a href="https://www.linkedin.com/in/%3cusername%3e" target="_blank">
+                        <i class="fa fa-linkedin fa-2x"></i></a>
+                    
+                    
+                        <a href="https://www.facebook.com/%3cusername%3e" target="_blank">
+                        <i class="fa fa-facebook-square fa-2x"></i></a>
+                    
+                    
+                        <a href="https://twitter.com/%3cusername%3e" target="_blank">
+                        <i class="fa fa-twitter-square fa-2x"></i></a>
+                    
+                    
+                        <a href="https://github.com/%3cusername%3e" target="_blank">
+                        <i class="fa fa-github-square fa-2x"></i></a>
+                    
+                    
+                        <a href="https://delicious.com/%3cusername%3e" target="_blank">
+                        <i class="fa fa-delicious fa-2x"></i></a>
+                    
+                    
+                        <a href="https://www.flickr.com/photos/%3cusername%3e" target="_blank">
+                        <i class="fa fa-flickr fa-2x"></i></a>
+                    
+                    
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    
+    </body>
+</html>
+
