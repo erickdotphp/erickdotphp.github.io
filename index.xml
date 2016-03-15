@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Erick Blog</title>
-    <link>http://erickdotphp.github.io/</link>
-    <description>Recent content on Erick Blog</description>
+    <title></title>
+    <link>/</link>
+    <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
     <lastBuildDate>Mon, 14 Mar 2016 18:22:14 +0800</lastBuildDate>
-    <atom:link href="http://erickdotphp.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Git多分支处理</title>
-      <link>http://erickdotphp.github.io/post/git-branch/</link>
+      <link>/post/git-branch/</link>
       <pubDate>Mon, 14 Mar 2016 18:22:14 +0800</pubDate>
       
-      <guid>http://erickdotphp.github.io/post/git-branch/</guid>
+      <guid>/post/git-branch/</guid>
       <description>&lt;p&gt;如果需要在同一套代码中控制多个远程版本&lt;/p&gt;
 
 &lt;p&gt;###查看当前的远端
@@ -35,10 +34,10 @@
     
     <item>
       <title>Git的常用么命令</title>
-      <link>http://erickdotphp.github.io/post/git/</link>
+      <link>/post/git/</link>
       <pubDate>Mon, 14 Mar 2016 18:22:14 +0800</pubDate>
       
-      <guid>http://erickdotphp.github.io/post/git/</guid>
+      <guid>/post/git/</guid>
       <description>
 
 &lt;h2 id=&#34;生成密钥:1c1ef82aae62aeea8eedcb5f455b129b&#34;&gt;生成密钥&lt;/h2&gt;
@@ -108,10 +107,10 @@ git push  #此时主干中也合并了new-feature的代码&lt;/p&gt;
     
     <item>
       <title>Centos7 上 安装 Composer</title>
-      <link>http://erickdotphp.github.io/post/composer/</link>
+      <link>/post/composer/</link>
       <pubDate>Mon, 14 Mar 2016 12:30:55 +0800</pubDate>
       
-      <guid>http://erickdotphp.github.io/post/composer/</guid>
+      <guid>/post/composer/</guid>
       <description>&lt;p&gt;安装前请确保 环境中有PHP
 可以用php -v查看&lt;/p&gt;
 
@@ -128,10 +127,10 @@ git push  #此时主干中也合并了new-feature的代码&lt;/p&gt;
     
     <item>
       <title>Centos7 上 安装和配置 Sublime Text3</title>
-      <link>http://erickdotphp.github.io/post/sublime/</link>
+      <link>/post/sublime/</link>
       <pubDate>Mon, 14 Mar 2016 12:30:55 +0800</pubDate>
       
-      <guid>http://erickdotphp.github.io/post/sublime/</guid>
+      <guid>/post/sublime/</guid>
       <description>&lt;p&gt;###下载最新的包
 &lt;a href=&#34;http://www.sublimetext.com/3&#34;&gt;http://www.sublimetext.com/3&lt;/a&gt;
 下载tarball
@@ -181,10 +180,10 @@ OnlyShowIn=Unity;
     
     <item>
       <title>Centos7 上 安装 mariadb</title>
-      <link>http://erickdotphp.github.io/post/mariadb/</link>
+      <link>/post/mariadb/</link>
       <pubDate>Mon, 14 Mar 2016 11:30:55 +0800</pubDate>
       
-      <guid>http://erickdotphp.github.io/post/mariadb/</guid>
+      <guid>/post/mariadb/</guid>
       <description>&lt;p&gt;###全部删除MySQL/MariaDB
 MySQL 已经不再包含在 CentOS 7 的源中，而改用了 MariaDB;
 1、使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
@@ -216,10 +215,10 @@ gpgcheck=1
     
     <item>
       <title>Lumen 环境搭建</title>
-      <link>http://erickdotphp.github.io/post/lumen/</link>
+      <link>/post/lumen/</link>
       <pubDate>Mon, 14 Mar 2016 11:30:55 +0800</pubDate>
       
-      <guid>http://erickdotphp.github.io/post/lumen/</guid>
+      <guid>/post/lumen/</guid>
       <description>&lt;p&gt;###安装composer
 &lt;code&gt;$ curl -sS https://getcomposer.org/installer | php -- --install-dir=lumen&lt;/code&gt;&lt;/p&gt;
 
@@ -274,10 +273,10 @@ php composer.phar dump-autoload&lt;/p&gt;
     
     <item>
       <title>Centos7 上 安装 ZendServer</title>
-      <link>http://erickdotphp.github.io/post/zendserver/</link>
+      <link>/post/zendserver/</link>
       <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
       
-      <guid>http://erickdotphp.github.io/post/zendserver/</guid>
+      <guid>/post/zendserver/</guid>
       <description>&lt;p&gt;###获取官方包
 &lt;code&gt;$ wget http://downloads.zend.com/zendserver/8.5.1/ZendServer-8.5.1-RepositoryInstaller-linux.tar.gz&lt;/code&gt;&lt;/p&gt;
 
@@ -326,10 +325,10 @@ fpm /usr/local/zend/etc/php-fpm.conf
     
     <item>
       <title>Digital Ocean API整理</title>
-      <link>http://erickdotphp.github.io/post/digitalocean/</link>
+      <link>/post/digitalocean/</link>
       <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
       
-      <guid>http://erickdotphp.github.io/post/digitalocean/</guid>
+      <guid>/post/digitalocean/</guid>
       <description>&lt;p&gt;###请求类型
 GET 只读请求，不需要验证，不会影响查询对象
 DELETE 删除操作
@@ -365,10 +364,10 @@ HEAD 只返回GET查询的head部分用于查询metadata&lt;/p&gt;
     
     <item>
       <title>Linux常用命令</title>
-      <link>http://erickdotphp.github.io/post/linux/</link>
+      <link>/post/linux/</link>
       <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
       
-      <guid>http://erickdotphp.github.io/post/linux/</guid>
+      <guid>/post/linux/</guid>
       <description>
 
 &lt;h1 id=&#34;linux:34fe9f2d9cc3cd7e319ca75e7da08332&#34;&gt;Linux&lt;/h1&gt;
@@ -395,10 +394,10 @@ scp  -r local_dir username@servername:remote_dir
     
     <item>
       <title>PHP SSH2 扩展</title>
-      <link>http://erickdotphp.github.io/post/php-ssh2/</link>
+      <link>/post/php-ssh2/</link>
       <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
       
-      <guid>http://erickdotphp.github.io/post/php-ssh2/</guid>
+      <guid>/post/php-ssh2/</guid>
       <description>&lt;p&gt;###安装&lt;/p&gt;
 
 &lt;p&gt;####下载包
@@ -455,10 +454,10 @@ echo (stream_get_contents($ret));
     
     <item>
       <title>这个博客是怎么搭建起来的</title>
-      <link>http://erickdotphp.github.io/post/hugo/</link>
+      <link>/post/hugo/</link>
       <pubDate>Fri, 11 Mar 2016 18:22:14 +0800</pubDate>
       
-      <guid>http://erickdotphp.github.io/post/hugo/</guid>
+      <guid>/post/hugo/</guid>
       <description>
 
 &lt;h2 id=&#34;大概原理:32ab7241d48fcc174c877413a917f8cf&#34;&gt;大概原理&lt;/h2&gt;

@@ -2,63 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://erickdotphp.github.io/</loc>
+    <loc>/</loc>
     <lastmod>2016-03-14T18:22:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://erickdotphp.github.io/post/git-branch/</loc>
+    <loc>/post/git-branch/</loc>
     <lastmod>2016-03-14T18:22:14+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://erickdotphp.github.io/post/git/</loc>
+    <loc>/post/git/</loc>
     <lastmod>2016-03-14T18:22:14+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://erickdotphp.github.io/post/composer/</loc>
+    <loc>/post/composer/</loc>
     <lastmod>2016-03-14T12:30:55+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://erickdotphp.github.io/post/sublime/</loc>
+    <loc>/post/sublime/</loc>
     <lastmod>2016-03-14T12:30:55+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://erickdotphp.github.io/post/mariadb/</loc>
+    <loc>/post/mariadb/</loc>
     <lastmod>2016-03-14T11:30:55+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://erickdotphp.github.io/post/lumen/</loc>
+    <loc>/post/lumen/</loc>
     <lastmod>2016-03-14T11:30:55+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://erickdotphp.github.io/post/zendserver/</loc>
+    <loc>/post/zendserver/</loc>
     <lastmod>2016-03-14T10:30:55+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://erickdotphp.github.io/post/digitalocean/</loc>
+    <loc>/post/digitalocean/</loc>
     <lastmod>2016-03-14T10:30:55+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://erickdotphp.github.io/post/linux/</loc>
+    <loc>/post/linux/</loc>
     <lastmod>2016-03-14T10:30:55+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://erickdotphp.github.io/post/php-ssh2/</loc>
+    <loc>/post/php-ssh2/</loc>
     <lastmod>2016-03-14T10:30:55+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://erickdotphp.github.io/post/hugo/</loc>
+    <loc>/post/hugo/</loc>
     <lastmod>2016-03-11T18:22:14+08:00</lastmod>
   </url>
   
