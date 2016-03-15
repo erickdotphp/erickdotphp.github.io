@@ -39,16 +39,21 @@
       <pubDate>Mon, 14 Mar 2016 18:22:14 +0800</pubDate>
       
       <guid>http://erickdotphp.github.io/post/git/</guid>
-      <description>&lt;p&gt;###生成密钥
-&lt;code&gt;ssh-keygen&lt;/code&gt;&lt;/p&gt;
+      <description>
 
-&lt;p&gt;###添加公钥到git账户&lt;/p&gt;
+&lt;h2 id=&#34;生成密钥:1c1ef82aae62aeea8eedcb5f455b129b&#34;&gt;生成密钥&lt;/h2&gt;
 
-&lt;p&gt;###检测是否成功
-&lt;code&gt;ssh -T git@github.com&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh-keygen&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;###获取代码
-git clone git://github.com:xxxx/test.git ##以gitreadonly方式克隆到本地，只可以读&lt;/p&gt;
+&lt;h2 id=&#34;添加公钥到git账户:1c1ef82aae62aeea8eedcb5f455b129b&#34;&gt;添加公钥到git账户&lt;/h2&gt;
+
+&lt;h2 id=&#34;检测是否成功:1c1ef82aae62aeea8eedcb5f455b129b&#34;&gt;检测是否成功&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;ssh -T git@github.com&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;获取代码:1c1ef82aae62aeea8eedcb5f455b129b&#34;&gt;获取代码&lt;/h2&gt;
+
+&lt;p&gt;git clone git://github.com:xxxx/test.git 以gitreadonly方式克隆到本地，只可以读&lt;/p&gt;
 
 &lt;p&gt;git clone git@github.com:xxx/test.git  ##以SSH方式克隆到本地，可以读写&lt;/p&gt;
 
@@ -58,12 +63,14 @@ git clone git://github.com:xxxx/test.git ##以gitreadonly方式克隆到本地�
 
 &lt;p&gt;git pull git@github.com:xxx/xxx.git ##获取并合并内容到本地&lt;/p&gt;
 
-&lt;p&gt;###本地配置
-git config &amp;ndash;global user.name &amp;lsquo;ed&amp;rsquo;&lt;br /&gt;
+&lt;h2 id=&#34;本地配置:1c1ef82aae62aeea8eedcb5f455b129b&#34;&gt;本地配置&lt;/h2&gt;
+
+&lt;p&gt;git config &amp;ndash;global user.name &amp;lsquo;ed&amp;rsquo;&lt;br /&gt;
 git config &amp;ndash;global user.email &amp;lsquo;erickdotphp@gmail.com&amp;rsquo; #全局联系方式，可选&lt;/p&gt;
 
-&lt;p&gt;###新建Git项目并提交到Github
-mkdir testdir &amp;amp; cd testdir&lt;br /&gt;
+&lt;h2 id=&#34;新建git项目并提交到github:1c1ef82aae62aeea8eedcb5f455b129b&#34;&gt;新建Git项目并提交到Github&lt;/h2&gt;
+
+&lt;p&gt;mkdir testdir &amp;amp; cd testdir&lt;br /&gt;
 touch README.md&lt;br /&gt;
 git init #初始化一个本地库&lt;br /&gt;
 git add README.md #添加文件到本地仓库&lt;br /&gt;
@@ -74,8 +81,9 @@ git remote add xxx git@github.com:xxx/xxx.git  #增加一个远程服务器的�
 git remote rm xxx   ##删除远程版本库的别名&lt;br /&gt;
 git push -u remotename master #将本地文件提交到Github的remoname版本库中。此时才更新了本地变更到github服务上。&lt;/p&gt;
 
-&lt;p&gt;###创建和合并分支
-git branch #显示当前分支是master&lt;br /&gt;
+&lt;h2 id=&#34;创建和合并分支:1c1ef82aae62aeea8eedcb5f455b129b&#34;&gt;创建和合并分支&lt;/h2&gt;
+
+&lt;p&gt;git branch #显示当前分支是master&lt;br /&gt;
 git branch new-feature  #创建分支&lt;br /&gt;
 git checkout new-feature  #切换到新分支&lt;br /&gt;
 vi page_cache.inc.php&lt;br /&gt;
@@ -83,14 +91,16 @@ git add page_cache.inc.php&lt;br /&gt;
 git commit -a -m &amp;ldquo;added initial version of page cache&amp;rdquo;&lt;br /&gt;
 git push origin new-feature  ##把分支提交到远程服务器，只是把分支结构和内容提交到远程，并没有发生和主干的合并行为。&lt;/p&gt;
 
-&lt;p&gt;###如果new-feature分支成熟了，觉得有必要合并进master
-git checkout master  #切换到新主干&lt;br /&gt;
+&lt;h2 id=&#34;如果new-feature分支成熟了-觉得有必要合并进master:1c1ef82aae62aeea8eedcb5f455b129b&#34;&gt;如果new-feature分支成熟了，觉得有必要合并进master&lt;/h2&gt;
+
+&lt;p&gt;git checkout master  #切换到新主干&lt;br /&gt;
 git merge new-feature  ##把分支合并到主干&lt;br /&gt;
 git branch #显示当前分支是master&lt;br /&gt;
 git push  #此时主干中也合并了new-feature的代码&lt;/p&gt;
 
-&lt;p&gt;###忽略某个文件更新的命令
-&lt;code&gt;git update-index --assume-unchanged&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;忽略某个文件更新的命令:1c1ef82aae62aeea8eedcb5f455b129b&#34;&gt;忽略某个文件更新的命令&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;git update-index --assume-unchanged&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;目前只知道怎么忽略单个文件&amp;hellip;&lt;/p&gt;
 </description>

@@ -37,16 +37,21 @@
   </div>
   <h1 class="headline" itemprop="headline">Git的常用么命令</h1>
   <section class="body" itemprop="articleBody">
-    <p>###生成密钥
-<code>ssh-keygen</code></p>
+    
 
-<p>###添加公钥到git账户</p>
+<h2 id="生成密钥:1c1ef82aae62aeea8eedcb5f455b129b">生成密钥</h2>
 
-<p>###检测是否成功
-<code>ssh -T git@github.com</code></p>
+<p><code>ssh-keygen</code></p>
 
-<p>###获取代码
-git clone git://github.com:xxxx/test.git ##以gitreadonly方式克隆到本地，只可以读</p>
+<h2 id="添加公钥到git账户:1c1ef82aae62aeea8eedcb5f455b129b">添加公钥到git账户</h2>
+
+<h2 id="检测是否成功:1c1ef82aae62aeea8eedcb5f455b129b">检测是否成功</h2>
+
+<p><code>ssh -T git@github.com</code></p>
+
+<h2 id="获取代码:1c1ef82aae62aeea8eedcb5f455b129b">获取代码</h2>
+
+<p>git clone git://github.com:xxxx/test.git 以gitreadonly方式克隆到本地，只可以读</p>
 
 <p>git clone git@github.com:xxx/test.git  ##以SSH方式克隆到本地，可以读写</p>
 
@@ -56,12 +61,14 @@ git clone git://github.com:xxxx/test.git ##以gitreadonly方式克隆到本地�
 
 <p>git pull git@github.com:xxx/xxx.git ##获取并合并内容到本地</p>
 
-<p>###本地配置
-git config &ndash;global user.name &lsquo;ed&rsquo;<br />
+<h2 id="本地配置:1c1ef82aae62aeea8eedcb5f455b129b">本地配置</h2>
+
+<p>git config &ndash;global user.name &lsquo;ed&rsquo;<br />
 git config &ndash;global user.email &lsquo;erickdotphp@gmail.com&rsquo; #全局联系方式，可选</p>
 
-<p>###新建Git项目并提交到Github
-mkdir testdir &amp; cd testdir<br />
+<h2 id="新建git项目并提交到github:1c1ef82aae62aeea8eedcb5f455b129b">新建Git项目并提交到Github</h2>
+
+<p>mkdir testdir &amp; cd testdir<br />
 touch README.md<br />
 git init #初始化一个本地库<br />
 git add README.md #添加文件到本地仓库<br />
@@ -72,8 +79,9 @@ git remote add xxx git@github.com:xxx/xxx.git  #增加一个远程服务器的�
 git remote rm xxx   ##删除远程版本库的别名<br />
 git push -u remotename master #将本地文件提交到Github的remoname版本库中。此时才更新了本地变更到github服务上。</p>
 
-<p>###创建和合并分支
-git branch #显示当前分支是master<br />
+<h2 id="创建和合并分支:1c1ef82aae62aeea8eedcb5f455b129b">创建和合并分支</h2>
+
+<p>git branch #显示当前分支是master<br />
 git branch new-feature  #创建分支<br />
 git checkout new-feature  #切换到新分支<br />
 vi page_cache.inc.php<br />
@@ -81,14 +89,16 @@ git add page_cache.inc.php<br />
 git commit -a -m &ldquo;added initial version of page cache&rdquo;<br />
 git push origin new-feature  ##把分支提交到远程服务器，只是把分支结构和内容提交到远程，并没有发生和主干的合并行为。</p>
 
-<p>###如果new-feature分支成熟了，觉得有必要合并进master
-git checkout master  #切换到新主干<br />
+<h2 id="如果new-feature分支成熟了-觉得有必要合并进master:1c1ef82aae62aeea8eedcb5f455b129b">如果new-feature分支成熟了，觉得有必要合并进master</h2>
+
+<p>git checkout master  #切换到新主干<br />
 git merge new-feature  ##把分支合并到主干<br />
 git branch #显示当前分支是master<br />
 git push  #此时主干中也合并了new-feature的代码</p>
 
-<p>###忽略某个文件更新的命令
-<code>git update-index --assume-unchanged</code></p>
+<h2 id="忽略某个文件更新的命令:1c1ef82aae62aeea8eedcb5f455b129b">忽略某个文件更新的命令</h2>
+
+<p><code>git update-index --assume-unchanged</code></p>
 
 <p>目前只知道怎么忽略单个文件&hellip;</p>
 
