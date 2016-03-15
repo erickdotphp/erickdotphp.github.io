@@ -1,98 +1,206 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn">
+<html lang="zh-cn">
 <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.15" />
-
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title> Posts &middot; Erick Blog </title>
-
-  
-  <link rel="stylesheet" href="http://erickdotphp.github.io/css/poole.css">
-  <link rel="stylesheet" href="http://erickdotphp.github.io/css/syntax.css">
-  <link rel="stylesheet" href="http://erickdotphp.github.io/css/hyde.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="/favicon.png">
-
-  
-  <link href="http://erickdotphp.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="Erick Blog" />
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="generator" content="Hugo 0.15" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://erickdotphp.github.io/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="alternate" href="http://erickdotphp.github.io/index.xml" type="application/rss+xml" title="Erick Blog">
+<title>Posts - Erick Blog</title>
 </head>
+<body>
 
-<body class="theme-base-0d">
-
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="http://erickdotphp.github.io/"><h1>Erick Blog</h1></a>
-      <p class="lead">
-      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
-      </p>
-    </div>
-
-    <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
-      
-    </ul>
-
-    <p>&copy; 2016. All rights reserved. </p>
+<header>
+  <div class="container">
+    <a class="path" href="http://erickdotphp.github.io/">[Erick Blog]</a>
+    <span class="caret"></span>
   </div>
+</header>
+
+<div class="container">
+
+<main role="main" class="article-list">
+  <h1 class="list-title">Posts</h1>
+  
+    
+<article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/post/git-branch/">Git多分支处理</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2016-03-14">March 14, 2016</time></span>
+
+  </div>
+  <section class="summary">
+    如果需要在同一套代码中控制多个远程版本 ###查看当前的远端 $ git remote -v ###增加远端 $ git remote add 远端名 远端git地址 这样推送和拉取的之后只要在后面加上远端名和分支名就可以 ###拉取远端 $ git pull inter master ###推送远端 $ git push inter master 
+  </section>
+</article>
+
+  
+    
+<article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/post/git/">Git的常用么命令</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2016-03-14">March 14, 2016</time></span>
+
+  </div>
+  <section class="summary">
+    ###生成密钥 ssh-keygen ###添加公钥到git账户 ###检测是否成功 ssh -T git@github.com ###获取代码 git clone git://github.com:xxxx/test.git ##以gitreadonly方式克隆到本地，只可以读 git clone git@github.com:xxx/test.git ##以SSH方式克隆到本地，可以读写 git clone https://github.com/xxx/test.git ##以https方式克隆到本地，可以读写 git fetch git@github.com:xxx/xxx.git ##获取到本地但不合并 git pull git@github.com:xxx/xxx.git ##获取并合并内容到本地 ###本地配置 git config &ndash;global user.name &lsquo;ed&rsquo; git config &ndash;global user.email &lsquo;erickdotphp@gmail.com&rsquo; #全局联系方式，可选 ###新建Git项目并提交到Github mkdir testdir &amp; cd testdir touch README.md git init #初始化一个本地库 git add README.md #添加文件到本地仓库 git rm README.md #本地倒库内删除 git commit -m &ldquo;first commit&rdquo; #提交到本地库并备注，此时变更仍在本地。 git commit -a ##自动更新变化的文件，a可以理解为auto git  <a href="/post/git/">看看完整版</a>
+  </section>
+</article>
+
+  
+    
+<article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/post/composer/">Centos7 上 安装 Composer</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2016-03-14">March 14, 2016</time></span>
+
+  </div>
+  <section class="summary">
+    安装前请确保 环境中有PHP 可以用php -v查看 ###下载 $ curl -sS https://getcomposer.org/installer| php -- --install-dir=/home ###移动到可执行目录 $ mv composer.phar /usr/local/bin/composer ###配置环境变量 $ export PATH=$PATH:/usr/local/bin 
+  </section>
+</article>
+
+  
+    
+<article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/post/sublime/">Centos7 上 安装和配置 Sublime Text3</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2016-03-14">March 14, 2016</time></span>
+
+  </div>
+  <section class="summary">
+    ###下载最新的包 http://www.sublimetext.com/3 下载tarball $ tar jxvf sublime_text_3_build_3083_x64.tar.bz2 -C /opt ###移动到系统目录 $ mv sublime_text_3 /opt/ ###创建连接 $ ln -s /opt/sublime_text_3/sublime_text /usr/bin/sublime ###移动到系统目录下 $ cp /opt/sublime_text_3/sublime_text.desktop /usr/share/applications ###修改配置文件 $ cd /usr/share/applications $ vim sublime_text.desktop [Desktop Entry] Version=1.0 Type=Application Name=Sublime Text GenericName=Text Editor Comment=Sophisticated text editor for code, markup and prose Exec=/opt/sublime_text_3/sublime_text %F Terminal=false MimeType=text/plain; Icon=/opt/sublime_text_3/Icon/48x48/sublime-text.png Categories=TextEditor;Development; StartupNotify=true Actions=Window;Document; [Desktop Action Window] Name=New Window Exec=/opt/sublime_text_3/sublime_text -n OnlyShowIn=Unity; [Desktop Action Document] Name=New File Exec=/opt/sublime_text_3/sublime_text  <a href="/post/sublime/">看看完整版</a>
+  </section>
+</article>
+
+  
+    
+<article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/post/mariadb/">Centos7 上 安装 mariadb</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2016-03-14">March 14, 2016</time></span>
+
+  </div>
+  <section class="summary">
+    ###全部删除MySQL/MariaDB MySQL 已经不再包含在 CentOS 7 的源中，而改用了 MariaDB; 1、使用rpm -qa | grep mariadb搜索 MariaDB 现有的包： 如果存在，使用rpm -e &ndash;nodeps mariadb-*全部删除： 2、使用rpm -qa | grep mariadb搜索 MariaDB 现有的包： 如果存在，使用yum remove mysql mysql-server mysql-libs compat-mysql51全部删除； ###添加MariaDB的yum源 1、创建 /etc/yum.repos.d/MariaDB.repo： 2、添加yum源,该文件中添加如图所示内容： # MariaDB 10.1 CentOS repository list - created 2015-11-19 02:26 UTC # http://mariadb.org/mariadb/repositories/ [mariadb] name = MariaDB baseurl = http://yum.mariadb.org/10.0/centos7-amd64 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB gpgcheck=1 ###安装 MariaDB $ yum install MariaDB-server MariaDB-client ###启动、配置MariaDB $ service mysql start $  <a href="/post/mariadb/">看看完整版</a>
+  </section>
+</article>
+
+  
+    
+<article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/post/lumen/">Lumen 环境搭建</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2016-03-14">March 14, 2016</time></span>
+
+  </div>
+  <section class="summary">
+    ###安装composer $ curl -sS https://getcomposer.org/installer | php -- --install-dir=lumen ####全局使用 $ mv composer.phar /usr/local/bin/composer ####配置PATH $ export PATH=~/.composer/vendor/bin:$PATH ###安装lumen $ composer global require &quot;laravel/lumen-installer&quot; ###设置nginx server { listen 80; server_name www.lumen.loc; set $root_path '/home/wwwroot/lumen/public'; root $root_path; index index.php index.html index.htm; location / { try_files $uri $uri/ /index.php?$query_string; } location ~ (index|get|static|report|404|503)\.php$ { try_files $uri =404; fastcgi_pass fastcgi_backend; fastcgi_param PHP_FLAG &quot;session.auto_start=off \n suhosin.session.cryptua=off&quot;; fastcgi_param PHP_VALUE &quot;memory_limit=256M \n max_execution_time=600&quot;; fastcgi_read_timeout 600s; fastcgi_connect_timeout  <a href="/post/lumen/">看看完整版</a>
+  </section>
+</article>
+
+  
+    
+<article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/post/zendserver/">Centos7 上 安装 ZendServer</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2016-03-14">March 14, 2016</time></span>
+
+  </div>
+  <section class="summary">
+    ###获取官方包 $ wget http://downloads.zend.com/zendserver/8.5.1/ZendServer-8.5.1-RepositoryInstaller-linux.tar.gz ###关闭防火墙 $ vim /etc/selinux/config SELINUX=disabled $ setenforce 0 ###安装ZS ./install_zs.sh 5.6 nginx ###远程访问不到zend server 需要关闭iptable $ service iptables status $ service iptables stop ###配置文件的路径如下 nginx vim /etc/nginx/nginx.conf php /usr/local/zend/etc/php.ini fpm /usr/local/zend/etc/php-fpm.conf 虚拟机 /usr/local/zend/etc/sites.d ###都配置好以后可以访问主机地址了 http://localhost:10081/ZendServer/ ###另外破解方法 vim /usr/local/zend/gui/module/Configuration/src/Configuration/License/License.php 所有判断改成return true; ###FAQ Nginx 报错 no port in upstream &ldquo;fastcgi_backend&rdquo;,因为没有配置fastcgi 在/etc/nginx/nginx.conf在 access_log /var/log/nginx/access.log main; 后面加入 fastcgi_read_timeout 300; upstream fastcgi_backend { server unix:/usr/local/zend/tmp/php-fpm.sock; } 其中fastcgi_read_timeout 300;是为了防止ngxin 504超时错误 
+  </section>
+</article>
+
+  
+    
+<article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/post/digitalocean/">Digital Ocean API整理</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2016-03-14">March 14, 2016</time></span>
+
+  </div>
+  <section class="summary">
+    ###请求类型 GET 只读请求，不需要验证，不会影响查询对象 DELETE 删除操作 PUT 更新操作 POST 新增操作 HEAD 只返回GET查询的head部分用于查询metadata ###需要理解的几个词 ####Account 账户，包括基本信息，状态，水滴上限等等 ####Droplet 水滴（暂时这么翻译吧），可以理解为容器，Ocean的基本单位 ####Image 镜像，给Droplet使用的，可以作为备份，快照，或者是基础镜像 ####Actions 类似于日志的东西 ####Regions 区域，Digital Ocean 数据中心所在地，镜像可以在不同的区域之间切换 ####Slug 区域的唯一标示，human-readable ####Size 硬件配置信息，一组配置信息包括内存，磁盘，区域CPU数量等信息。 ####Floating IP 公网可访问的静态IP，跟容器绑定 
+  </section>
+</article>
+
+  
+    
+<article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/post/linux/">Linux常用命令</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2016-03-14">March 14, 2016</time></span>
+
+  </div>
+  <section class="summary">
+    Linux 文件传输 +从服务器上下载文件 scp username@servername:/path/filename /var/www/local_dir（本地目录） 例如scp root@192.168.0.101:/var/www/test.txt 把192.168.0.101上的/var/www/test.txt 的文件下载到/var/www/local_dir（本地目录） +上传本地文件到服务器 scp /path/filename username@servername:/path 例如scp /var/www/test.php root@192.168.0.101:/var/www/ 把本机/var/www/目录下的test.php文件上传到192.168.0.101这台服务器上的/var/www/目录中 +从服务器下载整个目录 scp -r username@servername:/var/www/remote_dir/（远程目录） /var/www/local_dir（本地目录） 例如:scp -r root@192.168.0.101:/var/www/test /var/www/ +上传目录到服务器 scp -r local_dir username@servername:remote_dir 例如：scp -r test root@192.168.0.101:/var/www/ 把当前目录下的test目录上传到服务器的/var/www/ 目录 
+  </section>
+</article>
+
+  
+    
+<article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/post/php-ssh2/">PHP SSH2 扩展</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2016-03-14">March 14, 2016</time></span>
+
+  </div>
+  <section class="summary">
+    ###安装 ####下载包 wget http://www.libssh2.org/download/libssh2-1.4.2.tar.gz wget http://pecl.php.net/get/ssh2-0.12.tgz ####先安装 libssh2 在安装 SS2 $ tar -zxvf libssh2-1.4.2.tar.gz $ cd libssh2-1.4.2 $ ./configure --prefix=/usr/local/libssh2 $ make &amp;&amp; make install ####安装ssh2 $ tar -zxvf ssh2-0.12.tgz $ cd ssh2-0.12 $ /usr/local/zend/bin/phpize $ ./configure --prefix=/usr/local/ssh2 --with-ssh2=/usr/local/libssh2 --with-php-config=/usr/local/zend/bin/php-config $ make &amp;&amp; make install 修改php.ini 加入 extension=ssh2.so 重启Zend Server ###调试 #####用户名密码方式登录 $user=&quot;root&quot;;//远程用户名 $pass=&quot;123456&quot;;//远程密码 $connection=ssh2_connect('192.168.1.46',22); ssh2_auth_password($connection,$user,$pass); #####用sshkey方式登录 $connection=ssh2_connect('192.168.1.46',22); if(ssh2_auth_pubkey_file($connection, 'root', '/home/id_rsa.pub', '/home/id_rsa', 'secret')) { echo &quot;Public Key Authentication Successful\n&quot;; }  <a href="/post/php-ssh2/">看看完整版</a>
+  </section>
+</article>
+
+  
+    
+<article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/post/hugo/">这个博客是怎么搭建起来的</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2016-03-11">March 11, 2016</time></span>
+
+  </div>
+  <section class="summary">
+    大概原理 首先hugo，用来生成博客的静态文件 hugo是用go语言写的，效率比较高 把生成好的静态页面通过github pages 上传到github上 就做好了 安装 可以直接下载可执行文件 linux windows都有 官网地址 https://gohugo.io/ 创建新的站点 $ hugo new site blog 会生成一个文件夹，里面的config.toml是配置文件 这是一个TOML文件，全称是Tom’s Obvious, Minimal Language，这是它的作者GitHub联合创始人Tom Preston-Werner 觉得YAML不够优雅，捣鼓出来的一个新格式。如果你不喜欢这种格式，你可以将config.toml替换为YAML格式的config.yaml，或者json格式的config.json。hugo都支持。 创建新页面 cd 到 blog下 $ hugo new about.md 这样会把文件生成在contents目录下 也可以放在文件夹下 $ hugo new post/first.md md就是markdown格式，很方便 默认是没有模板的，可以去下载模板 地址是 这里 找好模板之后 创建themes文件夹 $ mkdir themes $ git clone https://github.com/spf13/模板名.git 启动本地服务器 $ hugo server --theme=base16 --buildDrafts --watch watch 是监控文章更新 buildDrafts是生成content里面的页面 生成静态站点 在blog目录下 $ hugo --theme=base16 --buildDrafts 生成好以后把public里面的文件上传到github上就可以了  <a href="/post/hugo/">看看完整版</a>
+  </section>
+</article>
+
+  
+</main>
+
 </div>
 
-
-  <div class="content container">
-    <ul class="posts">
-        
-        <li>
-          <span><a href="http://erickdotphp.github.io/post/git-branch/">Git多分支处理</a> <time class="pull-right post-list">Mon, Mar 14, 2016</time></span>
-        </li>
-        
-        <li>
-          <span><a href="http://erickdotphp.github.io/post/git/">Git的常用么命令</a> <time class="pull-right post-list">Mon, Mar 14, 2016</time></span>
-        </li>
-        
-        <li>
-          <span><a href="http://erickdotphp.github.io/post/composer/">Centos7 上 安装 Composer</a> <time class="pull-right post-list">Mon, Mar 14, 2016</time></span>
-        </li>
-        
-        <li>
-          <span><a href="http://erickdotphp.github.io/post/sublime/">Centos7 上 安装和配置 Sublime Text3</a> <time class="pull-right post-list">Mon, Mar 14, 2016</time></span>
-        </li>
-        
-        <li>
-          <span><a href="http://erickdotphp.github.io/post/mariadb/">Centos7 上 安装 mariadb</a> <time class="pull-right post-list">Mon, Mar 14, 2016</time></span>
-        </li>
-        
-        <li>
-          <span><a href="http://erickdotphp.github.io/post/lumen/">Lumen 环境搭建</a> <time class="pull-right post-list">Mon, Mar 14, 2016</time></span>
-        </li>
-        
-        <li>
-          <span><a href="http://erickdotphp.github.io/post/zendserver/">Centos7 上 安装 ZendServer</a> <time class="pull-right post-list">Mon, Mar 14, 2016</time></span>
-        </li>
-        
-        <li>
-          <span><a href="http://erickdotphp.github.io/post/digitalocean/">Digital Ocean API整理</a> <time class="pull-right post-list">Mon, Mar 14, 2016</time></span>
-        </li>
-        
-        <li>
-          <span><a href="http://erickdotphp.github.io/post/linux/">Linux常用命令</a> <time class="pull-right post-list">Mon, Mar 14, 2016</time></span>
-        </li>
-        
-        <li>
-          <span><a href="http://erickdotphp.github.io/post/php-ssh2/">PHP SSH2 扩展</a> <time class="pull-right post-list">Mon, Mar 14, 2016</time></span>
-        </li>
-        
-        <li>
-          <span><a href="http://erickdotphp.github.io/post/hugo/">这个博客是怎么搭建起来的</a> <time class="pull-right post-list">Fri, Mar 11, 2016</time></span>
-        </li>
-        
-    </ul>
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2016  Erick Blog - <a rel="license" href="#">CC BY 4.0</a></span>
   </div>
+</footer>
+
 </body>
 </html>
+
