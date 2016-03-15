@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Digital Ocean API整理">
+    <meta name="description" content="Centos7 上 安装 ZendServer">
     <meta name="author" content="erickdotphp">
 
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="/favicon.ico">
 
-    <title>Digital Ocean API整理 &middot; Erick BLog</title>
+    <title>Centos7 上 安装 ZendServer &middot; Erick BLog</title>
 
    	
     
@@ -43,6 +43,8 @@
                     <li><a href="http://erickdotphp.github.io">Home</a></li>
                     <li><a href="http://erickdotphp.github.io/post/">Blog</a></li>
                     
+                      <li><a href="/blog/2016/02/01/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-composer/"> Centos7 上 安装 Composer </a></li>
+                    
                 </ul>
             </div>
         </div>
@@ -54,8 +56,8 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10">
-			<h3>Digital Ocean API整理</h3>
-				<span class="label label-primary">2016年03月14日</span> in 
+			<h3>Centos7 上 安装 ZendServer</h3>
+				<span class="label label-primary">2016年02月01日</span> in 
 				 using tags
 				
 			</small>
@@ -64,36 +66,49 @@
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10">
 			<br>
-			<p>###请求类型
-GET 只读请求，不需要验证，不会影响查询对象
-DELETE 删除操作
-PUT 更新操作
-POST 新增操作
-HEAD 只返回GET查询的head部分用于查询metadata</p>
+			<p>###获取官方包
+<code>$ wget http://downloads.zend.com/zendserver/8.5.1/ZendServer-8.5.1-RepositoryInstaller-linux.tar.gz</code></p>
 
-<p>###需要理解的几个词</p>
+<p>###关闭防火墙
+<code>$ vim /etc/selinux/config</code>
+SELINUX=disabled
+<code>$ setenforce 0</code></p>
 
-<p>####Account
-账户，包括基本信息，状态，水滴上限等等
-####Droplet
-水滴（暂时这么翻译吧），可以理解为容器，Ocean的基本单位</p>
+<p>###安装ZS
+<code>./install_zs.sh 5.6 nginx</code></p>
 
-<p>####Image
-镜像，给Droplet使用的，可以作为备份，快照，或者是基础镜像
-####Actions
-类似于日志的东西</p>
+<p>###远程访问不到zend server 需要关闭iptable
+<code>$ service iptables status</code>
+<code>$ service iptables stop</code></p>
 
-<p>####Regions
-区域，Digital Ocean 数据中心所在地，镜像可以在不同的区域之间切换</p>
+<p>###配置文件的路径如下
+nginx  vim /etc/nginx/nginx.conf
+php /usr/local/zend/etc/php.ini
+fpm /usr/local/zend/etc/php-fpm.conf
+虚拟机 /usr/local/zend/etc/sites.d</p>
 
-<p>####Slug
-区域的唯一标示，human-readable</p>
+<p>###都配置好以后可以访问主机地址了
+<a href="http://localhost:10081/ZendServer/">http://localhost:10081/ZendServer/</a></p>
 
-<p>####Size
-硬件配置信息，一组配置信息包括内存，磁盘，区域CPU数量等信息。</p>
+<p>###另外破解方法</p>
 
-<p>####Floating IP
-公网可访问的静态IP，跟容器绑定</p>
+<p><code>vim /usr/local/zend/gui/module/Configuration/src/Configuration/License/License.php</code>
+所有判断改成return true;</p>
+
+<p>###FAQ</p>
+
+<p>Nginx 报错 no port in upstream &ldquo;fastcgi_backend&rdquo;,因为没有配置fastcgi
+在/etc/nginx/nginx.conf在
+<code>access_log  /var/log/nginx/access.log  main;</code>
+后面加入</p>
+
+<pre><code>    fastcgi_read_timeout 300;
+    upstream fastcgi_backend {
+       server   unix:/usr/local/zend/tmp/php-fpm.sock;
+    }
+</code></pre>
+
+<p>其中fastcgi_read_timeout 300;是为了防止ngxin 504超时错误</p>
 
 		</div>
 	</div>

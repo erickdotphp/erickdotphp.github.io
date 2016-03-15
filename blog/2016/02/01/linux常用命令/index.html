@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Git的常用么命令">
+    <meta name="description" content="Linux常用命令">
     <meta name="author" content="erickdotphp">
 
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="/favicon.ico">
 
-    <title>Git的常用么命令 &middot; Erick BLog</title>
+    <title>Linux常用命令 &middot; Erick BLog</title>
 
    	
     
@@ -43,6 +43,8 @@
                     <li><a href="http://erickdotphp.github.io">Home</a></li>
                     <li><a href="http://erickdotphp.github.io/post/">Blog</a></li>
                     
+                      <li><a href="/blog/2016/02/01/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-composer/"> Centos7 上 安装 Composer </a></li>
+                    
                 </ul>
             </div>
         </div>
@@ -54,8 +56,8 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10">
-			<h3>Git的常用么命令</h3>
-				<span class="label label-primary">2016年03月14日</span> in 
+			<h3>Linux常用命令</h3>
+				<span class="label label-primary">2016年02月01日</span> in 
 				 using tags
 				
 			</small>
@@ -66,68 +68,25 @@
 			<br>
 			
 
-<h2 id="生成密钥:1c1ef82aae62aeea8eedcb5f455b129b">生成密钥</h2>
+<h1 id="linux:34fe9f2d9cc3cd7e319ca75e7da08332">Linux</h1>
 
-<p><code>ssh-keygen</code></p>
+<h2 id="文件传输:34fe9f2d9cc3cd7e319ca75e7da08332">文件传输</h2>
 
-<h2 id="添加公钥到git账户:1c1ef82aae62aeea8eedcb5f455b129b">添加公钥到git账户</h2>
+<p>+从服务器上下载文件
+scp username@servername:/path/filename /var/www/local_dir（本地目录）
+例如scp root@192.168.0.101:/var/www/test.txt  把192.168.0.101上的/var/www/test.txt 的文件下载到/var/www/local_dir（本地目录）</p>
 
-<h2 id="检测是否成功:1c1ef82aae62aeea8eedcb5f455b129b">检测是否成功</h2>
+<p>+上传本地文件到服务器
+scp /path/filename username@servername:/path<br />
+例如scp /var/www/test.php  root@192.168.0.101:/var/www/  把本机/var/www/目录下的test.php文件上传到192.168.0.101这台服务器上的/var/www/目录中</p>
 
-<p><code>ssh -T git@github.com</code></p>
+<p>+从服务器下载整个目录
+scp -r username@servername:/var/www/remote_dir/（远程目录） /var/www/local_dir（本地目录）
+例如:scp -r root@192.168.0.101:/var/www/test  /var/www/</p>
 
-<h2 id="获取代码:1c1ef82aae62aeea8eedcb5f455b129b">获取代码</h2>
-
-<p>git clone git://github.com:xxxx/test.git 以gitreadonly方式克隆到本地，只可以读</p>
-
-<p>git clone git@github.com:xxx/test.git  ##以SSH方式克隆到本地，可以读写</p>
-
-<p>git clone <a href="https://github.com/xxx/test.git">https://github.com/xxx/test.git</a> ##以https方式克隆到本地，可以读写</p>
-
-<p>git fetch git@github.com:xxx/xxx.git  ##获取到本地但不合并</p>
-
-<p>git pull git@github.com:xxx/xxx.git ##获取并合并内容到本地</p>
-
-<h2 id="本地配置:1c1ef82aae62aeea8eedcb5f455b129b">本地配置</h2>
-
-<p>git config &ndash;global user.name &lsquo;ed&rsquo;<br />
-git config &ndash;global user.email &lsquo;erickdotphp@gmail.com&rsquo; #全局联系方式，可选</p>
-
-<h2 id="新建git项目并提交到github:1c1ef82aae62aeea8eedcb5f455b129b">新建Git项目并提交到Github</h2>
-
-<p>mkdir testdir &amp; cd testdir<br />
-touch README.md<br />
-git init #初始化一个本地库<br />
-git add README.md #添加文件到本地仓库<br />
-git rm README.md #本地倒库内删除<br />
-git commit -m &ldquo;first commit&rdquo; #提交到本地库并备注，此时变更仍在本地。<br />
-git commit -a  ##自动更新变化的文件，a可以理解为auto<br />
-git remote add xxx git@github.com:xxx/xxx.git  #增加一个远程服务器的别名。<br />
-git remote rm xxx   ##删除远程版本库的别名<br />
-git push -u remotename master #将本地文件提交到Github的remoname版本库中。此时才更新了本地变更到github服务上。</p>
-
-<h2 id="创建和合并分支:1c1ef82aae62aeea8eedcb5f455b129b">创建和合并分支</h2>
-
-<p>git branch #显示当前分支是master<br />
-git branch new-feature  #创建分支<br />
-git checkout new-feature  #切换到新分支<br />
-vi page_cache.inc.php<br />
-git add page_cache.inc.php<br />
-git commit -a -m &ldquo;added initial version of page cache&rdquo;<br />
-git push origin new-feature  ##把分支提交到远程服务器，只是把分支结构和内容提交到远程，并没有发生和主干的合并行为。</p>
-
-<h2 id="如果new-feature分支成熟了-觉得有必要合并进master:1c1ef82aae62aeea8eedcb5f455b129b">如果new-feature分支成熟了，觉得有必要合并进master</h2>
-
-<p>git checkout master  #切换到新主干<br />
-git merge new-feature  ##把分支合并到主干<br />
-git branch #显示当前分支是master<br />
-git push  #此时主干中也合并了new-feature的代码</p>
-
-<h2 id="忽略某个文件更新的命令:1c1ef82aae62aeea8eedcb5f455b129b">忽略某个文件更新的命令</h2>
-
-<p><code>git update-index --assume-unchanged</code></p>
-
-<p>目前只知道怎么忽略单个文件&hellip;</p>
+<p>+上传目录到服务器
+scp  -r local_dir username@servername:remote_dir
+例如：scp -r test  root@192.168.0.101:/var/www/   把当前目录下的test目录上传到服务器的/var/www/ 目录</p>
 
 		</div>
 	</div>

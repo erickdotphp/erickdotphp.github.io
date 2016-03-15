@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Erick BLog">
+    <meta name="description" content="Lumen 环境搭建">
     <meta name="author" content="erickdotphp">
 
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="/favicon.ico">
 
-    <title>Erick BLog</title>
+    <title>Lumen 环境搭建 &middot; Erick BLog</title>
 
    	
     
@@ -28,7 +28,7 @@
     <script src="http://erickdotphp.github.io/js/bootstrap.min-3.3.5.js"></script>
 
     
-    <link href="http://erickdotphp.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Erick BLog" />
+    <link href="" rel="alternate" type="application/rss+xml" title="Erick BLog" />
 </head>
 <body lang="en">
     
@@ -53,92 +53,78 @@
 
 
 
-    <div class="container">
-        
-        
-            	
-		
-			<div class="row">
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<h3>Lumen 环境搭建</h3>
+				<span class="label label-primary">2016年02月01日</span> in 
+				 using tags
 				
-				<div class="col-md-offset-1 col-md-10">
-					<h3><a href="http://erickdotphp.github.io/blog/2016/02/01/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">Linux常用命令</a></h3>
-						<small><span class="label label-primary">
-							
-								2016年02月01日
-							</span>&nbsp;in
-							 using tags
-							
-					</small>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-offset-1 col-md-10">
-					<br>
-					
-	  					
-	  		  				Linux 文件传输 +从服务器上下载文件 scp username@servername:/path/filename /var/www/local_dir（本地目录） 例如scp root@192.168.0.101:/var/www/test.txt 把192.168.0.101上的/var/www/test.txt 的文件下载到/var/www/local_dir（本地目录） +上传本地文件到服务器 scp /path/filename username@servername:/path 例如scp /var/www/test.php root@192.168.0.101:/var/www/ 把本机/var/www/目录下的test.php文件上传到192.168.0.101这台服务器上的/var/www/目录中 +从服务器下载整个目录 scp -r username@servername:/var/www/remote_dir/（远程目录） /var/www/local_dir（本地目录） 例如:scp -r root@192.168.0.101:/var/www/test /var/www/ +上传目录到服务器 scp -r local_dir username@servername:remote_dir 例如：scp -r test root@192.168.0.101:/var/www/ 把当前目录下的test目录上传到服务器的/var/www/ 目录
-					  		<br>
-						  	<a href="http://erickdotphp.github.io/blog/2016/02/01/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
-						  	
-						  		Read more
-						  	</a>
-					  	
-					
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<hr>
-				</div>
-			</div>
-		
-	
-
-        
+			</small>
+		</div>
 	</div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="text-center">
-                    
-    
-    <ul class="pagination">
-        
-        <li>
-            <a href="/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-        </li>
-        
-        <li
-        >
-        <a href="/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-        </li>
-        
-        <li
-        ><a href="/">1</a></li>
-        
-        <li
-        class="active"><a href="/page/2/">2</a></li>
-        
-        <li
-        class="disabled">
-        <a href="" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-        </li>
-        
-        <li>
-            <a href="/page/2/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-        </li>
-        
-    </ul>
-    
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <hr>
-            </div>
-        </div>
-    </div>
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<br>
+			<p>###安装composer
+<code>$ curl -sS https://getcomposer.org/installer | php -- --install-dir=lumen</code></p>
+
+<p>####全局使用
+<code>$ mv composer.phar /usr/local/bin/composer</code></p>
+
+<p>####配置PATH
+<code>$ export PATH=~/.composer/vendor/bin:$PATH</code></p>
+
+<p>###安装lumen
+<code>$ composer global require &quot;laravel/lumen-installer&quot;</code></p>
+
+<p>###设置nginx</p>
+
+<pre><code>server {
+listen  80;
+server_name www.lumen.loc;
+set $root_path '/home/wwwroot/lumen/public';  
+root $root_path;
+index index.php index.html index.htm;  
+location / {
+    try_files $uri $uri/ /index.php?$query_string;
+}
+location ~ (index|get|static|report|404|503)\.php$ {
+    try_files $uri =404;
+    fastcgi_pass   fastcgi_backend;
+
+    fastcgi_param  PHP_FLAG  &quot;session.auto_start=off \n suhosin.session.cryptua=off&quot;;
+    fastcgi_param  PHP_VALUE &quot;memory_limit=256M \n max_execution_time=600&quot;;
+    fastcgi_read_timeout 600s;
+    fastcgi_connect_timeout 600s;
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+}
+    location ~* ^/(css|img|js|flv|swf|download)/(.+)$ {
+        root $root_path;  
+    }
+    location ~ /\.ht {
+        deny all;
+    }
+}
+</code></pre>
+
+<p>###修改hosts
+/etc/hosts</p>
+
+<p>###composer 重新加载类库
+php composer.phar dump-autoload</p>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<hr>
+		</div>
+	</div>
+</div>
+
     <div class="container">
         <div class="row col-md-12">
             <footer>
@@ -174,9 +160,6 @@
                         <a href="https://www.flickr.com/photos/erickdotphp" target="_blank">
                         <i class="fa fa-flickr fa-2x"></i></a>
                     
-                    
-                        <a href="http://erickdotphp.github.io/index.xml" target="_blank">
-                        <i class="fa fa-rss-square fa-2x"></i></a>
                     
                 </div>
             </footer>

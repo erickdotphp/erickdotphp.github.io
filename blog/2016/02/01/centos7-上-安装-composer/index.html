@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Centos7 上 安装 mariadb">
+    <meta name="description" content="Centos7 上 安装 Composer">
     <meta name="author" content="erickdotphp">
 
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="/favicon.ico">
 
-    <title>Centos7 上 安装 mariadb &middot; Erick BLog</title>
+    <title>Centos7 上 安装 Composer &middot; Erick BLog</title>
 
    	
     
@@ -43,6 +43,8 @@
                     <li><a href="http://erickdotphp.github.io">Home</a></li>
                     <li><a href="http://erickdotphp.github.io/post/">Blog</a></li>
                     
+                      <li><a href="/blog/2016/02/01/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-composer/"> Centos7 上 安装 Composer </a></li>
+                    
                 </ul>
             </div>
         </div>
@@ -54,8 +56,8 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10">
-			<h3>Centos7 上 安装 mariadb</h3>
-				<span class="label label-primary">2016年03月14日</span> in 
+			<h3>Centos7 上 安装 Composer</h3>
+				<span class="label label-primary">2016年02月01日</span> in 
 				 using tags
 				
 			</small>
@@ -64,32 +66,22 @@
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10">
 			<br>
-			<p>###全部删除MySQL/MariaDB
-MySQL 已经不再包含在 CentOS 7 的源中，而改用了 MariaDB;
-1、使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
-如果存在，使用rpm -e &ndash;nodeps mariadb-*全部删除：
-2、使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
-如果存在，使用yum remove mysql mysql-server mysql-libs compat-mysql51全部删除；</p>
+			
 
-<p>###添加MariaDB的yum源
-1、创建 /etc/yum.repos.d/MariaDB.repo：
-2、添加yum源,该文件中添加如图所示内容：</p>
+<p>安装前请确保 环境中有PHP
+可以用<code>php -v</code>查看</p>
 
-<pre><code># MariaDB 10.1 CentOS repository list - created 2015-11-19 02:26 UTC
-# http://mariadb.org/mariadb/repositories/
-[mariadb]
-name = MariaDB
-baseurl = http://yum.mariadb.org/10.0/centos7-amd64
-gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-gpgcheck=1
-</code></pre>
+<h2 id="下载:1d289a0d6ce78f28ee09576170bf8ad5">下载</h2>
 
-<p>###安装 MariaDB
-<code>$ yum install MariaDB-server MariaDB-client</code></p>
+<p><code>$ curl -sS https://getcomposer.org/installer| php -- --install-dir=/home</code></p>
 
-<p>###启动、配置MariaDB
-<code>$ service mysql start</code>
-<code>$ mysql_secure_installation</code></p>
+<h2 id="移动到可执行目录:1d289a0d6ce78f28ee09576170bf8ad5">移动到可执行目录</h2>
+
+<p><code>$ mv composer.phar /usr/local/bin/composer</code></p>
+
+<h2 id="配置环境变量:1d289a0d6ce78f28ee09576170bf8ad5">配置环境变量</h2>
+
+<p><code>$ export PATH=$PATH:/usr/local/bin</code></p>
 
 		</div>
 	</div>
