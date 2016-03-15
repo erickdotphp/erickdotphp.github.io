@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Centos7 上 安装 mariadb</title>
+
+  <meta name="description" content="Centos7 上 安装 mariadb"/>
+  <meta name="author" content=""/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <base href="http://erickdotphp.github.io/" />
+
+  <link rel="stylesheet" href="css/fonts.css"/>
+  <link rel="stylesheet" href="css/normalize.css"/>
+  <link rel="stylesheet" href="css/skeleton.css"/>
+  <link rel="stylesheet" href="css/custom.css"/>
+  <link rel="stylesheet" href="genericons/genericons.css"/>
+  
+  
+  <link rel="stylesheet" href="highlight/tomorrow-night.css"/>
+
+  <link href="index.xml" rel="alternate" type="application/rss+xml" title="Posts + Links" />
+  <link href="links/index.xml" rel="alternate" type="application/rss+xml" title="Links" />
+  <link href="posts/index.xml" rel="alternate" type="application/rss+xml" title="Posts" />
+
+  
+</head>
+<body>
+
+<input type="checkbox" id="sidebar-menu-checkbox" />
+<label for="sidebar-menu-checkbox" id="sidebar-menu"></label>
+
+<div id="flex-container">
+  <div id="fake-sidebar">:)</div>
+  <div id="container-mask"></div>
+  <div id="container">
+
+
+<div id="post-header">
+  <p class="post-infos">
+    <time>2016-03-14 11:30</time>
+    
+
+  </p>
+  <h1>Centos7 上 安装 mariadb</h1>
+</div>
+
+
+
+<div class="post">
+  <p>###全部删除MySQL/MariaDB
+MySQL 已经不再包含在 CentOS 7 的源中，而改用了 MariaDB;
+1、使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
+如果存在，使用rpm -e &ndash;nodeps mariadb-*全部删除：
+2、使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
+如果存在，使用yum remove mysql mysql-server mysql-libs compat-mysql51全部删除；</p>
+
+<p>###添加MariaDB的yum源
+1、创建 /etc/yum.repos.d/MariaDB.repo：
+2、添加yum源,该文件中添加如图所示内容：</p>
+
+<pre><code># MariaDB 10.1 CentOS repository list - created 2015-11-19 02:26 UTC
+# http://mariadb.org/mariadb/repositories/
+[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/10.0/centos7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+</code></pre>
+
+<p>###安装 MariaDB
+<code>$ yum install MariaDB-server MariaDB-client</code></p>
+
+<p>###启动、配置MariaDB
+<code>$ service mysql start</code>
+<code>$ mysql_secure_installation</code></p>
+
+</div>
+
+
+
+<footer>
+  <p class="footnote">Copyright &copy; 2016: All rights reserved by <a href="mailto:"></a></p>
+</footer>
+
+  </div>
+</div>
+
+<div id="sidebar">
+<div class="sidebar">
+  <div class="sidebar-about">
+    <a href="http://erickdotphp.github.io/">
+      <img src="media/me.jpg" title="" alt="Me" />
+      <h4 class="sidebar-title">Erick Blog</h4>
+    </a>
+    <span class="sidebar-tagline"></span>
+  </div>
+  <nav class="sidebar-nav">
+    <ul class="sidebar-nav-list">
+      <li class="sidebar-nav-item nav-home">
+        <span class="genericon genericon-home"></span><a class="sidebar-link" href="http://erickdotphp.github.io/">Home</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="genericon genericon-feed" href="posts/index.xml"></a><a class="sidebar-link" href="posts/">Posts/</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="genericon genericon-feed" href="links/index.xml"></a><a class="sidebar-link" href="links/">Links/</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="sidebar-externals">
+  
+  | <a class="genericon genericon-mail" href="mailto:"></a>
+  </div>
+  <hr />
+  <div class="sidebar-bottom">
+    <p>Powered by <a href="http://gohugo.io">Hugo</a>.</p> <p>Theme: <a href="https://github.com/TiTi/hurock">Hurock</a>.</p>
+    <p>Copyright &copy; 2016.</p> <p>All rights reserved.</p>
+  </div>
+</div>
+</div>
+
+
+<script src="highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+</body>
+</html>
+
