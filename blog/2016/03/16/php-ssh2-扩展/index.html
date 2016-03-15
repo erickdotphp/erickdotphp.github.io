@@ -83,20 +83,27 @@
 
 <p>wget <a href="http://pecl.php.net/get/ssh2-0.12.tgz">http://pecl.php.net/get/ssh2-0.12.tgz</a></p>
 
-<h4 id="先安装-libssh2-在安装-ss2:ad2d16bc04b9308ca0888a494676fdc8">先安装 libssh2 在安装 SS2</h4>
+<h4 id="先安装-libssh2-再安装-ssh2:ad2d16bc04b9308ca0888a494676fdc8">先安装 libssh2 再安装 SSH2</h4>
 
-<p><code>$ tar -zxvf libssh2-1.4.2.tar.gz</code>
-<code>$ cd libssh2-1.4.2</code>
-<code>$ ./configure --prefix=/usr/local/libssh2</code>
-<code>$ make &amp;&amp; make install</code></p>
+<p><code>$ tar -zxvf libssh2-1.4.2.tar.gz</code></p>
+
+<p><code>$ cd libssh2-1.4.2</code></p>
+
+<p><code>$ ./configure --prefix=/usr/local/libssh2</code></p>
+
+<p><code>$ make &amp;&amp; make install</code></p>
 
 <h4 id="安装ssh2:ad2d16bc04b9308ca0888a494676fdc8">安装ssh2</h4>
 
-<p><code>$ tar -zxvf ssh2-0.12.tgz</code>
-<code>$ cd ssh2-0.12</code>
-<code>$ /usr/local/zend/bin/phpize</code>
-<code>$ ./configure --prefix=/usr/local/ssh2 --with-ssh2=/usr/local/libssh2 --with-php-config=/usr/local/zend/bin/php-config</code>
-<code>$ make &amp;&amp; make install</code></p>
+<p><code>$ tar -zxvf ssh2-0.12.tgz</code></p>
+
+<p><code>$ cd ssh2-0.12</code></p>
+
+<p><code>$ /usr/local/zend/bin/phpize</code></p>
+
+<p><code>$ ./configure --prefix=/usr/local/ssh2 --with-ssh2=/usr/local/libssh2 --with-php-config=/usr/local/zend/bin/php-config</code></p>
+
+<p><code>$ make &amp;&amp; make install</code></p>
 
 <p>修改php.ini 加入</p>
 

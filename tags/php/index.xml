@@ -28,20 +28,27 @@
 
 &lt;p&gt;wget &lt;a href=&#34;http://pecl.php.net/get/ssh2-0.12.tgz&#34;&gt;http://pecl.php.net/get/ssh2-0.12.tgz&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;先安装-libssh2-在安装-ss2:ad2d16bc04b9308ca0888a494676fdc8&#34;&gt;先安装 libssh2 在安装 SS2&lt;/h4&gt;
+&lt;h4 id=&#34;先安装-libssh2-再安装-ssh2:ad2d16bc04b9308ca0888a494676fdc8&#34;&gt;先安装 libssh2 再安装 SSH2&lt;/h4&gt;
 
-&lt;p&gt;&lt;code&gt;$ tar -zxvf libssh2-1.4.2.tar.gz&lt;/code&gt;
-&lt;code&gt;$ cd libssh2-1.4.2&lt;/code&gt;
-&lt;code&gt;$ ./configure --prefix=/usr/local/libssh2&lt;/code&gt;
-&lt;code&gt;$ make &amp;amp;&amp;amp; make install&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ tar -zxvf libssh2-1.4.2.tar.gz&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ cd libssh2-1.4.2&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ ./configure --prefix=/usr/local/libssh2&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ make &amp;amp;&amp;amp; make install&lt;/code&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;安装ssh2:ad2d16bc04b9308ca0888a494676fdc8&#34;&gt;安装ssh2&lt;/h4&gt;
 
-&lt;p&gt;&lt;code&gt;$ tar -zxvf ssh2-0.12.tgz&lt;/code&gt;
-&lt;code&gt;$ cd ssh2-0.12&lt;/code&gt;
-&lt;code&gt;$ /usr/local/zend/bin/phpize&lt;/code&gt;
-&lt;code&gt;$ ./configure --prefix=/usr/local/ssh2 --with-ssh2=/usr/local/libssh2 --with-php-config=/usr/local/zend/bin/php-config&lt;/code&gt;
-&lt;code&gt;$ make &amp;amp;&amp;amp; make install&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ tar -zxvf ssh2-0.12.tgz&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ cd ssh2-0.12&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ /usr/local/zend/bin/phpize&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ ./configure --prefix=/usr/local/ssh2 --with-ssh2=/usr/local/libssh2 --with-php-config=/usr/local/zend/bin/php-config&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ make &amp;amp;&amp;amp; make install&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;修改php.ini 加入&lt;/p&gt;
 
