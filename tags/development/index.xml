@@ -30,12 +30,13 @@ HEAD 只返回GET查询的head部分用于查询metadata&lt;/p&gt;
 
 &lt;h2 id=&#34;需要理解的几个词:408d90965407ccd8c9d1d1bcc218cd96&#34;&gt;需要理解的几个词&lt;/h2&gt;
 
-&lt;p&gt;##Account&lt;/p&gt;
+&lt;h2 id=&#34;account:408d90965407ccd8c9d1d1bcc218cd96&#34;&gt;Account&lt;/h2&gt;
 
 &lt;p&gt;账户，包括基本信息，状态，水滴上限等等&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Droplet&lt;/em&gt;
-水滴（暂时这么翻译吧），可以理解为容器，Ocean的基本单位&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Droplet&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;水滴（暂时这么翻译吧），可以理解为容器，Ocean的基本单位&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Image&lt;/em&gt;
 镜像，给Droplet使用的，可以作为备份，快照，或者是基础镜像&lt;/p&gt;
