@@ -1,53 +1,109 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="zh-cn">
 <head>
-  <meta charset="utf-8"/>
-  <title>Git多分支处理</title>
-
-  <meta name="description" content="Git多分支处理"/>
-  <meta name="author" content=""/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <base href="http://erickdotphp.github.io/" />
-
-  <link rel="stylesheet" href="css/fonts.css"/>
-  <link rel="stylesheet" href="css/normalize.css"/>
-  <link rel="stylesheet" href="css/skeleton.css"/>
-  <link rel="stylesheet" href="css/custom.css"/>
-  <link rel="stylesheet" href="genericons/genericons.css"/>
-  
-  
-  <link rel="stylesheet" href="highlight/tomorrow-night.css"/>
-
-  <link href="index.xml" rel="alternate" type="application/rss+xml" title="Posts + Links" />
-  <link href="links/index.xml" rel="alternate" type="application/rss+xml" title="Links" />
-  <link href="posts/index.xml" rel="alternate" type="application/rss+xml" title="Posts" />
-
-  
-</head>
-<body>
-
-<input type="checkbox" id="sidebar-menu-checkbox" />
-<label for="sidebar-menu-checkbox" id="sidebar-menu"></label>
-
-<div id="flex-container">
-  <div id="fake-sidebar">:)</div>
-  <div id="container-mask"></div>
-  <div id="container">
-
-
-<div id="post-header">
-  <p class="post-infos">
-    <time>2016-03-14 18:22</time>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Git多分支处理 &middot; Erick Blog</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<!--[if lt IE 9]>
+	<script src="http://erickdotphp.github.io//js/html5.js"></script>
+	<![endif]-->
     
+    <link href="http://erickdotphp.github.io//index.xml" rel="alternate" type="application/rss+xml" title="Erick Blog" />
 
-  </p>
-  <h1>Git多分支处理</h1>
-</div>
+    <link rel='stylesheet' id='twentyfourteen-lato-css'  href='//fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+
+    <link rel='stylesheet' id='genericons-css' href='http://erickdotphp.github.io//genericons/genericons.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='twentyfourteen-style-css' href='http://erickdotphp.github.io//css/style.css' type='text/css' media='all' />
+	
+	<script type='text/javascript' src='http://erickdotphp.github.io//js/jquery/jquery.js'></script>
+	<script type='text/javascript' src='http://erickdotphp.github.io//js/jquery/jquery-migrate.min.js'></script>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+</head>
+
+<body class="home blog masthead-fixed list-view full-width grid">
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+		<div class="header-main">
+			<h1 class="site-title"><a href="http://erickdotphp.github.io//index.html" rel="home">Erick Blog</a></h1>
+
+			<div class="search-toggle">
+				<a href="#search-container" class="screen-reader-text">Search</a>
+			</div>
+
+			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+				<button class="menu-toggle">Primary Menu</button>
+				<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
+				<div class="nav-menu">
+					<ul>
+						
+					</ul>
+				</div>
+			</nav>
+		</div>
+
+		<div id="search-container" class="search-box-wrapper hide">
+			<div class="search-box">
+                <script type="text/javascript">
+    function site_search(obj) {
+    	var host = window.location.host;
+        obj.q.value = "site:" + host + " " + obj.ss_q.value;
+    }
+</script>
+
+<aside id="search-3" class="widget widget_search">
+	<form role="search" class="search-form" action="//www.google.com/search" method="get" onSubmit="site_search(this)">
+
+	<input name="q" type="hidden" />
+	    <label>
+	        <span class="screen-reader-text">Search for:</span>
+	        <input name="ss_q" type="text" placeholder="Search ..." class="search-field" />
+	    </label>
+	    <input type="submit" value="Search" class="search-submit" />
+	</form>
+</aside>
+			</div>
+		</div>
+	</header>
+
+	<div id="main" class="site-main">
 
 
+<div id="main-content" class="main-content">
 
-<div class="post">
-  <p>如果需要在同一套代码中控制多个远程版本</p>
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+			<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Git多分支处理</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://erickdotphp.github.io/post/git-branch//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-03-14 18:22:14 &#43;0800 CST">
+						March 14
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+	
+	<div class="entry-content">
+		<p>如果需要在同一套代码中控制多个远程版本</p>
 
 <p>###查看当前的远端
 <code>$ git remote -v</code></p>
@@ -63,59 +119,78 @@
 <p>###推送远端
 <code>$ git push inter master</code></p>
 
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">		
+			
+		</span>
+	</footer>
+</article> 
+
+			
+		
+		</div>
+
+	</div>
+	<div id="secondary">
+
+	
+
+	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+
+		<script type="text/javascript">
+    function site_search(obj) {
+    	var host = window.location.host;
+        obj.q.value = "site:" + host + " " + obj.ss_q.value;
+    }
+</script>
+
+<aside id="search-3" class="widget widget_search">
+	<form role="search" class="search-form" action="//www.google.com/search" method="get" onSubmit="site_search(this)">
+
+	<input name="q" type="hidden" />
+	    <label>
+	        <span class="screen-reader-text">Search for:</span>
+	        <input name="ss_q" type="text" placeholder="Search ..." class="search-field" />
+	    </label>
+	    <input type="submit" value="Search" class="search-submit" />
+	</form>
+</aside>
+
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+
+	
+</aside>
+
+		<aside id="categories-3" class="widget widget_categories">
+	
+	<h1 class="widget-title">Categories</h1>
+
+	<ul>
+		
+		
+
+	</ul>
+
+</aside>
+
+	</div>
+
 </div>
 
-
-
-<footer>
-  <p class="footnote">Copyright &copy; 2016: All rights reserved by <a href="mailto:"></a></p>
-</footer>
-
-  </div>
 </div>
 
-<div id="sidebar">
-<div class="sidebar">
-  <div class="sidebar-about">
-    <a href="http://erickdotphp.github.io/">
-      <img src="media/me.jpg" title="" alt="Me" />
-      <h4 class="sidebar-title">Erick Blog</h4>
-    </a>
-    <span class="sidebar-tagline"></span>
-  </div>
-  <nav class="sidebar-nav">
-    <ul class="sidebar-nav-list">
-      <li class="sidebar-nav-item nav-home">
-        <span class="genericon genericon-home"></span><a class="sidebar-link" href="http://erickdotphp.github.io/">Home</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="genericon genericon-feed" href="posts/index.xml"></a><a class="sidebar-link" href="posts/">Posts/</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="genericon genericon-feed" href="links/index.xml"></a><a class="sidebar-link" href="links/">Links/</a>
-      </li>
-    </ul>
-  </nav>
-  <div class="sidebar-externals">
-  
-  | <a class="genericon genericon-mail" href="mailto:"></a>
-  </div>
-  <hr />
-  <div class="sidebar-bottom">
-    <p>Powered by <a href="http://gohugo.io">Hugo</a>.</p> <p>Theme: <a href="https://github.com/TiTi/hurock">Hurock</a>.</p>
-    <p>Copyright &copy; 2016.</p> <p>All rights reserved.</p>
-  </div>
-</div>
-</div>
+		</div>
 
+		<footer id="colophon" class="site-footer" role="contentinfo">
 
-<script src="highlight/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+			<div class="site-info">
+				<a href="http://gohugo.io">Proudly powered by Hugo</a>
+			</div>
+		</footer>
+	</div>
 
-
-
-
-
+	<script type='text/javascript' src='http://erickdotphp.github.io//js/functions.js'></script>
 </body>
 </html>
-

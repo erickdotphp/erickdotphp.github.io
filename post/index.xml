@@ -59,8 +59,8 @@ git clone git://github.com:xxxx/test.git ##以gitreadonly方式克隆到本地�
 &lt;p&gt;git pull git@github.com:xxx/xxx.git ##获取并合并内容到本地&lt;/p&gt;
 
 &lt;p&gt;###本地配置
-git config &amp;ndash;global user.name &amp;lsquo;erick&amp;rsquo;&lt;br /&gt;
-git config &amp;ndash;global user.email &amp;lsquo;erick@123.com&amp;rsquo; #全局联系方式，可选&lt;/p&gt;
+git config &amp;ndash;global user.name &amp;lsquo;ed&amp;rsquo;&lt;br /&gt;
+git config &amp;ndash;global user.email &amp;lsquo;erickdotphp@gmail.com&amp;rsquo; #全局联系方式，可选&lt;/p&gt;
 
 &lt;p&gt;###新建Git项目并提交到Github
 mkdir testdir &amp;amp; cd testdir&lt;br /&gt;
@@ -205,6 +205,64 @@ gpgcheck=1
     </item>
     
     <item>
+      <title>Lumen 环境搭建</title>
+      <link>http://erickdotphp.github.io/post/lumen/</link>
+      <pubDate>Mon, 14 Mar 2016 11:30:55 +0800</pubDate>
+      
+      <guid>http://erickdotphp.github.io/post/lumen/</guid>
+      <description>&lt;p&gt;###安装composer
+&lt;code&gt;$ curl -sS https://getcomposer.org/installer | php -- --install-dir=lumen&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;####全局使用
+&lt;code&gt;$ mv composer.phar /usr/local/bin/composer&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;####配置PATH
+&lt;code&gt;$ export PATH=~/.composer/vendor/bin:$PATH&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;###安装lumen
+&lt;code&gt;$ composer global require &amp;quot;laravel/lumen-installer&amp;quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;###设置nginx&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;server {
+listen  80;
+server_name www.lumen.loc;
+set $root_path &#39;/home/wwwroot/lumen/public&#39;;  
+root $root_path;
+index index.php index.html index.htm;  
+location / {
+    try_files $uri $uri/ /index.php?$query_string;
+}
+location ~ (index|get|static|report|404|503)\.php$ {
+    try_files $uri =404;
+    fastcgi_pass   fastcgi_backend;
+
+    fastcgi_param  PHP_FLAG  &amp;quot;session.auto_start=off \n suhosin.session.cryptua=off&amp;quot;;
+    fastcgi_param  PHP_VALUE &amp;quot;memory_limit=256M \n max_execution_time=600&amp;quot;;
+    fastcgi_read_timeout 600s;
+    fastcgi_connect_timeout 600s;
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+}
+    location ~* ^/(css|img|js|flv|swf|download)/(.+)$ {
+        root $root_path;  
+    }
+    location ~ /\.ht {
+        deny all;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;###修改hosts
+/etc/hosts&lt;/p&gt;
+
+&lt;p&gt;###composer 重新加载类库
+php composer.phar dump-autoload&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Centos7 上 安装 ZendServer</title>
       <link>http://erickdotphp.github.io/post/zendserver/</link>
       <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
@@ -253,6 +311,135 @@ fpm /usr/local/zend/etc/php-fpm.conf
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;其中fastcgi_read_timeout 300;是为了防止ngxin 504超时错误&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Digital Ocean API整理</title>
+      <link>http://erickdotphp.github.io/post/digitalocean/</link>
+      <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
+      
+      <guid>http://erickdotphp.github.io/post/digitalocean/</guid>
+      <description>&lt;p&gt;###请求类型
+GET 只读请求，不需要验证，不会影响查询对象
+DELETE 删除操作
+PUT 更新操作
+POST 新增操作
+HEAD 只返回GET查询的head部分用于查询metadata&lt;/p&gt;
+
+&lt;p&gt;###需要理解的几个词&lt;/p&gt;
+
+&lt;p&gt;####Account
+账户，包括基本信息，状态，水滴上限等等
+####Droplet
+水滴（暂时这么翻译吧），可以理解为容器，Ocean的基本单位&lt;/p&gt;
+
+&lt;p&gt;####Image
+镜像，给Droplet使用的，可以作为备份，快照，或者是基础镜像
+####Actions
+类似于日志的东西&lt;/p&gt;
+
+&lt;p&gt;####Regions
+区域，Digital Ocean 数据中心所在地，镜像可以在不同的区域之间切换&lt;/p&gt;
+
+&lt;p&gt;####Slug
+区域的唯一标示，human-readable&lt;/p&gt;
+
+&lt;p&gt;####Size
+硬件配置信息，一组配置信息包括内存，磁盘，区域CPU数量等信息。&lt;/p&gt;
+
+&lt;p&gt;####Floating IP
+公网可访问的静态IP，跟容器绑定&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux常用命令</title>
+      <link>http://erickdotphp.github.io/post/linux/</link>
+      <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
+      
+      <guid>http://erickdotphp.github.io/post/linux/</guid>
+      <description>
+
+&lt;h1 id=&#34;linux:34fe9f2d9cc3cd7e319ca75e7da08332&#34;&gt;Linux&lt;/h1&gt;
+
+&lt;h2 id=&#34;文件传输:34fe9f2d9cc3cd7e319ca75e7da08332&#34;&gt;文件传输&lt;/h2&gt;
+
+&lt;p&gt;+从服务器上下载文件
+scp username@servername:/path/filename /var/www/local_dir（本地目录）
+例如scp root@192.168.0.101:/var/www/test.txt  把192.168.0.101上的/var/www/test.txt 的文件下载到/var/www/local_dir（本地目录）&lt;/p&gt;
+
+&lt;p&gt;+上传本地文件到服务器
+scp /path/filename username@servername:/path&lt;br /&gt;
+例如scp /var/www/test.php  root@192.168.0.101:/var/www/  把本机/var/www/目录下的test.php文件上传到192.168.0.101这台服务器上的/var/www/目录中&lt;/p&gt;
+
+&lt;p&gt;+从服务器下载整个目录
+scp -r username@servername:/var/www/remote_dir/（远程目录） /var/www/local_dir（本地目录）
+例如:scp -r root@192.168.0.101:/var/www/test  /var/www/&lt;/p&gt;
+
+&lt;p&gt;+上传目录到服务器
+scp  -r local_dir username@servername:remote_dir
+例如：scp -r test  root@192.168.0.101:/var/www/   把当前目录下的test目录上传到服务器的/var/www/ 目录&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PHP SSH2 扩展</title>
+      <link>http://erickdotphp.github.io/post/php-ssh2/</link>
+      <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
+      
+      <guid>http://erickdotphp.github.io/post/php-ssh2/</guid>
+      <description>&lt;p&gt;###安装&lt;/p&gt;
+
+&lt;p&gt;####下载包
+wget &lt;a href=&#34;http://www.libssh2.org/download/libssh2-1.4.2.tar.gz&#34;&gt;http://www.libssh2.org/download/libssh2-1.4.2.tar.gz&lt;/a&gt;
+wget &lt;a href=&#34;http://pecl.php.net/get/ssh2-0.12.tgz&#34;&gt;http://pecl.php.net/get/ssh2-0.12.tgz&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;####先安装 libssh2 在安装 SS2
+&lt;code&gt;$ tar -zxvf libssh2-1.4.2.tar.gz&lt;/code&gt;
+&lt;code&gt;$ cd libssh2-1.4.2&lt;/code&gt;
+&lt;code&gt;$ ./configure --prefix=/usr/local/libssh2&lt;/code&gt;
+&lt;code&gt;$ make &amp;amp;&amp;amp; make install&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;####安装ssh2
+&lt;code&gt;$ tar -zxvf ssh2-0.12.tgz&lt;/code&gt;
+&lt;code&gt;$ cd ssh2-0.12&lt;/code&gt;
+&lt;code&gt;$ /usr/local/zend/bin/phpize&lt;/code&gt;
+&lt;code&gt;$ ./configure --prefix=/usr/local/ssh2 --with-ssh2=/usr/local/libssh2 --with-php-config=/usr/local/zend/bin/php-config&lt;/code&gt;
+&lt;code&gt;$ make &amp;amp;&amp;amp; make install&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;修改php.ini 加入
+&lt;code&gt;extension=ssh2.so&lt;/code&gt;
+重启Zend Server&lt;/p&gt;
+
+&lt;p&gt;###调试&lt;/p&gt;
+
+&lt;p&gt;#####用户名密码方式登录&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$user=&amp;quot;root&amp;quot;;//远程用户名
+$pass=&amp;quot;123456&amp;quot;;//远程密码
+$connection=ssh2_connect(&#39;192.168.1.46&#39;,22);
+ssh2_auth_password($connection,$user,$pass);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#####用sshkey方式登录&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$connection=ssh2_connect(&#39;192.168.1.46&#39;,22);
+if(ssh2_auth_pubkey_file($connection, &#39;root&#39;, &#39;/home/id_rsa.pub&#39;, &#39;/home/id_rsa&#39;, &#39;secret&#39;))
+{
+    echo &amp;quot;Public Key Authentication Successful\n&amp;quot;;
+} else {    
+    die(&#39;Public Key Authentication Failed&#39;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#####执行命令获取返回值&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$cmd=&amp;quot;ps aux&amp;quot;;//命令
+$ret=ssh2_exec($connection,$cmd);
+stream_set_blocking($ret, true);
+echo (stream_get_contents($ret));
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

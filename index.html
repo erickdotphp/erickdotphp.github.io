@@ -1,97 +1,891 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="zh-cn">
 <head>
-  <meta charset="utf-8"/>
-  <title>Erick Blog</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Erick Blog</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<!--[if lt IE 9]>
+	<script src="http://erickdotphp.github.io//js/html5.js"></script>
+	<![endif]-->
+    
+    <link href="http://erickdotphp.github.io//index.xml" rel="alternate" type="application/rss+xml" title="Erick Blog" />
 
-  <meta name="description" content="Erick Blog"/>
-  <meta name="author" content=""/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <base href="http://erickdotphp.github.io/" />
+    <link rel='stylesheet' id='twentyfourteen-lato-css'  href='//fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
 
-  <link rel="stylesheet" href="css/fonts.css"/>
-  <link rel="stylesheet" href="css/normalize.css"/>
-  <link rel="stylesheet" href="css/skeleton.css"/>
-  <link rel="stylesheet" href="css/custom.css"/>
-  <link rel="stylesheet" href="genericons/genericons.css"/>
-  
-  
-  <link rel="stylesheet" href="highlight/tomorrow-night.css"/>
-
-  <link href="index.xml" rel="alternate" type="application/rss+xml" title="Posts + Links" />
-  <link href="links/index.xml" rel="alternate" type="application/rss+xml" title="Links" />
-  <link href="posts/index.xml" rel="alternate" type="application/rss+xml" title="Posts" />
-
-  
+    <link rel='stylesheet' id='genericons-css' href='http://erickdotphp.github.io//genericons/genericons.css' type='text/css' media='all' />
+	<link rel='stylesheet' id='twentyfourteen-style-css' href='http://erickdotphp.github.io//css/style.css' type='text/css' media='all' />
+	
+	<script type='text/javascript' src='http://erickdotphp.github.io//js/jquery/jquery.js'></script>
+	<script type='text/javascript' src='http://erickdotphp.github.io//js/jquery/jquery-migrate.min.js'></script>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
 </head>
-<body>
 
-<input type="checkbox" id="sidebar-menu-checkbox" />
-<label for="sidebar-menu-checkbox" id="sidebar-menu"></label>
+<body class="home blog masthead-fixed list-view full-width grid">
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+		<div class="header-main">
+			<h1 class="site-title"><a href="http://erickdotphp.github.io//index.html" rel="home">Erick Blog</a></h1>
 
-<div id="flex-container">
-  <div id="fake-sidebar">:)</div>
-  <div id="container-mask"></div>
-  <div id="container">
+			<div class="search-toggle">
+				<a href="#search-container" class="screen-reader-text">Search</a>
+			</div>
+
+			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+				<button class="menu-toggle">Primary Menu</button>
+				<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
+				<div class="nav-menu">
+					<ul>
+						
+					</ul>
+				</div>
+			</nav>
+		</div>
+
+		<div id="search-container" class="search-box-wrapper hide">
+			<div class="search-box">
+                <script type="text/javascript">
+    function site_search(obj) {
+    	var host = window.location.host;
+        obj.q.value = "site:" + host + " " + obj.ss_q.value;
+    }
+</script>
+
+<aside id="search-3" class="widget widget_search">
+	<form role="search" class="search-form" action="//www.google.com/search" method="get" onSubmit="site_search(this)">
+
+	<input name="q" type="hidden" />
+	    <label>
+	        <span class="screen-reader-text">Search for:</span>
+	        <input name="ss_q" type="text" placeholder="Search ..." class="search-field" />
+	    </label>
+	    <input type="submit" value="Search" class="search-submit" />
+	</form>
+</aside>
+			</div>
+		</div>
+	</header>
+
+	<div id="main" class="site-main">
 
 
-<div class="posts">
-  
+<div id="main-content" class="main-content">
+
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Git多分支处理</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://erickdotphp.github.io/post/git-branch//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-03-14 18:22:14 &#43;0800 CST">
+						March 14
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+	
+	<div class="entry-content">
+		<p>如果需要在同一套代码中控制多个远程版本</p>
+
+<p>###查看当前的远端
+<code>$ git remote -v</code></p>
+
+<p>###增加远端
+<code>$ git remote add 远端名 远端git地址</code></p>
+
+<p>这样推送和拉取的之后只要在后面加上远端名和分支名就可以</p>
+
+<p>###拉取远端
+<code>$ git pull inter master</code></p>
+
+<p>###推送远端
+<code>$ git push inter master</code></p>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">		
+			
+		</span>
+	</footer>
+</article> 
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Git的常用么命令</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://erickdotphp.github.io/post/git//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-03-14 18:22:14 &#43;0800 CST">
+						March 14
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+	
+	<div class="entry-content">
+		<p>###生成密钥
+<code>ssh-keygen</code></p>
+
+<p>###添加公钥到git账户</p>
+
+<p>###检测是否成功
+<code>ssh -T git@github.com</code></p>
+
+<p>###获取代码
+git clone git://github.com:xxxx/test.git ##以gitreadonly方式克隆到本地，只可以读</p>
+
+<p>git clone git@github.com:xxx/test.git  ##以SSH方式克隆到本地，可以读写</p>
+
+<p>git clone <a href="https://github.com/xxx/test.git">https://github.com/xxx/test.git</a> ##以https方式克隆到本地，可以读写</p>
+
+<p>git fetch git@github.com:xxx/xxx.git  ##获取到本地但不合并</p>
+
+<p>git pull git@github.com:xxx/xxx.git ##获取并合并内容到本地</p>
+
+<p>###本地配置
+git config &ndash;global user.name &lsquo;ed&rsquo;<br />
+git config &ndash;global user.email &lsquo;erickdotphp@gmail.com&rsquo; #全局联系方式，可选</p>
+
+<p>###新建Git项目并提交到Github
+mkdir testdir &amp; cd testdir<br />
+touch README.md<br />
+git init #初始化一个本地库<br />
+git add README.md #添加文件到本地仓库<br />
+git rm README.md #本地倒库内删除<br />
+git commit -m &ldquo;first commit&rdquo; #提交到本地库并备注，此时变更仍在本地。<br />
+git commit -a  ##自动更新变化的文件，a可以理解为auto<br />
+git remote add xxx git@github.com:xxx/xxx.git  #增加一个远程服务器的别名。<br />
+git remote rm xxx   ##删除远程版本库的别名<br />
+git push -u remotename master #将本地文件提交到Github的remoname版本库中。此时才更新了本地变更到github服务上。</p>
+
+<p>###创建和合并分支
+git branch #显示当前分支是master<br />
+git branch new-feature  #创建分支<br />
+git checkout new-feature  #切换到新分支<br />
+vi page_cache.inc.php<br />
+git add page_cache.inc.php<br />
+git commit -a -m &ldquo;added initial version of page cache&rdquo;<br />
+git push origin new-feature  ##把分支提交到远程服务器，只是把分支结构和内容提交到远程，并没有发生和主干的合并行为。</p>
+
+<p>###如果new-feature分支成熟了，觉得有必要合并进master
+git checkout master  #切换到新主干<br />
+git merge new-feature  ##把分支合并到主干<br />
+git branch #显示当前分支是master<br />
+git push  #此时主干中也合并了new-feature的代码</p>
+
+<p>###忽略某个文件更新的命令
+<code>git update-index --assume-unchanged</code></p>
+
+<p>目前只知道怎么忽略单个文件&hellip;</p>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">		
+			
+		</span>
+	</footer>
+</article> 
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Centos7 上 安装 Composer</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://erickdotphp.github.io/post/composer//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-03-14 12:30:55 &#43;0800 CST">
+						March 14
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+	
+	<div class="entry-content">
+		<p>安装前请确保 环境中有PHP
+可以用php -v查看</p>
+
+<p>###下载
+<code>$ curl -sS https://getcomposer.org/installer| php -- --install-dir=/home</code></p>
+
+<p>###移动到可执行目录
+<code>$ mv composer.phar /usr/local/bin/composer</code></p>
+
+<p>###配置环境变量
+<code>$ export PATH=$PATH:/usr/local/bin</code></p>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">		
+			
+		</span>
+	</footer>
+</article> 
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Centos7 上 安装和配置 Sublime Text3</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://erickdotphp.github.io/post/sublime//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-03-14 12:30:55 &#43;0800 CST">
+						March 14
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+	
+	<div class="entry-content">
+		<p>###下载最新的包
+<a href="http://www.sublimetext.com/3">http://www.sublimetext.com/3</a>
+下载tarball
+<code>$ tar jxvf sublime_text_3_build_3083_x64.tar.bz2  -C /opt</code></p>
+
+<p>###移动到系统目录
+<code>$ mv sublime_text_3 /opt/</code></p>
+
+<p>###创建连接
+<code>$ ln -s /opt/sublime_text_3/sublime_text /usr/bin/sublime</code></p>
+
+<p>###移动到系统目录下
+<code>$ cp /opt/sublime_text_3/sublime_text.desktop /usr/share/applications</code></p>
+
+<p>###修改配置文件
+<code>$ cd /usr/share/applications</code>
+<code>$ vim sublime_text.desktop</code></p>
+
+<pre><code>[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Sublime Text
+GenericName=Text Editor
+Comment=Sophisticated text editor for code, markup and prose
+Exec=/opt/sublime_text_3/sublime_text %F
+Terminal=false
+MimeType=text/plain;
+Icon=/opt/sublime_text_3/Icon/48x48/sublime-text.png
+Categories=TextEditor;Development;
+StartupNotify=true
+Actions=Window;Document;
+
+[Desktop Action Window]
+Name=New Window
+Exec=/opt/sublime_text_3/sublime_text -n
+OnlyShowIn=Unity;
+
+[Desktop Action Document]
+Name=New File
+Exec=/opt/sublime_text_3/sublime_text --command new_file
+OnlyShowIn=Unity;
+</code></pre>
+
+<p>这些都做完以后 sublime的快捷方式会出现在   应用程序=&gt;编程 里面</p>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">		
+			
+		</span>
+	</footer>
+</article> 
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Centos7 上 安装 mariadb</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://erickdotphp.github.io/post/mariadb//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-03-14 11:30:55 &#43;0800 CST">
+						March 14
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+	
+	<div class="entry-content">
+		<p>###全部删除MySQL/MariaDB
+MySQL 已经不再包含在 CentOS 7 的源中，而改用了 MariaDB;
+1、使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
+如果存在，使用rpm -e &ndash;nodeps mariadb-*全部删除：
+2、使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
+如果存在，使用yum remove mysql mysql-server mysql-libs compat-mysql51全部删除；</p>
+
+<p>###添加MariaDB的yum源
+1、创建 /etc/yum.repos.d/MariaDB.repo：
+2、添加yum源,该文件中添加如图所示内容：</p>
+
+<pre><code># MariaDB 10.1 CentOS repository list - created 2015-11-19 02:26 UTC
+# http://mariadb.org/mariadb/repositories/
+[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/10.0/centos7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+</code></pre>
+
+<p>###安装 MariaDB
+<code>$ yum install MariaDB-server MariaDB-client</code></p>
+
+<p>###启动、配置MariaDB
+<code>$ service mysql start</code>
+<code>$ mysql_secure_installation</code></p>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">		
+			
+		</span>
+	</footer>
+</article> 
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Lumen 环境搭建</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://erickdotphp.github.io/post/lumen//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-03-14 11:30:55 &#43;0800 CST">
+						March 14
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+	
+	<div class="entry-content">
+		<p>###安装composer
+<code>$ curl -sS https://getcomposer.org/installer | php -- --install-dir=lumen</code></p>
+
+<p>####全局使用
+<code>$ mv composer.phar /usr/local/bin/composer</code></p>
+
+<p>####配置PATH
+<code>$ export PATH=~/.composer/vendor/bin:$PATH</code></p>
+
+<p>###安装lumen
+<code>$ composer global require &quot;laravel/lumen-installer&quot;</code></p>
+
+<p>###设置nginx</p>
+
+<pre><code>server {
+listen  80;
+server_name www.lumen.loc;
+set $root_path '/home/wwwroot/lumen/public';  
+root $root_path;
+index index.php index.html index.htm;  
+location / {
+    try_files $uri $uri/ /index.php?$query_string;
+}
+location ~ (index|get|static|report|404|503)\.php$ {
+    try_files $uri =404;
+    fastcgi_pass   fastcgi_backend;
+
+    fastcgi_param  PHP_FLAG  &quot;session.auto_start=off \n suhosin.session.cryptua=off&quot;;
+    fastcgi_param  PHP_VALUE &quot;memory_limit=256M \n max_execution_time=600&quot;;
+    fastcgi_read_timeout 600s;
+    fastcgi_connect_timeout 600s;
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+}
+    location ~* ^/(css|img|js|flv|swf|download)/(.+)$ {
+        root $root_path;  
+    }
+    location ~ /\.ht {
+        deny all;
+    }
+}
+</code></pre>
+
+<p>###修改hosts
+/etc/hosts</p>
+
+<p>###composer 重新加载类库
+php composer.phar dump-autoload</p>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">		
+			
+		</span>
+	</footer>
+</article> 
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Centos7 上 安装 ZendServer</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://erickdotphp.github.io/post/zendserver//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-03-14 10:30:55 &#43;0800 CST">
+						March 14
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+	
+	<div class="entry-content">
+		<p>###获取官方包
+<code>$ wget http://downloads.zend.com/zendserver/8.5.1/ZendServer-8.5.1-RepositoryInstaller-linux.tar.gz</code></p>
+
+<p>###关闭防火墙
+<code>$ vim /etc/selinux/config</code>
+SELINUX=disabled
+<code>$ setenforce 0</code></p>
+
+<p>###安装ZS
+<code>./install_zs.sh 5.6 nginx</code></p>
+
+<p>###远程访问不到zend server 需要关闭iptable
+<code>$ service iptables status</code>
+<code>$ service iptables stop</code></p>
+
+<p>###配置文件的路径如下
+nginx  vim /etc/nginx/nginx.conf
+php /usr/local/zend/etc/php.ini
+fpm /usr/local/zend/etc/php-fpm.conf
+虚拟机 /usr/local/zend/etc/sites.d</p>
+
+<p>###都配置好以后可以访问主机地址了
+<a href="http://localhost:10081/ZendServer/">http://localhost:10081/ZendServer/</a></p>
+
+<p>###另外破解方法</p>
+
+<p><code>vim /usr/local/zend/gui/module/Configuration/src/Configuration/License/License.php</code>
+所有判断改成return true;</p>
+
+<p>###FAQ</p>
+
+<p>Nginx 报错 no port in upstream &ldquo;fastcgi_backend&rdquo;,因为没有配置fastcgi
+在/etc/nginx/nginx.conf在
+<code>access_log  /var/log/nginx/access.log  main;</code>
+后面加入</p>
+
+<pre><code>    fastcgi_read_timeout 300;
+    upstream fastcgi_backend {
+       server   unix:/usr/local/zend/tmp/php-fpm.sock;
+    }
+</code></pre>
+
+<p>其中fastcgi_read_timeout 300;是为了防止ngxin 504超时错误</p>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">		
+			
+		</span>
+	</footer>
+</article> 
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Digital Ocean API整理</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://erickdotphp.github.io/post/digitalocean//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-03-14 10:30:55 &#43;0800 CST">
+						March 14
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+	
+	<div class="entry-content">
+		<p>###请求类型
+GET 只读请求，不需要验证，不会影响查询对象
+DELETE 删除操作
+PUT 更新操作
+POST 新增操作
+HEAD 只返回GET查询的head部分用于查询metadata</p>
+
+<p>###需要理解的几个词</p>
+
+<p>####Account
+账户，包括基本信息，状态，水滴上限等等
+####Droplet
+水滴（暂时这么翻译吧），可以理解为容器，Ocean的基本单位</p>
+
+<p>####Image
+镜像，给Droplet使用的，可以作为备份，快照，或者是基础镜像
+####Actions
+类似于日志的东西</p>
+
+<p>####Regions
+区域，Digital Ocean 数据中心所在地，镜像可以在不同的区域之间切换</p>
+
+<p>####Slug
+区域的唯一标示，human-readable</p>
+
+<p>####Size
+硬件配置信息，一组配置信息包括内存，磁盘，区域CPU数量等信息。</p>
+
+<p>####Floating IP
+公网可访问的静态IP，跟容器绑定</p>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">		
+			
+		</span>
+	</footer>
+</article> 
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">Linux常用命令</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://erickdotphp.github.io/post/linux//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-03-14 10:30:55 &#43;0800 CST">
+						March 14
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+	
+	<div class="entry-content">
+		
+
+<h1 id="linux:34fe9f2d9cc3cd7e319ca75e7da08332">Linux</h1>
+
+<h2 id="文件传输:34fe9f2d9cc3cd7e319ca75e7da08332">文件传输</h2>
+
+<p>+从服务器上下载文件
+scp username@servername:/path/filename /var/www/local_dir（本地目录）
+例如scp root@192.168.0.101:/var/www/test.txt  把192.168.0.101上的/var/www/test.txt 的文件下载到/var/www/local_dir（本地目录）</p>
+
+<p>+上传本地文件到服务器
+scp /path/filename username@servername:/path<br />
+例如scp /var/www/test.php  root@192.168.0.101:/var/www/  把本机/var/www/目录下的test.php文件上传到192.168.0.101这台服务器上的/var/www/目录中</p>
+
+<p>+从服务器下载整个目录
+scp -r username@servername:/var/www/remote_dir/（远程目录） /var/www/local_dir（本地目录）
+例如:scp -r root@192.168.0.101:/var/www/test  /var/www/</p>
+
+<p>+上传目录到服务器
+scp  -r local_dir username@servername:remote_dir
+例如：scp -r test  root@192.168.0.101:/var/www/   把当前目录下的test目录上传到服务器的/var/www/ 目录</p>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">		
+			
+		</span>
+	</footer>
+</article> 
+			
+				<article class="post type-post status-publish format-standard hentry">
+
+	
+	<header class="entry-header">
+
+	
+
+		<div class="entry-meta">
+			<span class="cat-links">
+                
+			</span>
+		</div>
+
+		<h1 class="entry-title">PHP SSH2 扩展</h1>
+
+		<div class="entry-meta">
+			<span class="entry-date">
+				<a href="http://erickdotphp.github.io/post/php-ssh2//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-03-14 10:30:55 &#43;0800 CST">
+						March 14
+					</time>
+				</a>
+			</span>
+		</div>
+
+	</header>
+	
+	<div class="entry-content">
+		<p>###安装</p>
+
+<p>####下载包
+wget <a href="http://www.libssh2.org/download/libssh2-1.4.2.tar.gz">http://www.libssh2.org/download/libssh2-1.4.2.tar.gz</a>
+wget <a href="http://pecl.php.net/get/ssh2-0.12.tgz">http://pecl.php.net/get/ssh2-0.12.tgz</a></p>
+
+<p>####先安装 libssh2 在安装 SS2
+<code>$ tar -zxvf libssh2-1.4.2.tar.gz</code>
+<code>$ cd libssh2-1.4.2</code>
+<code>$ ./configure --prefix=/usr/local/libssh2</code>
+<code>$ make &amp;&amp; make install</code></p>
+
+<p>####安装ssh2
+<code>$ tar -zxvf ssh2-0.12.tgz</code>
+<code>$ cd ssh2-0.12</code>
+<code>$ /usr/local/zend/bin/phpize</code>
+<code>$ ./configure --prefix=/usr/local/ssh2 --with-ssh2=/usr/local/libssh2 --with-php-config=/usr/local/zend/bin/php-config</code>
+<code>$ make &amp;&amp; make install</code></p>
+
+<p>修改php.ini 加入
+<code>extension=ssh2.so</code>
+重启Zend Server</p>
+
+<p>###调试</p>
+
+<p>#####用户名密码方式登录</p>
+
+<pre><code>$user=&quot;root&quot;;//远程用户名
+$pass=&quot;123456&quot;;//远程密码
+$connection=ssh2_connect('192.168.1.46',22);
+ssh2_auth_password($connection,$user,$pass);
+</code></pre>
+
+<p>#####用sshkey方式登录</p>
+
+<pre><code>$connection=ssh2_connect('192.168.1.46',22);
+if(ssh2_auth_pubkey_file($connection, 'root', '/home/id_rsa.pub', '/home/id_rsa', 'secret'))
+{
+    echo &quot;Public Key Authentication Successful\n&quot;;
+} else {    
+    die('Public Key Authentication Failed');
+}
+</code></pre>
+
+<p>#####执行命令获取返回值</p>
+
+<pre><code>$cmd=&quot;ps aux&quot;;//命令
+$ret=ssh2_exec($connection,$cmd);
+stream_set_blocking($ret, true);
+echo (stream_get_contents($ret));
+</code></pre>
+
+	</div>
+
+	<footer class="entry-meta">
+		<span class="tag-links">		
+			
+		</span>
+	</footer>
+</article> 
+			
+		
+		</div>
+	</div>
+	<div id="secondary">
+
+	
+
+	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+
+		<script type="text/javascript">
+    function site_search(obj) {
+    	var host = window.location.host;
+        obj.q.value = "site:" + host + " " + obj.ss_q.value;
+    }
+</script>
+
+<aside id="search-3" class="widget widget_search">
+	<form role="search" class="search-form" action="//www.google.com/search" method="get" onSubmit="site_search(this)">
+
+	<input name="q" type="hidden" />
+	    <label>
+	        <span class="screen-reader-text">Search for:</span>
+	        <input name="ss_q" type="text" placeholder="Search ..." class="search-field" />
+	    </label>
+	    <input type="submit" value="Search" class="search-submit" />
+	</form>
+</aside>
+
+		<aside id="recent-posts-3" class="widget widget_recent_entries">
+
+	
+	<h1 class="widget-title">Recent Posts</h1>
+		<ul>
+			
+			<li>
+				<a href="http://erickdotphp.github.io/post/git-branch//index.html">Git多分支处理</a>
+			</li>
+			
+			<li>
+				<a href="http://erickdotphp.github.io/post/git//index.html">Git的常用么命令</a>
+			</li>
+			
+			<li>
+				<a href="http://erickdotphp.github.io/post/composer//index.html">Centos7 上 安装 Composer</a>
+			</li>
+			
+			<li>
+				<a href="http://erickdotphp.github.io/post/sublime//index.html">Centos7 上 安装和配置 Sublime Text3</a>
+			</li>
+			
+			<li>
+				<a href="http://erickdotphp.github.io/post/mariadb//index.html">Centos7 上 安装 mariadb</a>
+			</li>
+			
+		</ul>
+	
+</aside>
+
+		<aside id="categories-3" class="widget widget_categories">
+	
+	<h1 class="widget-title">Categories</h1>
+
+	<ul>
+		
+		
+
+	</ul>
+
+</aside>
+
+	</div>
+
 </div>
-<hr />
-<div class="posts">
-  
+
 </div>
 
-<footer>
-  <p class="footnote">Copyright &copy; 2016: All rights reserved by <a href="mailto:"></a></p>
-</footer>
+		</div>
 
-  </div>
-</div>
+		<footer id="colophon" class="site-footer" role="contentinfo">
 
-<div id="sidebar">
-<div class="sidebar">
-  <div class="sidebar-about">
-    <a href="http://erickdotphp.github.io/">
-      <img src="media/me.jpg" title="" alt="Me" />
-      <h4 class="sidebar-title">Erick Blog</h4>
-    </a>
-    <span class="sidebar-tagline"></span>
-  </div>
-  <nav class="sidebar-nav">
-    <ul class="sidebar-nav-list">
-      <li class="sidebar-nav-item nav-home">
-        <span class="genericon genericon-home"></span><a class="sidebar-link" href="http://erickdotphp.github.io/">Home</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="genericon genericon-feed" href="posts/index.xml"></a><a class="sidebar-link" href="posts/">Posts/</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="genericon genericon-feed" href="links/index.xml"></a><a class="sidebar-link" href="links/">Links/</a>
-      </li>
-    </ul>
-  </nav>
-  <div class="sidebar-externals">
-  
-  | <a class="genericon genericon-mail" href="mailto:"></a>
-  </div>
-  <hr />
-  <div class="sidebar-bottom">
-    <p>Powered by <a href="http://gohugo.io">Hugo</a>.</p> <p>Theme: <a href="https://github.com/TiTi/hurock">Hurock</a>.</p>
-    <p>Copyright &copy; 2016.</p> <p>All rights reserved.</p>
-  </div>
-</div>
-</div>
+			<div class="site-info">
+				<a href="http://gohugo.io">Proudly powered by Hugo</a>
+			</div>
+		</footer>
+	</div>
 
-
-<script src="highlight/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-
-
-
+	<script type='text/javascript' src='http://erickdotphp.github.io//js/functions.js'></script>
 </body>
 </html>
-

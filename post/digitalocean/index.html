@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Centos7 上 安装和配置 Sublime Text3 &middot; Erick Blog</title>
+	<title>Digital Ocean API整理 &middot; Erick Blog</title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<!--[if lt IE 9]>
 	<script src="http://erickdotphp.github.io//js/html5.js"></script>
@@ -88,12 +88,12 @@
 			</span>
 		</div>
 
-		<h1 class="entry-title">Centos7 上 安装和配置 Sublime Text3</h1>
+		<h1 class="entry-title">Digital Ocean API整理</h1>
 
 		<div class="entry-meta">
 			<span class="entry-date">
-				<a href="http://erickdotphp.github.io/post/sublime//index.html" rel="bookmark">
-					<time class="entry-date" datetime="2016-03-14 12:30:55 &#43;0800 CST">
+				<a href="http://erickdotphp.github.io/post/digitalocean//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-03-14 10:30:55 &#43;0800 CST">
 						March 14
 					</time>
 				</a>
@@ -103,50 +103,36 @@
 	</header>
 	
 	<div class="entry-content">
-		<p>###下载最新的包
-<a href="http://www.sublimetext.com/3">http://www.sublimetext.com/3</a>
-下载tarball
-<code>$ tar jxvf sublime_text_3_build_3083_x64.tar.bz2  -C /opt</code></p>
+		<p>###请求类型
+GET 只读请求，不需要验证，不会影响查询对象
+DELETE 删除操作
+PUT 更新操作
+POST 新增操作
+HEAD 只返回GET查询的head部分用于查询metadata</p>
 
-<p>###移动到系统目录
-<code>$ mv sublime_text_3 /opt/</code></p>
+<p>###需要理解的几个词</p>
 
-<p>###创建连接
-<code>$ ln -s /opt/sublime_text_3/sublime_text /usr/bin/sublime</code></p>
+<p>####Account
+账户，包括基本信息，状态，水滴上限等等
+####Droplet
+水滴（暂时这么翻译吧），可以理解为容器，Ocean的基本单位</p>
 
-<p>###移动到系统目录下
-<code>$ cp /opt/sublime_text_3/sublime_text.desktop /usr/share/applications</code></p>
+<p>####Image
+镜像，给Droplet使用的，可以作为备份，快照，或者是基础镜像
+####Actions
+类似于日志的东西</p>
 
-<p>###修改配置文件
-<code>$ cd /usr/share/applications</code>
-<code>$ vim sublime_text.desktop</code></p>
+<p>####Regions
+区域，Digital Ocean 数据中心所在地，镜像可以在不同的区域之间切换</p>
 
-<pre><code>[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Sublime Text
-GenericName=Text Editor
-Comment=Sophisticated text editor for code, markup and prose
-Exec=/opt/sublime_text_3/sublime_text %F
-Terminal=false
-MimeType=text/plain;
-Icon=/opt/sublime_text_3/Icon/48x48/sublime-text.png
-Categories=TextEditor;Development;
-StartupNotify=true
-Actions=Window;Document;
+<p>####Slug
+区域的唯一标示，human-readable</p>
 
-[Desktop Action Window]
-Name=New Window
-Exec=/opt/sublime_text_3/sublime_text -n
-OnlyShowIn=Unity;
+<p>####Size
+硬件配置信息，一组配置信息包括内存，磁盘，区域CPU数量等信息。</p>
 
-[Desktop Action Document]
-Name=New File
-Exec=/opt/sublime_text_3/sublime_text --command new_file
-OnlyShowIn=Unity;
-</code></pre>
-
-<p>这些都做完以后 sublime的快捷方式会出现在   应用程序=&gt;编程 里面</p>
+<p>####Floating IP
+公网可访问的静态IP，跟容器绑定</p>
 
 	</div>
 

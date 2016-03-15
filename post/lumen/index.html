@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Centos7 上 安装和配置 Sublime Text3 &middot; Erick Blog</title>
+	<title>Lumen 环境搭建 &middot; Erick Blog</title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<!--[if lt IE 9]>
 	<script src="http://erickdotphp.github.io//js/html5.js"></script>
@@ -88,12 +88,12 @@
 			</span>
 		</div>
 
-		<h1 class="entry-title">Centos7 上 安装和配置 Sublime Text3</h1>
+		<h1 class="entry-title">Lumen 环境搭建</h1>
 
 		<div class="entry-meta">
 			<span class="entry-date">
-				<a href="http://erickdotphp.github.io/post/sublime//index.html" rel="bookmark">
-					<time class="entry-date" datetime="2016-03-14 12:30:55 &#43;0800 CST">
+				<a href="http://erickdotphp.github.io/post/lumen//index.html" rel="bookmark">
+					<time class="entry-date" datetime="2016-03-14 11:30:55 &#43;0800 CST">
 						March 14
 					</time>
 				</a>
@@ -103,50 +103,55 @@
 	</header>
 	
 	<div class="entry-content">
-		<p>###下载最新的包
-<a href="http://www.sublimetext.com/3">http://www.sublimetext.com/3</a>
-下载tarball
-<code>$ tar jxvf sublime_text_3_build_3083_x64.tar.bz2  -C /opt</code></p>
+		<p>###安装composer
+<code>$ curl -sS https://getcomposer.org/installer | php -- --install-dir=lumen</code></p>
 
-<p>###移动到系统目录
-<code>$ mv sublime_text_3 /opt/</code></p>
+<p>####全局使用
+<code>$ mv composer.phar /usr/local/bin/composer</code></p>
 
-<p>###创建连接
-<code>$ ln -s /opt/sublime_text_3/sublime_text /usr/bin/sublime</code></p>
+<p>####配置PATH
+<code>$ export PATH=~/.composer/vendor/bin:$PATH</code></p>
 
-<p>###移动到系统目录下
-<code>$ cp /opt/sublime_text_3/sublime_text.desktop /usr/share/applications</code></p>
+<p>###安装lumen
+<code>$ composer global require &quot;laravel/lumen-installer&quot;</code></p>
 
-<p>###修改配置文件
-<code>$ cd /usr/share/applications</code>
-<code>$ vim sublime_text.desktop</code></p>
+<p>###设置nginx</p>
 
-<pre><code>[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Sublime Text
-GenericName=Text Editor
-Comment=Sophisticated text editor for code, markup and prose
-Exec=/opt/sublime_text_3/sublime_text %F
-Terminal=false
-MimeType=text/plain;
-Icon=/opt/sublime_text_3/Icon/48x48/sublime-text.png
-Categories=TextEditor;Development;
-StartupNotify=true
-Actions=Window;Document;
+<pre><code>server {
+listen  80;
+server_name www.lumen.loc;
+set $root_path '/home/wwwroot/lumen/public';  
+root $root_path;
+index index.php index.html index.htm;  
+location / {
+    try_files $uri $uri/ /index.php?$query_string;
+}
+location ~ (index|get|static|report|404|503)\.php$ {
+    try_files $uri =404;
+    fastcgi_pass   fastcgi_backend;
 
-[Desktop Action Window]
-Name=New Window
-Exec=/opt/sublime_text_3/sublime_text -n
-OnlyShowIn=Unity;
-
-[Desktop Action Document]
-Name=New File
-Exec=/opt/sublime_text_3/sublime_text --command new_file
-OnlyShowIn=Unity;
+    fastcgi_param  PHP_FLAG  &quot;session.auto_start=off \n suhosin.session.cryptua=off&quot;;
+    fastcgi_param  PHP_VALUE &quot;memory_limit=256M \n max_execution_time=600&quot;;
+    fastcgi_read_timeout 600s;
+    fastcgi_connect_timeout 600s;
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+}
+    location ~* ^/(css|img|js|flv|swf|download)/(.+)$ {
+        root $root_path;  
+    }
+    location ~ /\.ht {
+        deny all;
+    }
+}
 </code></pre>
 
-<p>这些都做完以后 sublime的快捷方式会出现在   应用程序=&gt;编程 里面</p>
+<p>###修改hosts
+/etc/hosts</p>
+
+<p>###composer 重新加载类库
+php composer.phar dump-autoload</p>
 
 	</div>
 

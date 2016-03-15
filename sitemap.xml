@@ -33,7 +33,27 @@
   </url>
   
   <url>
+    <loc>http://erickdotphp.github.io/post/lumen/</loc>
+    <lastmod>2016-03-14T11:30:55+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://erickdotphp.github.io/post/zendserver/</loc>
+    <lastmod>2016-03-14T10:30:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://erickdotphp.github.io/post/digitalocean/</loc>
+    <lastmod>2016-03-14T10:30:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://erickdotphp.github.io/post/linux/</loc>
+    <lastmod>2016-03-14T10:30:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://erickdotphp.github.io/post/php-ssh2/</loc>
     <lastmod>2016-03-14T10:30:55+08:00</lastmod>
   </url>
   
