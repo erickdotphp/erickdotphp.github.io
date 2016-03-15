@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="generator" content="Hugo 0.15" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://erickdotphp.github.io/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="alternate" href="http://erickdotphp.github.io/index.xml" type="application/rss+xml" title="Erick Blog">
+<title>Centos7 上 安装 Composer - Erick Blog</title>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a class="path" href="http://erickdotphp.github.io/">[Erick Blog]</a>
+    <span class="caret"></span>
+  </div>
+</header>
+
+<div class="container">
+
+
+<main role="main" class="article">
+  
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2016-03-14">March 14, 2016</time></span>
+
+
+
+  </div>
+  <h1 class="headline" itemprop="headline">Centos7 上 安装 Composer</h1>
+  <section class="body" itemprop="articleBody">
+    <p>安装前请确保 环境中有PHP
+可以用php -v查看</p>
+
+<p>###下载
+<code>$ curl -sS https://getcomposer.org/installer| php -- --install-dir=/home</code></p>
+
+<p>###移动到可执行目录
+<code>$ mv composer.phar /usr/local/bin/composer</code></p>
+
+<p>###配置环境变量
+<code>$ export PATH=$PATH:/usr/local/bin</code></p>
+
+  </section>
+</article>
+
+</main>
+
+
+</div>
+
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2016  Erick Blog - <a rel="license" href="#">CC BY 4.0</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+

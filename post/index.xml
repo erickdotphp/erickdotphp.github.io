@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on </title>
-    <link>/post/</link>
-    <description>Recent content in Posts on </description>
+    <title>Posts on Erick Blog</title>
+    <link>http://erickdotphp.github.io/post/</link>
+    <description>Recent content in Posts on Erick Blog</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
     <lastBuildDate>Mon, 14 Mar 2016 18:22:14 +0800</lastBuildDate>
-    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://erickdotphp.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Git多分支处理</title>
-      <link>/post/git-branch/</link>
+      <link>http://erickdotphp.github.io/post/git-branch/</link>
       <pubDate>Mon, 14 Mar 2016 18:22:14 +0800</pubDate>
       
-      <guid>/post/git-branch/</guid>
+      <guid>http://erickdotphp.github.io/post/git-branch/</guid>
       <description>&lt;p&gt;如果需要在同一套代码中控制多个远程版本&lt;/p&gt;
 
 &lt;p&gt;###查看当前的远端
@@ -34,10 +35,10 @@
     
     <item>
       <title>Git的常用么命令</title>
-      <link>/post/git/</link>
+      <link>http://erickdotphp.github.io/post/git/</link>
       <pubDate>Mon, 14 Mar 2016 18:22:14 +0800</pubDate>
       
-      <guid>/post/git/</guid>
+      <guid>http://erickdotphp.github.io/post/git/</guid>
       <description>&lt;p&gt;###生成密钥
 &lt;code&gt;ssh-keygen&lt;/code&gt;&lt;/p&gt;
 
@@ -97,10 +98,10 @@ git push  #此时主干中也合并了new-feature的代码&lt;/p&gt;
     
     <item>
       <title>Centos7 上 安装 Composer</title>
-      <link>/post/composer/</link>
+      <link>http://erickdotphp.github.io/post/composer/</link>
       <pubDate>Mon, 14 Mar 2016 12:30:55 +0800</pubDate>
       
-      <guid>/post/composer/</guid>
+      <guid>http://erickdotphp.github.io/post/composer/</guid>
       <description>&lt;p&gt;安装前请确保 环境中有PHP
 可以用php -v查看&lt;/p&gt;
 
@@ -117,10 +118,10 @@ git push  #此时主干中也合并了new-feature的代码&lt;/p&gt;
     
     <item>
       <title>Centos7 上 安装和配置 Sublime Text3</title>
-      <link>/post/sublime/</link>
+      <link>http://erickdotphp.github.io/post/sublime/</link>
       <pubDate>Mon, 14 Mar 2016 12:30:55 +0800</pubDate>
       
-      <guid>/post/sublime/</guid>
+      <guid>http://erickdotphp.github.io/post/sublime/</guid>
       <description>&lt;p&gt;###下载最新的包
 &lt;a href=&#34;http://www.sublimetext.com/3&#34;&gt;http://www.sublimetext.com/3&lt;/a&gt;
 下载tarball
@@ -170,10 +171,10 @@ OnlyShowIn=Unity;
     
     <item>
       <title>Centos7 上 安装 mariadb</title>
-      <link>/post/mariadb/</link>
+      <link>http://erickdotphp.github.io/post/mariadb/</link>
       <pubDate>Mon, 14 Mar 2016 11:30:55 +0800</pubDate>
       
-      <guid>/post/mariadb/</guid>
+      <guid>http://erickdotphp.github.io/post/mariadb/</guid>
       <description>&lt;p&gt;###全部删除MySQL/MariaDB
 MySQL 已经不再包含在 CentOS 7 的源中，而改用了 MariaDB;
 1、使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
@@ -205,10 +206,10 @@ gpgcheck=1
     
     <item>
       <title>Centos7 上 安装 ZendServer</title>
-      <link>/post/zendserver/</link>
+      <link>http://erickdotphp.github.io/post/zendserver/</link>
       <pubDate>Mon, 14 Mar 2016 10:30:55 +0800</pubDate>
       
-      <guid>/post/zendserver/</guid>
+      <guid>http://erickdotphp.github.io/post/zendserver/</guid>
       <description>&lt;p&gt;###获取官方包
 &lt;code&gt;$ wget http://downloads.zend.com/zendserver/8.5.1/ZendServer-8.5.1-RepositoryInstaller-linux.tar.gz&lt;/code&gt;&lt;/p&gt;
 
@@ -257,10 +258,10 @@ fpm /usr/local/zend/etc/php-fpm.conf
     
     <item>
       <title>这个博客是怎么搭建起来的</title>
-      <link>/post/hugo/</link>
+      <link>http://erickdotphp.github.io/post/hugo/</link>
       <pubDate>Fri, 11 Mar 2016 18:22:14 +0800</pubDate>
       
-      <guid>/post/hugo/</guid>
+      <guid>http://erickdotphp.github.io/post/hugo/</guid>
       <description>
 
 &lt;h2 id=&#34;大概原理:32ab7241d48fcc174c877413a917f8cf&#34;&gt;大概原理&lt;/h2&gt;
