@@ -94,7 +94,7 @@ HEAD 只返回GET查询的head部分用于查询metadata&lt;/p&gt;
 
 &lt;h2 id=&#34;需要理解的几个词:408d90965407ccd8c9d1d1bcc218cd96&#34;&gt;需要理解的几个词&lt;/h2&gt;
 
-&lt;p&gt;&lt;em&gt;Account&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;##Account&lt;/p&gt;
 
 &lt;p&gt;账户，包括基本信息，状态，水滴上限等等&lt;/p&gt;
 
