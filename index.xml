@@ -90,6 +90,18 @@ echo (stream_get_contents($ret));
       
     
       
+        <item>
+          <title>Linklog: GitHub</title>
+          <link>http://erickdotphp.github.io/link/github/</link>
+          <pubDate>Tue, 15 Mar 2016 19:05:08 +0800</pubDate>
+          <author>erickdotphp</author>
+          <guid>http://erickdotphp.github.io/link/github/</guid>
+          <description>&lt;p&gt;Go To GitHub&lt;/p&gt;
+</description>
+        </item>
+      
+    
+      
         
           <item>
             <title>Digital Ocean API整理</title>
