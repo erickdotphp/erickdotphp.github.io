@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description" content="Erick BLog">
-    <meta name="author" content="&lt;authorname&gt;">
+    <meta name="author" content="erickdotphp">
 
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -14,7 +14,7 @@
 
    	
     
-        <link rel="stylesheet" href="http://erickdotphp.github.io/css/theme/cerulean.css">
+        <link rel="stylesheet" href="http://erickdotphp.github.io/css/theme/cosmo.css">
     
 
     <link rel="stylesheet" href="http://erickdotphp.github.io/css/font-awesome.min.css">
@@ -62,7 +62,7 @@
 					<h3><a href="http://erickdotphp.github.io/blog/2016/03/11/%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E6%98%AF%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BA%E8%B5%B7%E6%9D%A5%E7%9A%84/">这个博客是怎么搭建起来的</a></h3>
 						<small><span class="label label-primary">
 							
-								11.03.2016
+								2016年03月11日
 							</span>&nbsp;in
 							 using tags
 							
@@ -73,73 +73,14 @@
 				<div class="col-md-offset-1 col-md-10">
 					<br>
 					
-						
-
-<h2 id="大概原理:32ab7241d48fcc174c877413a917f8cf">大概原理</h2>
-
-<ol>
-<li><p>首先hugo，用来生成博客的静态文件
-hugo是用go语言写的，效率比较高</p></li>
-
-<li><p>把生成好的静态页面通过github pages 上传到github上</p></li>
-</ol>
-
-<p>就做好了</p>
-
-<h2 id="安装:32ab7241d48fcc174c877413a917f8cf">安装</h2>
-
-<p>可以直接下载可执行文件 linux windows都有
-官网地址 <a href="https://gohugo.io/">https://gohugo.io/</a></p>
-
-<h2 id="创建新的站点:32ab7241d48fcc174c877413a917f8cf">创建新的站点</h2>
-
-<p><code>$ hugo new site blog</code></p>
-
-<p>会生成一个文件夹，里面的config.toml是配置文件
-这是一个TOML文件，全称是Tom’s Obvious, Minimal Language，这是它的作者GitHub联合创始人Tom Preston-Werner 觉得YAML不够优雅，捣鼓出来的一个新格式。如果你不喜欢这种格式，你可以将config.toml替换为YAML格式的config.yaml，或者json格式的config.json。hugo都支持。</p>
-
-<h2 id="创建新页面:32ab7241d48fcc174c877413a917f8cf">创建新页面</h2>
-
-<p>cd 到 blog下</p>
-
-<p><code>$ hugo new about.md</code></p>
-
-<p>这样会把文件生成在contents目录下</p>
-
-<p>也可以放在文件夹下</p>
-
-<p><code>$ hugo new post/first.md</code></p>
-
-<p>md就是markdown格式，很方便</p>
-
-<p>默认是没有模板的，可以去下载模板</p>
-
-<p>地址是 <a href="https://github.com/spf13/hugoThemes">这里</a></p>
-
-<p>找好模板之后
-创建themes文件夹</p>
-
-<p><code>$ mkdir themes</code></p>
-
-<p>$ git clone <a href="https://github.com/spf13/模板名.git">https://github.com/spf13/模板名.git</a></p>
-
-<h2 id="启动本地服务器:32ab7241d48fcc174c877413a917f8cf">启动本地服务器</h2>
-
-<p><code>$ hugo server --theme=base16 --buildDrafts --watch</code></p>
-
-<p>watch 是监控文章更新  buildDrafts是生成content里面的页面</p>
-
-<h2 id="生成静态站点:32ab7241d48fcc174c877413a917f8cf">生成静态站点</h2>
-
-<p>在blog目录下</p>
-
-<p><code>$ hugo --theme=base16 --buildDrafts</code></p>
-
-<p>生成好以后把public里面的文件上传到github上就可以了</p>
-
-<p>参考文章
-<a href="http://www.gohugo.org/">http://www.gohugo.org/</a></p>
-
+	  					
+	  		  				大概原理 首先hugo，用来生成博客的静态文件 hugo是用go语言写的，效率比较高 把生成好的静态页面通过github pages 上传到github上 就做好了 安装 可以直接下载可执行文件 linux windows都有 官网地址 https://gohugo.io/ 创建新的站点 $ hugo new site blog 会生成一个文件夹，里面的config.toml是配置文件 这是一个TOML文件，全称是Tom’s Obvious, Minimal Language，这是它的作者GitHub联合创始人Tom Preston-Werner 觉得YAML不够优雅，捣鼓出来的一个新格式。如果你不喜欢这种格式，你可以将config.toml替换为YAML格式的config.yaml，或者json格式的config.json。hugo都支持。 创建新页面 cd 到 blog下 $ hugo new about.md 这样会把文件生成在contents目录下 也可以放在文件夹下 $ hugo new post/first.md md就是markdown格式，很方便 默认是没有模板的，可以去下载模板 地址是 这里 找好模板之后 创建themes文件夹 $ mkdir themes $ git clone https://github.com/spf13/模板名.git 启动本地服务器 $ hugo server --theme=base16 --buildDrafts --watch watch 是监控文章更新 buildDrafts是生成content里面的页面 生成静态站点 在blog目录下 $ hugo --theme=base16 --buildDrafts 生成好以后把public里面的文件上传到github上就可以了
+					  		<br>
+						  	<a href="http://erickdotphp.github.io/blog/2016/03/11/%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E6%98%AF%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BA%E8%B5%B7%E6%9D%A5%E7%9A%84/">
+						  	
+						  		Read more
+						  	</a>
+					  	
 					
 				</div>
 			</div>
@@ -201,34 +142,34 @@ hugo是用go语言写的，效率比较高</p></li>
             <footer>
                 <div class="pull-left">
                     <p>
-                        &copy; 2015 ~ &lt;authorname&gt; ~ Powered By <a href="http://hugo.spf13.com">Hugo</a> - version: 0.15 ~ <a href="http://erickdotphp.github.io/license">License</a>
+                        &copy; 2015 ~ erickdotphp ~ Powered By <a href="http://hugo.spf13.com">Hugo</a> - version: 0.15 ~ <a href="http://erickdotphp.github.io/license">License</a>
                     </p>
                 </div>
 
                 
                 <div class="pull-right">
                     
-                        <a href="https://www.linkedin.com/in/%3cusername%3e" target="_blank">
+                        <a href="https://www.linkedin.com/in/erickdotphp" target="_blank">
                         <i class="fa fa-linkedin fa-2x"></i></a>
                     
                     
-                        <a href="https://www.facebook.com/%3cusername%3e" target="_blank">
+                        <a href="https://www.facebook.com/erickdotphp" target="_blank">
                         <i class="fa fa-facebook-square fa-2x"></i></a>
                     
                     
-                        <a href="https://twitter.com/%3cusername%3e" target="_blank">
+                        <a href="https://twitter.com/erickdotphp" target="_blank">
                         <i class="fa fa-twitter-square fa-2x"></i></a>
                     
                     
-                        <a href="https://github.com/%3cusername%3e" target="_blank">
+                        <a href="https://github.com/erickdotphp" target="_blank">
                         <i class="fa fa-github-square fa-2x"></i></a>
                     
                     
-                        <a href="https://delicious.com/%3cusername%3e" target="_blank">
+                        <a href="https://delicious.com/erickdotphp" target="_blank">
                         <i class="fa fa-delicious fa-2x"></i></a>
                     
                     
-                        <a href="https://www.flickr.com/photos/%3cusername%3e" target="_blank">
+                        <a href="https://www.flickr.com/photos/erickdotphp" target="_blank">
                         <i class="fa fa-flickr fa-2x"></i></a>
                     
                     
