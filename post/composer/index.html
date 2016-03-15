@@ -1,109 +1,54 @@
-<!DOCTYPE html>
-
-<html lang="zh-cn">
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Centos7 上 安装 Composer &middot; Erick Blog</title>
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<!--[if lt IE 9]>
-	<script src="http://erickdotphp.github.io//js/html5.js"></script>
-	<![endif]-->
-    
-    <link href="http://erickdotphp.github.io//index.xml" rel="alternate" type="application/rss+xml" title="Erick Blog" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.15" />
 
-    <link rel='stylesheet' id='twentyfourteen-lato-css'  href='//fonts.googleapis.com/css?family=Lato%3A300%2C400%2C700%2C900%2C300italic%2C400italic%2C700italic&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-    <link rel='stylesheet' id='genericons-css' href='http://erickdotphp.github.io//genericons/genericons.css' type='text/css' media='all' />
-	<link rel='stylesheet' id='twentyfourteen-style-css' href='http://erickdotphp.github.io//css/style.css' type='text/css' media='all' />
-	
-	<script type='text/javascript' src='http://erickdotphp.github.io//js/jquery/jquery.js'></script>
-	<script type='text/javascript' src='http://erickdotphp.github.io//js/jquery/jquery-migrate.min.js'></script>
-	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+  <title> Centos7 上 安装 Composer &middot; Erick Blog </title>
+
+  
+  <link rel="stylesheet" href="http://erickdotphp.github.io/css/poole.css">
+  <link rel="stylesheet" href="http://erickdotphp.github.io/css/syntax.css">
+  <link rel="stylesheet" href="http://erickdotphp.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Erick Blog" />
 </head>
 
-<body class="home blog masthead-fixed list-view full-width grid">
-<div id="page" class="hfeed site">
-	<header id="masthead" class="site-header" role="banner">
-		<div class="header-main">
-			<h1 class="site-title"><a href="http://erickdotphp.github.io//index.html" rel="home">Erick Blog</a></h1>
+	<body class="theme-base-09">
+		<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="http://erickdotphp.github.io/"><h1>Erick Blog</h1></a>
+      <p class="lead">
+      An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.
+      </p>
+    </div>
 
-			<div class="search-toggle">
-				<a href="#search-container" class="screen-reader-text">Search</a>
-			</div>
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+    </ul>
 
-			<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-				<button class="menu-toggle">Primary Menu</button>
-				<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
-				<div class="nav-menu">
-					<ul>
-						
-					</ul>
-				</div>
-			</nav>
-		</div>
-
-		<div id="search-container" class="search-box-wrapper hide">
-			<div class="search-box">
-                <script type="text/javascript">
-    function site_search(obj) {
-    	var host = window.location.host;
-        obj.q.value = "site:" + host + " " + obj.ss_q.value;
-    }
-</script>
-
-<aside id="search-3" class="widget widget_search">
-	<form role="search" class="search-form" action="//www.google.com/search" method="get" onSubmit="site_search(this)">
-
-	<input name="q" type="hidden" />
-	    <label>
-	        <span class="screen-reader-text">Search for:</span>
-	        <input name="ss_q" type="text" placeholder="Search ..." class="search-field" />
-	    </label>
-	    <input type="submit" value="Search" class="search-submit" />
-	</form>
-</aside>
-			</div>
-		</div>
-	</header>
-
-	<div id="main" class="site-main">
+    <p>&copy; 2016. All rights reserved. </p>
+  </div>
+</div>
 
 
-<div id="main-content" class="main-content">
-
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
-
-			<article class="post type-post status-publish format-standard hentry">
-
-	
-	<header class="entry-header">
-
-	
-
-		<div class="entry-meta">
-			<span class="cat-links">
-                
-			</span>
-		</div>
-
-		<h1 class="entry-title">Centos7 上 安装 Composer</h1>
-
-		<div class="entry-meta">
-			<span class="entry-date">
-				<a href="http://erickdotphp.github.io/post/composer//index.html" rel="bookmark">
-					<time class="entry-date" datetime="2016-03-14 12:30:55 &#43;0800 CST">
-						March 14
-					</time>
-				</a>
-			</span>
-		</div>
-
-	</header>
-	
-	<div class="entry-content">
-		<p>安装前请确保 环境中有PHP
+		<div class="content container">
+			<div class="post">
+			 	<h1>Centos7 上 安装 Composer</h1>
+			  <span class="post-date">Mon, Mar 14, 2016</span>
+			      <p>安装前请确保 环境中有PHP
 可以用php -v查看</p>
 
 <p>###下载
@@ -115,78 +60,10 @@
 <p>###配置环境变量
 <code>$ export PATH=$PATH:/usr/local/bin</code></p>
 
-	</div>
-
-	<footer class="entry-meta">
-		<span class="tag-links">		
-			
-		</span>
-	</footer>
-</article> 
-
-			
-		
-		</div>
-
-	</div>
-	<div id="secondary">
-
-	
-
-	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
-
-		<script type="text/javascript">
-    function site_search(obj) {
-    	var host = window.location.host;
-        obj.q.value = "site:" + host + " " + obj.ss_q.value;
-    }
-</script>
-
-<aside id="search-3" class="widget widget_search">
-	<form role="search" class="search-form" action="//www.google.com/search" method="get" onSubmit="site_search(this)">
-
-	<input name="q" type="hidden" />
-	    <label>
-	        <span class="screen-reader-text">Search for:</span>
-	        <input name="ss_q" type="text" placeholder="Search ..." class="search-field" />
-	    </label>
-	    <input type="submit" value="Search" class="search-submit" />
-	</form>
-</aside>
-
-		<aside id="recent-posts-3" class="widget widget_recent_entries">
-
-	
-</aside>
-
-		<aside id="categories-3" class="widget widget_categories">
-	
-	<h1 class="widget-title">Categories</h1>
-
-	<ul>
-		
-		
-
-	</ul>
-
-</aside>
-
-	</div>
-
-</div>
-
-</div>
-
-		</div>
-
-		<footer id="colophon" class="site-footer" role="contentinfo">
-
-			<div class="site-info">
-				<a href="http://gohugo.io">Proudly powered by Hugo</a>
 			</div>
-		</footer>
-	</div>
 
-	<script type='text/javascript' src='http://erickdotphp.github.io//js/functions.js'></script>
-</body>
+			
+		</div>
+
+  </body>
 </html>
