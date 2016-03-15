@@ -23,15 +23,15 @@
 &lt;p&gt;安装前请确保 环境中有PHP
 可以用&lt;code&gt;php -v&lt;/code&gt;查看&lt;/p&gt;
 
-&lt;h2 id=&#34;下载:1d289a0d6ce78f28ee09576170bf8ad5&#34;&gt;下载&lt;/h2&gt;
+&lt;h4 id=&#34;下载:1d289a0d6ce78f28ee09576170bf8ad5&#34;&gt;下载&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;$ curl -sS https://getcomposer.org/installer| php -- --install-dir=/home&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;移动到可执行目录:1d289a0d6ce78f28ee09576170bf8ad5&#34;&gt;移动到可执行目录&lt;/h2&gt;
+&lt;h4 id=&#34;移动到可执行目录:1d289a0d6ce78f28ee09576170bf8ad5&#34;&gt;移动到可执行目录&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;$ mv composer.phar /usr/local/bin/composer&lt;/code&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;配置环境变量:1d289a0d6ce78f28ee09576170bf8ad5&#34;&gt;配置环境变量&lt;/h2&gt;
+&lt;h4 id=&#34;配置环境变量:1d289a0d6ce78f28ee09576170bf8ad5&#34;&gt;配置环境变量&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;$ export PATH=$PATH:/usr/local/bin&lt;/code&gt;&lt;/p&gt;
 </description>

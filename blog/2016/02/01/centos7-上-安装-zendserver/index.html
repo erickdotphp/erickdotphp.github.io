@@ -76,41 +76,56 @@
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10">
 			<br>
-			<p>###获取官方包
-<code>$ wget http://downloads.zend.com/zendserver/8.5.1/ZendServer-8.5.1-RepositoryInstaller-linux.tar.gz</code></p>
+			
 
-<p>###关闭防火墙
-<code>$ vim /etc/selinux/config</code>
-SELINUX=disabled
-<code>$ setenforce 0</code></p>
+<h3 id="获取官方包:da14b2d9c81cf7f06515d51d96e6e018">获取官方包</h3>
 
-<p>###安装ZS
-<code>./install_zs.sh 5.6 nginx</code></p>
+<p><code>$ wget http://downloads.zend.com/zendserver/8.5.1/ZendServer-8.5.1-RepositoryInstaller-linux.tar.gz</code></p>
 
-<p>###远程访问不到zend server 需要关闭iptable
-<code>$ service iptables status</code>
+<h3 id="关闭防火墙:da14b2d9c81cf7f06515d51d96e6e018">关闭防火墙</h3>
+
+<p><code>$ vim /etc/selinux/config</code></p>
+
+<p>SELINUX=disabled</p>
+
+<p><code>$ setenforce 0</code></p>
+
+<h3 id="安装zendserver:da14b2d9c81cf7f06515d51d96e6e018">安装ZendServer</h3>
+
+<p><code>./install_zs.sh 5.6 nginx</code></p>
+
+<h3 id="远程访问不到zend-server-需要关闭iptable:da14b2d9c81cf7f06515d51d96e6e018">远程访问不到zend server 需要关闭iptable</h3>
+
+<p><code>$ service iptables status</code>
 <code>$ service iptables stop</code></p>
 
-<p>###配置文件的路径如下
-nginx  vim /etc/nginx/nginx.conf
-php /usr/local/zend/etc/php.ini
-fpm /usr/local/zend/etc/php-fpm.conf
-虚拟机 /usr/local/zend/etc/sites.d</p>
+<h3 id="配置文件的路径如下:da14b2d9c81cf7f06515d51d96e6e018">配置文件的路径如下</h3>
 
-<p>###都配置好以后可以访问主机地址了
-<a href="http://localhost:10081/ZendServer/">http://localhost:10081/ZendServer/</a></p>
+<ul>
+<li>nginx  vim /etc/nginx/nginx.conf</li>
+<li>php /usr/local/zend/etc/php.ini</li>
+<li>fpm /usr/local/zend/etc/php-fpm.conf</li>
+<li>虚拟机 /usr/local/zend/etc/sites.d</li>
+</ul>
 
-<p>###另外破解方法</p>
+<h3 id="都配置好以后可以访问主机地址了:da14b2d9c81cf7f06515d51d96e6e018">都配置好以后可以访问主机地址了</h3>
 
-<p><code>vim /usr/local/zend/gui/module/Configuration/src/Configuration/License/License.php</code>
-所有判断改成return true;</p>
+<p><a href="http://localhost:10081/ZendServer/">http://localhost:10081/ZendServer/</a></p>
 
-<p>###FAQ</p>
+<h3 id="另外破解方法:da14b2d9c81cf7f06515d51d96e6e018">另外破解方法</h3>
+
+<p><code>vim /usr/local/zend/gui/module/Configuration/src/Configuration/License/License.php</code></p>
+
+<p>所有判断改成return true;</p>
+
+<h3 id="faq:da14b2d9c81cf7f06515d51d96e6e018">FAQ</h3>
 
 <p>Nginx 报错 no port in upstream &ldquo;fastcgi_backend&rdquo;,因为没有配置fastcgi
-在/etc/nginx/nginx.conf在
-<code>access_log  /var/log/nginx/access.log  main;</code>
-后面加入</p>
+在/etc/nginx/nginx.conf在</p>
+
+<p><code>access_log  /var/log/nginx/access.log  main;</code></p>
+
+<p>后面加入</p>
 
 <pre><code>    fastcgi_read_timeout 300;
     upstream fastcgi_backend {

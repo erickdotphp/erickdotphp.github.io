@@ -70,19 +70,25 @@
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10">
 			<br>
-			<p>###安装composer
-<code>$ curl -sS https://getcomposer.org/installer | php -- --install-dir=lumen</code></p>
+			
 
-<p>####全局使用
-<code>$ mv composer.phar /usr/local/bin/composer</code></p>
+<h3 id="安装composer:8b0d77d2d0ed0248257bdb90ac2bef73">安装composer</h3>
 
-<p>####配置PATH
-<code>$ export PATH=~/.composer/vendor/bin:$PATH</code></p>
+<p><code>$ curl -sS https://getcomposer.org/installer | php -- --install-dir=lumen</code></p>
 
-<p>###安装lumen
-<code>$ composer global require &quot;laravel/lumen-installer&quot;</code></p>
+<h4 id="全局使用:8b0d77d2d0ed0248257bdb90ac2bef73">全局使用</h4>
 
-<p>###设置nginx</p>
+<p><code>$ mv composer.phar /usr/local/bin/composer</code></p>
+
+<h4 id="配置path:8b0d77d2d0ed0248257bdb90ac2bef73">配置PATH</h4>
+
+<p><code>$ export PATH=~/.composer/vendor/bin:$PATH</code></p>
+
+<h3 id="安装lumen:8b0d77d2d0ed0248257bdb90ac2bef73">安装lumen</h3>
+
+<p><code>$ composer global require &quot;laravel/lumen-installer&quot;</code></p>
+
+<h3 id="设置nginx:8b0d77d2d0ed0248257bdb90ac2bef73">设置nginx</h3>
 
 <pre><code>server {
 listen  80;
@@ -114,11 +120,13 @@ location ~ (index|get|static|report|404|503)\.php$ {
 }
 </code></pre>
 
-<p>###修改hosts
-/etc/hosts</p>
+<h3 id="修改hosts:8b0d77d2d0ed0248257bdb90ac2bef73">修改hosts</h3>
 
-<p>###composer 重新加载类库
-php composer.phar dump-autoload</p>
+<p>/etc/hosts</p>
+
+<h3 id="composer-重新加载类库:8b0d77d2d0ed0248257bdb90ac2bef73">composer 重新加载类库</h3>
+
+<p>php composer.phar dump-autoload</p>
 
 		</div>
 	</div>

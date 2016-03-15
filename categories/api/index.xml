@@ -20,13 +20,17 @@
             <guid>http://erickdotphp.github.io/blog/2016/03/15/digital-ocean-api%E6%95%B4%E7%90%86/</guid>
             <description>
 
-&lt;p&gt;###请求类型&lt;/p&gt;
+&lt;h3 id=&#34;请求类型:408d90965407ccd8c9d1d1bcc218cd96&#34;&gt;请求类型&lt;/h3&gt;
 
-&lt;p&gt;GET 只读请求，不需要验证，不会影响查询对象
-DELETE 删除操作
-PUT 更新操作
-POST 新增操作
-HEAD 只返回GET查询的head部分用于查询metadata&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GET&lt;/strong&gt; 只读请求，不需要验证，不会影响查询对象&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;DELETE&lt;/strong&gt; 删除操作&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PUT&lt;/strong&gt; 更新操作&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;POST&lt;/strong&gt; 新增操作&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;HEAD&lt;/strong&gt; 只返回GET查询的head部分用于查询metadata&lt;/p&gt;
 
 &lt;h3 id=&#34;需要理解的几个词:408d90965407ccd8c9d1d1bcc218cd96&#34;&gt;需要理解的几个词&lt;/h3&gt;
 
