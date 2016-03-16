@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Centos7 上 安装 mariadb">
+    <meta name="description" content="Nginx 配置 HTTPS">
     <meta name="author" content="erickdotphp">
 
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Centos7 上 安装 mariadb &middot; Erick BLog</title>
+    <title>Nginx 配置 HTTPS &middot; Erick BLog</title>
 
    	
     
@@ -55,18 +55,18 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10">
-			<h3>Centos7 上 安装 mariadb</h3>
-				<span class="label label-primary">2016年02月01日</span> in 
+			<h3>Nginx 配置 HTTPS</h3>
+				<span class="label label-primary">2016年03月16日</span> in 
 				
 					
 					<a href="/categories/env">env</a>
 				 using tags
 				
 					
-					<a href="/tags/mariadb">Mariadb</a>
+					<a href="/tags/https">https</a>
 				
 					 , 
-					<a href="/tags/mysql">Mysql</a>
+					<a href="/tags/nginx">nginx</a>
 				
 			</small>
 		</div>
@@ -76,43 +76,40 @@
 			<br>
 			
 
-<h3 id="全部删除mysql-mariadb:b67bc1b681b2f1df56e313dd51c88107">全部删除MySQL/MariaDB</h3>
+<p>生成证书需要openssl
+没有的话先安装</p>
 
-<p>MySQL 已经不再包含在 CentOS 7 的源中，而改用了 MariaDB;</p>
+<h3 id="创建服务器私钥:9758537dfb310b7b24c633e5a26d34d7">创建服务器私钥</h3>
 
-<ul>
-<li><p>使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
-如果存在，使用rpm -e &ndash;nodeps mariadb-*全部删除：</p></li>
+<p><code>$ openssl genrsa -des3 -out server.key 1024</code></p>
 
-<li><p>使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
-如果存在，使用yum remove mysql mysql-server mysql-libs compat-mysql51全部删除；</p></li>
-</ul>
+<h3 id="创建签名请求的证书-csr:9758537dfb310b7b24c633e5a26d34d7">创建签名请求的证书（CSR）</h3>
 
-<h3 id="添加mariadb的yum源:b67bc1b681b2f1df56e313dd51c88107">添加MariaDB的yum源</h3>
+<p><code>$ openssl req -new -key server.key -out server.csr</code></p>
 
-<ul>
-<li>创建 /etc/yum.repos.d/MariaDB.repo：</li>
-<li>添加yum源,该文件中添加如图所示内容：</li>
-</ul>
+<p>会要求填写一些信息</p>
 
-<pre><code># MariaDB 10.1 CentOS repository list - created 2015-11-19 02:26 UTC
-# http://mariadb.org/mariadb/repositories/
-[mariadb]
-name = MariaDB
-baseurl = http://yum.mariadb.org/10.0/centos7-amd64
-gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-gpgcheck=1
+<h3 id="重新生成没有密码的key:9758537dfb310b7b24c633e5a26d34d7">重新生成没有密码的key</h3>
+
+<p><code>$ cp server.key server.key.org</code></p>
+
+<p><code>$ openssl rsa -in server.key.org -out server.key</code></p>
+
+<h3 id="产生私钥:9758537dfb310b7b24c633e5a26d34d7">产生私钥</h3>
+
+<p><code>$ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt</code></p>
+
+<h3 id="配置nginx:9758537dfb310b7b24c633e5a26d34d7">配置Nginx</h3>
+
+<pre><code>server {
+    server_name YOUR_DOMAINNAME_HERE;
+    listen 443;
+    ssl on;
+    ssl_certificate /usr/local/nginx/conf/server.crt;
+    ssl_certificate_key /usr/local/nginx/conf/server.key;
+}
+
 </code></pre>
-
-<h3 id="安装-mariadb:b67bc1b681b2f1df56e313dd51c88107">安装 MariaDB</h3>
-
-<p><code>$ yum install MariaDB-server MariaDB-client</code></p>
-
-<h3 id="启动-配置mariadb:b67bc1b681b2f1df56e313dd51c88107">启动、配置MariaDB</h3>
-
-<p><code>$ service mysql start</code></p>
-
-<p><code>$ mysql_secure_installation</code></p>
 
 		</div>
 	</div>

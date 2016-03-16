@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Https on Erick BLog</title>
+    <link>http://erickdotphp.github.io/tags/https/</link>
+    <description>Recent content in Https on Erick BLog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</managingEditor>
+    <webMaster>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</webMaster>
+    <lastBuildDate>Wed, 16 Mar 2016 17:32:55 +0800</lastBuildDate>
+    <atom:link href="http://erickdotphp.github.io/tags/https/index.xml" rel="self" type="application/rss+xml" />
+    
+      
+        
+          <item>
+            <title>HTTP与HTTPS的区别</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/16/http%E4%B8%8Ehttps%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+            <pubDate>Wed, 16 Mar 2016 17:32:55 +0800</pubDate>
+            <author>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/16/http%E4%B8%8Ehttps%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+            <description>
+
+&lt;h3 id=&#34;http协议:5e1bebcee23da204a2d58013ebaa7a43&#34;&gt;HTTP协议&lt;/h3&gt;
+
+&lt;p&gt;浏览器和服务器之前的传输以前都是用HTTP协议做的，浏览器发送请求，服务器响应。但是有个问题就是数据的传输都是明文的，现在WIFI到处都是，万一哪台路由被人控制了，那你用这个WIFI的时候，所有来回的信息都是明文，不就悲剧了么&lt;/p&gt;
+
+&lt;p&gt;所以有了HTTPS协议&lt;/p&gt;
+
+&lt;h3 id=&#34;https协议:5e1bebcee23da204a2d58013ebaa7a43&#34;&gt;HTTPS协议&lt;/h3&gt;
+
+&lt;p&gt;HTTPS协议简单的说就是把传输的数据加密了一下，只不过这个加密过程比较复杂并且不可逆，所以相对来说要安全许多。&lt;/p&gt;
+
+&lt;h3 id=&#34;ssl-secure-sockets-layer:5e1bebcee23da204a2d58013ebaa7a43&#34;&gt;SSL（Secure Sockets Layer）&lt;/h3&gt;
+
+&lt;p&gt;用于给HTTPS进行加密的协议，由网景公司设计。目前已经淘汰&lt;/p&gt;
+
+&lt;h3 id=&#34;tls-transport-layer-security:5e1bebcee23da204a2d58013ebaa7a43&#34;&gt;TLS（Transport Layer Security）&lt;/h3&gt;
+
+&lt;p&gt;SSL的后续版本，目前到1.2，HTTPS协议实际使用的就是它&lt;/p&gt;
+
+&lt;p&gt;加密过程就不赘述了，在下面的文章里面有&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.guokr.com/post/114121/&#34;&gt;参考文章&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+          </item>
+        
+      
+    
+      
+        
+          <item>
+            <title>Nginx 配置 HTTPS</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/16/nginx-%E9%85%8D%E7%BD%AE-https/</link>
+            <pubDate>Wed, 16 Mar 2016 17:32:55 +0800</pubDate>
+            <author>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/16/nginx-%E9%85%8D%E7%BD%AE-https/</guid>
+            <description>
+
+&lt;p&gt;生成证书需要openssl
+没有的话先安装&lt;/p&gt;
+
+&lt;h3 id=&#34;创建服务器私钥:9758537dfb310b7b24c633e5a26d34d7&#34;&gt;创建服务器私钥&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;$ openssl genrsa -des3 -out server.key 1024&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;创建签名请求的证书-csr:9758537dfb310b7b24c633e5a26d34d7&#34;&gt;创建签名请求的证书（CSR）&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;$ openssl req -new -key server.key -out server.csr&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;会要求填写一些信息&lt;/p&gt;
+
+&lt;h3 id=&#34;重新生成没有密码的key:9758537dfb310b7b24c633e5a26d34d7&#34;&gt;重新生成没有密码的key&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;$ cp server.key server.key.org&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ openssl rsa -in server.key.org -out server.key&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;产生私钥:9758537dfb310b7b24c633e5a26d34d7&#34;&gt;产生私钥&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;$ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;配置nginx:9758537dfb310b7b24c633e5a26d34d7&#34;&gt;配置Nginx&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;server {
+    server_name YOUR_DOMAINNAME_HERE;
+    listen 443;
+    ssl on;
+    ssl_certificate /usr/local/nginx/conf/server.crt;
+    ssl_certificate_key /usr/local/nginx/conf/server.key;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+          </item>
+        
+      
+    
+  </channel>
+</rss>

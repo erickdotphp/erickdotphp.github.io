@@ -7,8 +7,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</managingEditor>
     <webMaster>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</webMaster>
-    <lastBuildDate>Mon, 14 Mar 2016 18:22:14 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 16 Mar 2016 09:56:00 +0800</lastBuildDate>
     <atom:link href="http://erickdotphp.github.io/categories/tool/index.xml" rel="self" type="application/rss+xml" />
+    
+      
+        
+          <item>
+            <title>使用Digital Ocean快速生成一个Word Press</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/16/%E4%BD%BF%E7%94%A8digital-ocean%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AAword-press/</link>
+            <pubDate>Wed, 16 Mar 2016 09:56:00 +0800</pubDate>
+            <author>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/16/%E4%BD%BF%E7%94%A8digital-ocean%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AAword-press/</guid>
+            <description>
+
+&lt;h4 id=&#34;第一步-创建droplet:5bfba050f84083c3854094a5899dcb4e&#34;&gt;第一步 创建Droplet&lt;/h4&gt;
+
+&lt;p&gt;选择 &lt;em&gt;One Click Apps&lt;/em&gt; 标签
+选择 &lt;em&gt;Word Press&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;完成之后的配置&lt;/p&gt;
+
+&lt;h4 id=&#34;第二步-通过ssh配置word-press:5bfba050f84083c3854094a5899dcb4e&#34;&gt;第二步 通过SSH配置Word Press&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;$ ssh root@droplet.ip.address&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;参考&lt;a href=&#34;https://www.digitalocean.com/community/tutorials/one-click-install-wordpress-on-ubuntu-14-04-with-digitalocean&#34;&gt;这里&lt;/a&gt;&lt;/p&gt;
+</description>
+          </item>
+        
+      
     
       
         
@@ -162,16 +189,22 @@ git config &amp;ndash;global user.email &amp;lsquo;erickdotphp@gmail.com&amp;rsq
 
 &lt;h4 id=&#34;新建git项目并提交到github:1c1ef82aae62aeea8eedcb5f455b129b&#34;&gt;新建Git项目并提交到Github&lt;/h4&gt;
 
-&lt;p&gt;&lt;code&gt;mkdir testdir &amp;amp; cd testdir&lt;/code&gt;
-&lt;code&gt;touch README.md&lt;/code&gt;
-* git init #初始化一个本地库&lt;br /&gt;
-* git add README.md #添加文件到本地仓库&lt;br /&gt;
-* git rm README.md #本地倒库内删除&lt;br /&gt;
-* git commit -m &amp;ldquo;first commit&amp;rdquo; #提交到本地库并备注，此时变更仍在本地。&lt;br /&gt;
-* git commit -a  ##自动更新变化的文件，a可以理解为auto&lt;br /&gt;
-* git remote add xxx git@github.com:xxx/xxx.git  #增加一个远程服务器的别名。&lt;br /&gt;
-* git remote rm xxx   ##删除远程版本库的别名&lt;br /&gt;
-* git push -u remotename master&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mkdir testdir &amp;amp; cd testdir 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;$ touch README.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;git init #初始化一个本地库&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;git add README.md #添加文件到本地仓库&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;git rm README.md #本地倒库内删除&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;git commit -m &amp;ldquo;first commit&amp;rdquo; #提交到本地库并备注，此时变更仍在本地。&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;git commit -a  ##自动更新变化的文件，a可以理解为auto&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;git remote add xxx git@github.com:xxx/xxx.git  #增加一个远程服务器的别名。&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;git remote rm xxx   ##删除远程版本库的别名&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;git push -u remotename master&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;将本地文件提交到Github的remoname版本库中。此时才更新了本地变更到github服务上。&lt;/p&gt;
 
@@ -198,7 +231,11 @@ git config &amp;ndash;global user.email &amp;lsquo;erickdotphp@gmail.com&amp;rsq
 
 &lt;h4 id=&#34;忽略某个文件更新的命令:1c1ef82aae62aeea8eedcb5f455b129b&#34;&gt;忽略某个文件更新的命令&lt;/h4&gt;
 
-&lt;p&gt;&lt;code&gt;git update-index --assume-unchanged&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ git update-index --assume-unchanged&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;####忽略权限修改&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ git config core.filemode false&lt;/code&gt;&lt;/p&gt;
 </description>
           </item>
         

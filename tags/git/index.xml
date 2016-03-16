@@ -83,16 +83,22 @@ git config &amp;ndash;global user.email &amp;lsquo;erickdotphp@gmail.com&amp;rsq
 
 &lt;h4 id=&#34;新建git项目并提交到github:1c1ef82aae62aeea8eedcb5f455b129b&#34;&gt;新建Git项目并提交到Github&lt;/h4&gt;
 
-&lt;p&gt;&lt;code&gt;mkdir testdir &amp;amp; cd testdir&lt;/code&gt;
-&lt;code&gt;touch README.md&lt;/code&gt;
-* git init #初始化一个本地库&lt;br /&gt;
-* git add README.md #添加文件到本地仓库&lt;br /&gt;
-* git rm README.md #本地倒库内删除&lt;br /&gt;
-* git commit -m &amp;ldquo;first commit&amp;rdquo; #提交到本地库并备注，此时变更仍在本地。&lt;br /&gt;
-* git commit -a  ##自动更新变化的文件，a可以理解为auto&lt;br /&gt;
-* git remote add xxx git@github.com:xxx/xxx.git  #增加一个远程服务器的别名。&lt;br /&gt;
-* git remote rm xxx   ##删除远程版本库的别名&lt;br /&gt;
-* git push -u remotename master&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mkdir testdir &amp;amp; cd testdir 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;$ touch README.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;git init #初始化一个本地库&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;git add README.md #添加文件到本地仓库&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;git rm README.md #本地倒库内删除&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;git commit -m &amp;ldquo;first commit&amp;rdquo; #提交到本地库并备注，此时变更仍在本地。&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;git commit -a  ##自动更新变化的文件，a可以理解为auto&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;git remote add xxx git@github.com:xxx/xxx.git  #增加一个远程服务器的别名。&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;git remote rm xxx   ##删除远程版本库的别名&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;git push -u remotename master&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;将本地文件提交到Github的remoname版本库中。此时才更新了本地变更到github服务上。&lt;/p&gt;
 
@@ -119,7 +125,11 @@ git config &amp;ndash;global user.email &amp;lsquo;erickdotphp@gmail.com&amp;rsq
 
 &lt;h4 id=&#34;忽略某个文件更新的命令:1c1ef82aae62aeea8eedcb5f455b129b&#34;&gt;忽略某个文件更新的命令&lt;/h4&gt;
 
-&lt;p&gt;&lt;code&gt;git update-index --assume-unchanged&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ git update-index --assume-unchanged&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;####忽略权限修改&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ git config core.filemode false&lt;/code&gt;&lt;/p&gt;
 </description>
           </item>
         

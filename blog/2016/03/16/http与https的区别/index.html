@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Centos7 上 安装 mariadb">
+    <meta name="description" content="HTTP与HTTPS的区别">
     <meta name="author" content="erickdotphp">
 
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Centos7 上 安装 mariadb &middot; Erick BLog</title>
+    <title>HTTP与HTTPS的区别 &middot; Erick BLog</title>
 
    	
     
@@ -55,18 +55,18 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10">
-			<h3>Centos7 上 安装 mariadb</h3>
-				<span class="label label-primary">2016年02月01日</span> in 
+			<h3>HTTP与HTTPS的区别</h3>
+				<span class="label label-primary">2016年03月16日</span> in 
 				
 					
 					<a href="/categories/env">env</a>
 				 using tags
 				
 					
-					<a href="/tags/mariadb">Mariadb</a>
+					<a href="/tags/https">https</a>
 				
 					 , 
-					<a href="/tags/mysql">Mysql</a>
+					<a href="/tags/http--https">http &amp; https</a>
 				
 			</small>
 		</div>
@@ -76,43 +76,29 @@
 			<br>
 			
 
-<h3 id="全部删除mysql-mariadb:b67bc1b681b2f1df56e313dd51c88107">全部删除MySQL/MariaDB</h3>
+<h3 id="http协议:5e1bebcee23da204a2d58013ebaa7a43">HTTP协议</h3>
 
-<p>MySQL 已经不再包含在 CentOS 7 的源中，而改用了 MariaDB;</p>
+<p>浏览器和服务器之前的传输以前都是用HTTP协议做的，浏览器发送请求，服务器响应。但是有个问题就是数据的传输都是明文的，现在WIFI到处都是，万一哪台路由被人控制了，那你用这个WIFI的时候，所有来回的信息都是明文，不就悲剧了么</p>
 
-<ul>
-<li><p>使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
-如果存在，使用rpm -e &ndash;nodeps mariadb-*全部删除：</p></li>
+<p>所以有了HTTPS协议</p>
 
-<li><p>使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
-如果存在，使用yum remove mysql mysql-server mysql-libs compat-mysql51全部删除；</p></li>
-</ul>
+<h3 id="https协议:5e1bebcee23da204a2d58013ebaa7a43">HTTPS协议</h3>
 
-<h3 id="添加mariadb的yum源:b67bc1b681b2f1df56e313dd51c88107">添加MariaDB的yum源</h3>
+<p>HTTPS协议简单的说就是把传输的数据加密了一下，只不过这个加密过程比较复杂并且不可逆，所以相对来说要安全许多。</p>
 
-<ul>
-<li>创建 /etc/yum.repos.d/MariaDB.repo：</li>
-<li>添加yum源,该文件中添加如图所示内容：</li>
-</ul>
+<h3 id="ssl-secure-sockets-layer:5e1bebcee23da204a2d58013ebaa7a43">SSL（Secure Sockets Layer）</h3>
 
-<pre><code># MariaDB 10.1 CentOS repository list - created 2015-11-19 02:26 UTC
-# http://mariadb.org/mariadb/repositories/
-[mariadb]
-name = MariaDB
-baseurl = http://yum.mariadb.org/10.0/centos7-amd64
-gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-gpgcheck=1
-</code></pre>
+<p>用于给HTTPS进行加密的协议，由网景公司设计。目前已经淘汰</p>
 
-<h3 id="安装-mariadb:b67bc1b681b2f1df56e313dd51c88107">安装 MariaDB</h3>
+<h3 id="tls-transport-layer-security:5e1bebcee23da204a2d58013ebaa7a43">TLS（Transport Layer Security）</h3>
 
-<p><code>$ yum install MariaDB-server MariaDB-client</code></p>
+<p>SSL的后续版本，目前到1.2，HTTPS协议实际使用的就是它</p>
 
-<h3 id="启动-配置mariadb:b67bc1b681b2f1df56e313dd51c88107">启动、配置MariaDB</h3>
+<p>加密过程就不赘述了，在下面的文章里面有</p>
 
-<p><code>$ service mysql start</code></p>
-
-<p><code>$ mysql_secure_installation</code></p>
+<blockquote>
+<p><a href="http://www.guokr.com/post/114121/">参考文章</a></p>
+</blockquote>
 
 		</div>
 	</div>

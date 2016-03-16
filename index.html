@@ -108,6 +108,150 @@
 			<div class="row">
 				
 				<div class="col-md-offset-1 col-md-10">
+					<h3><a href="http://erickdotphp.github.io/blog/2016/03/16/http%E4%B8%8Ehttps%E7%9A%84%E5%8C%BA%E5%88%AB/">HTTP与HTTPS的区别</a></h3>
+						<small><span class="label label-primary">
+							
+								2016年03月16日
+							</span>&nbsp;in
+							
+								
+								<a href="/categories/env">env</a>
+							 using tags
+							
+								
+							<a href="/tags/https">https</a>
+						
+								 , 
+							<a href="/tags/http--https">http &amp; https</a>
+						
+					</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-10">
+					<br>
+					
+	  					
+	  		  				HTTP协议 浏览器和服务器之前的传输以前都是用HTTP协议做的，浏览器发送请求，服务器响应。但是有个问题就是数据的传输都是明文的，现在WIFI到处都是，万一哪台路由被人控制了，那你用这个WIFI的时候，所有来回的信息都是明文，不就悲剧了么 所以有了HTTPS协议 HTTPS协议 HTTPS协议简单的说就是把传输的数据加密了一下，只不过这个加密过程比较复杂并且不可逆，所以相对来说要安全许多。 SSL（Secure Sockets Layer） 用于给HTTPS进行加密的协议，由网景公司设计。目前已经淘汰 TLS（Transport Layer Security） SSL的后续版本，目前到1.2，HTTPS协议实际使用的就是它 加密过程就不赘述了，在下面的文章里面有 参考文章
+					  		<br>
+						  	<a href="http://erickdotphp.github.io/blog/2016/03/16/http%E4%B8%8Ehttps%E7%9A%84%E5%8C%BA%E5%88%AB/">
+						  	
+						  		Read more
+						  	</a>
+					  	
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<hr>
+				</div>
+			</div>
+		
+	
+
+        
+            	
+		
+			<div class="row">
+				
+				<div class="col-md-offset-1 col-md-10">
+					<h3><a href="http://erickdotphp.github.io/blog/2016/03/16/nginx-%E9%85%8D%E7%BD%AE-https/">Nginx 配置 HTTPS</a></h3>
+						<small><span class="label label-primary">
+							
+								2016年03月16日
+							</span>&nbsp;in
+							
+								
+								<a href="/categories/env">env</a>
+							 using tags
+							
+								
+							<a href="/tags/https">https</a>
+						
+								 , 
+							<a href="/tags/nginx">nginx</a>
+						
+					</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-10">
+					<br>
+					
+	  					
+	  		  				生成证书需要openssl 没有的话先安装 创建服务器私钥 $ openssl genrsa -des3 -out server.key 1024 创建签名请求的证书（CSR） $ openssl req -new -key server.key -out server.csr 会要求填写一些信息 重新生成没有密码的key $ cp server.key server.key.org $ openssl rsa -in server.key.org -out server.key 产生私钥 $ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt 配置Nginx server { server_name YOUR_DOMAINNAME_HERE; listen 443; ssl on; ssl_certificate /usr/local/nginx/conf/server.crt; ssl_certificate_key /usr/local/nginx/conf/server.key; }
+					  		<br>
+						  	<a href="http://erickdotphp.github.io/blog/2016/03/16/nginx-%E9%85%8D%E7%BD%AE-https/">
+						  	
+						  		Read more
+						  	</a>
+					  	
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<hr>
+				</div>
+			</div>
+		
+	
+
+        
+            	
+		
+			<div class="row">
+				
+				<div class="col-md-offset-1 col-md-10">
+					<h3><a href="http://erickdotphp.github.io/blog/2016/03/16/%E4%BD%BF%E7%94%A8digital-ocean%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AAword-press/">使用Digital Ocean快速生成一个Word Press</a></h3>
+						<small><span class="label label-primary">
+							
+								2016年03月16日
+							</span>&nbsp;in
+							
+								
+								<a href="/categories/tool">tool</a>
+							 using tags
+							
+								
+							<a href="/tags/digital-ocean">Digital Ocean</a>
+						
+								 , 
+							<a href="/tags/word-press">Word Press</a>
+						
+					</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-10">
+					<br>
+					
+	  					
+	  		  				第一步 创建Droplet 选择 One Click Apps 标签 选择 Word Press 完成之后的配置 第二步 通过SSH配置Word Press $ ssh root@droplet.ip.address 参考这里
+					  		<br>
+						  	<a href="http://erickdotphp.github.io/blog/2016/03/16/%E4%BD%BF%E7%94%A8digital-ocean%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AAword-press/">
+						  	
+						  		Read more
+						  	</a>
+					  	
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<hr>
+				</div>
+			</div>
+		
+	
+
+        
+            	
+		
+			<div class="row">
+				
+				<div class="col-md-offset-1 col-md-10">
 					<h3><a href="http://erickdotphp.github.io/blog/2016/03/15/digital-ocean-api%E6%95%B4%E7%90%86/">Digital Ocean API整理</a></h3>
 						<small><span class="label label-primary">
 							
@@ -264,7 +408,7 @@
 					<br>
 					
 	  					
-	  		  				生成密钥 ssh-keygen 添加公钥到git账户 检测是否成功 ssh -T git@github.com 获取代码 git clone git://github.com:xxxx/test.git 以gitreadonly方式克隆到本地，只可以读 git clone git@github.com:xxx/test.git ##以SSH方式克隆到本地，可以读写 git clone https://github.com/xxx/test.git ##以https方式克隆到本地，可以读写 git fetch git@github.com:xxx/xxx.git ##获取到本地但不合并 git pull git@github.com:xxx/xxx.git ##获取并合并内容到本地 本地配置 git config &ndash;global user.name &lsquo;ed&rsquo; git config &ndash;global user.email &lsquo;erickdotphp@gmail.com&rsquo; #全局联系方式，可选 新建Git项目并提交到Github mkdir testdir &amp; cd testdir touch README.md * git init #初始化一个本地库 * git add README.md #添加文件到本地仓库 * git rm README.md #本地倒库内删除 * git commit -m &ldquo;first commit&rdquo; #提交到本地库并备注，此时变更仍在本地。 *
+	  		  				生成密钥 ssh-keygen 添加公钥到git账户 检测是否成功 ssh -T git@github.com 获取代码 git clone git://github.com:xxxx/test.git 以gitreadonly方式克隆到本地，只可以读 git clone git@github.com:xxx/test.git ##以SSH方式克隆到本地，可以读写 git clone https://github.com/xxx/test.git ##以https方式克隆到本地，可以读写 git fetch git@github.com:xxx/xxx.git ##获取到本地但不合并 git pull git@github.com:xxx/xxx.git ##获取并合并内容到本地 本地配置 git config &ndash;global user.name &lsquo;ed&rsquo; git config &ndash;global user.email &lsquo;erickdotphp@gmail.com&rsquo; #全局联系方式，可选 新建Git项目并提交到Github $ mkdir testdir &amp; cd testdir $ touch README.md git init #初始化一个本地库 git add README.md #添加文件到本地仓库 git rm README.md #本地倒库内删除 git commit -m &ldquo;first commit&rdquo; #提交到本地库并备注，此时变更仍在本地。 git commit -a
 					  		<br>
 						  	<a href="http://erickdotphp.github.io/blog/2016/02/01/git%E7%9A%84%E5%B8%B8%E7%94%A8%E4%B9%88%E5%91%BD%E4%BB%A4/">
 						  	
@@ -357,150 +501,6 @@
 	  		  				下载最新的包 http://www.sublimetext.com/3 下载tarball $ tar jxvf sublime_text_3_build_3083_x64.tar.bz2 -C /opt 移动到系统目录 $ mv sublime_text_3 /opt/ 创建连接 $ ln -s /opt/sublime_text_3/sublime_text /usr/bin/sublime 移动到系统目录下 $ cp /opt/sublime_text_3/sublime_text.desktop /usr/share/applications 修改配置文件 $ cd /usr/share/applications $ vim sublime_text.desktop [Desktop Entry] Version=1.0 Type=Application Name=Sublime Text GenericName=Text Editor Comment=Sophisticated text editor for code, markup and prose Exec=/opt/sublime_text_3/sublime_text %F Terminal=false MimeType=text/plain; Icon=/opt/sublime_text_3/Icon/48x48/sublime-text.png Categories=TextEditor;Development; StartupNotify=true Actions=Window;Document; [Desktop Action Window] Name=New Window Exec=/opt/sublime_text_3/sublime_text -n OnlyShowIn=Unity; [Desktop Action Document] Name=New File Exec=/opt/sublime_text_3/sublime_text
 					  		<br>
 						  	<a href="http://erickdotphp.github.io/blog/2016/02/01/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE-sublime-text3/">
-						  	
-						  		Read more
-						  	</a>
-					  	
-					
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<hr>
-				</div>
-			</div>
-		
-	
-
-        
-            	
-		
-			<div class="row">
-				
-				<div class="col-md-offset-1 col-md-10">
-					<h3><a href="http://erickdotphp.github.io/blog/2016/02/01/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-mariadb/">Centos7 上 安装 mariadb</a></h3>
-						<small><span class="label label-primary">
-							
-								2016年02月01日
-							</span>&nbsp;in
-							
-								
-								<a href="/categories/env">env</a>
-							 using tags
-							
-								
-							<a href="/tags/mariadb">Mariadb</a>
-						
-								 , 
-							<a href="/tags/mysql">Mysql</a>
-						
-					</small>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-offset-1 col-md-10">
-					<br>
-					
-	  					
-	  		  				全部删除MySQL/MariaDB MySQL 已经不再包含在 CentOS 7 的源中，而改用了 MariaDB; * 使用rpm -qa | grep mariadb搜索 MariaDB 现有的包： 如果存在，使用rpm -e &ndash;nodeps mariadb-*全部删除： * 使用rpm -qa | grep mariadb搜索 MariaDB 现有的包： 如果存在，使用yum remove mysql mysql-server mysql-libs compat-mysql51全部删除； 添加MariaDB的yum源 创建 /etc/yum.repos.d/MariaDB.repo： 添加yum源,该文件中添加如图所示内容： # MariaDB 10.1 CentOS repository list - created 2015-11-19 02:26 UTC # http://mariadb.org/mariadb/repositories/ [mariadb] name = MariaDB baseurl = http://yum.mariadb.org/10.0/centos7-amd64 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB gpgcheck=1 安装 MariaDB $ yum install MariaDB-server MariaDB-client 启动、配置MariaDB $ service mysql
-					  		<br>
-						  	<a href="http://erickdotphp.github.io/blog/2016/02/01/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-mariadb/">
-						  	
-						  		Read more
-						  	</a>
-					  	
-					
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<hr>
-				</div>
-			</div>
-		
-	
-
-        
-            	
-		
-			<div class="row">
-				
-				<div class="col-md-offset-1 col-md-10">
-					<h3><a href="http://erickdotphp.github.io/blog/2016/02/01/lumen-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Lumen 环境搭建</a></h3>
-						<small><span class="label label-primary">
-							
-								2016年02月01日
-							</span>&nbsp;in
-							
-								
-								<a href="/categories/env">env</a>
-							 using tags
-							
-								
-							<a href="/tags/lumen">Lumen</a>
-						
-					</small>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-offset-1 col-md-10">
-					<br>
-					
-	  					
-	  		  				安装composer $ curl -sS https://getcomposer.org/installer | php -- --install-dir=lumen 全局使用 $ mv composer.phar /usr/local/bin/composer 配置PATH $ export PATH=~/.composer/vendor/bin:$PATH 安装lumen $ composer global require &quot;laravel/lumen-installer&quot; 设置nginx server { listen 80; server_name www.lumen.loc; set $root_path '/home/wwwroot/lumen/public'; root $root_path; index index.php index.html index.htm; location / { try_files $uri $uri/ /index.php?$query_string; } location ~ (index|get|static|report|404|503)\.php$ { try_files $uri =404; fastcgi_pass fastcgi_backend; fastcgi_param PHP_FLAG &quot;session.auto_start=off \n suhosin.session.cryptua=off&quot;; fastcgi_param PHP_VALUE &quot;memory_limit=256M \n max_execution_time=600&quot;; fastcgi_read_timeout 600s; fastcgi_connect_timeout
-					  		<br>
-						  	<a href="http://erickdotphp.github.io/blog/2016/02/01/lumen-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
-						  	
-						  		Read more
-						  	</a>
-					  	
-					
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<hr>
-				</div>
-			</div>
-		
-	
-
-        
-            	
-		
-			<div class="row">
-				
-				<div class="col-md-offset-1 col-md-10">
-					<h3><a href="http://erickdotphp.github.io/blog/2016/02/01/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-zendserver/">Centos7 上 安装 ZendServer</a></h3>
-						<small><span class="label label-primary">
-							
-								2016年02月01日
-							</span>&nbsp;in
-							
-								
-								<a href="/categories/env">env</a>
-							 using tags
-							
-								
-							<a href="/tags/zend-server">Zend Server</a>
-						
-								 , 
-							<a href="/tags/nginx">nginx</a>
-						
-								 , 
-							<a href="/tags/php">PHP</a>
-						
-					</small>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-offset-1 col-md-10">
-					<br>
-					
-	  					
-	  		  				获取官方包 $ wget http://downloads.zend.com/zendserver/8.5.1/ZendServer-8.5.1-RepositoryInstaller-linux.tar.gz 关闭防火墙 $ vim /etc/selinux/config SELINUX=disabled $ setenforce 0 安装ZendServer ./install_zs.sh 5.6 nginx 远程访问不到zend server 需要关闭iptable $ service iptables status $ service iptables stop 配置文件的路径如下 nginx vim /etc/nginx/nginx.conf php /usr/local/zend/etc/php.ini fpm /usr/local/zend/etc/php-fpm.conf 虚拟机 /usr/local/zend/etc/sites.d 都配置好以后可以访问主机地址了 http://localhost:10081/ZendServer/ 另外破解方法 vim /usr/local/zend/gui/module/Configuration/src/Configuration/License/License.php 所有判断改成return true; FAQ Nginx 报错 no port in upstream &ldquo;fastcgi_backend&rdquo;,因为没有配置fastcgi 在/etc/nginx/nginx.conf在 access_log /var/log/nginx/access.log main; 后面加入 fastcgi_read_timeout 300; upstream fastcgi_backend { server unix:/usr/local/zend/tmp/php-fpm.sock; } 其中fastcgi_read_timeout 300;是为了防止ngxin 504超时错误
-					  		<br>
-						  	<a href="http://erickdotphp.github.io/blog/2016/02/01/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-zendserver/">
 						  	
 						  		Read more
 						  	</a>

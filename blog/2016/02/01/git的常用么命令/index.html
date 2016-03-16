@@ -102,16 +102,22 @@ git config &ndash;global user.email &lsquo;erickdotphp@gmail.com&rsquo; #全局�
 
 <h4 id="新建git项目并提交到github:1c1ef82aae62aeea8eedcb5f455b129b">新建Git项目并提交到Github</h4>
 
-<p><code>mkdir testdir &amp; cd testdir</code>
-<code>touch README.md</code>
-* git init #初始化一个本地库<br />
-* git add README.md #添加文件到本地仓库<br />
-* git rm README.md #本地倒库内删除<br />
-* git commit -m &ldquo;first commit&rdquo; #提交到本地库并备注，此时变更仍在本地。<br />
-* git commit -a  ##自动更新变化的文件，a可以理解为auto<br />
-* git remote add xxx git@github.com:xxx/xxx.git  #增加一个远程服务器的别名。<br />
-* git remote rm xxx   ##删除远程版本库的别名<br />
-* git push -u remotename master</p>
+<pre><code>$ mkdir testdir &amp; cd testdir 
+</code></pre>
+
+<pre><code>$ touch README.md
+</code></pre>
+
+<ul>
+<li>git init #初始化一个本地库<br /></li>
+<li>git add README.md #添加文件到本地仓库<br /></li>
+<li>git rm README.md #本地倒库内删除<br /></li>
+<li>git commit -m &ldquo;first commit&rdquo; #提交到本地库并备注，此时变更仍在本地。<br /></li>
+<li>git commit -a  ##自动更新变化的文件，a可以理解为auto<br /></li>
+<li>git remote add xxx git@github.com:xxx/xxx.git  #增加一个远程服务器的别名。<br /></li>
+<li>git remote rm xxx   ##删除远程版本库的别名<br /></li>
+<li>git push -u remotename master</li>
+</ul>
 
 <p>将本地文件提交到Github的remoname版本库中。此时才更新了本地变更到github服务上。</p>
 
@@ -138,7 +144,11 @@ git config &ndash;global user.email &lsquo;erickdotphp@gmail.com&rsquo; #全局�
 
 <h4 id="忽略某个文件更新的命令:1c1ef82aae62aeea8eedcb5f455b129b">忽略某个文件更新的命令</h4>
 
-<p><code>git update-index --assume-unchanged</code></p>
+<p><code>$ git update-index --assume-unchanged</code></p>
+
+<p>####忽略权限修改</p>
+
+<p><code>$ git config core.filemode false</code></p>
 
 		</div>
 	</div>

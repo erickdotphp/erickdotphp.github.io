@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Centos7 上 安装 mariadb">
+    <meta name="description" content="Word Press">
     <meta name="author" content="erickdotphp">
 
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Centos7 上 安装 mariadb &middot; Erick BLog</title>
+    <title>Tags &middot; Erick BLog</title>
 
    	
     
@@ -28,7 +28,7 @@
     <script src="http://erickdotphp.github.io/js/bootstrap.min-3.3.5.js"></script>
 
     
-    <link href="" rel="alternate" type="application/rss+xml" title="Erick BLog" />
+    <link href="http://erickdotphp.github.io/tags/word-press/index.xml" rel="alternate" type="application/rss+xml" title="Erick BLog" />
 </head>
 <body lang="en">
     
@@ -51,77 +51,36 @@
 </div>
 
 
-
-<div class="container">
+	<div class="row">
+		<div class="text-center">
+			<h3>
+				
+					Posts
+				</h3>
+	    </div>
+    </div>
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10">
-			<h3>Centos7 上 安装 mariadb</h3>
-				<span class="label label-primary">2016年02月01日</span> in 
+			<ul>
 				
-					
-					<a href="/categories/env">env</a>
-				 using tags
-				
-					
-					<a href="/tags/mariadb">Mariadb</a>
-				
-					 , 
-					<a href="/tags/mysql">Mysql</a>
-				
-			</small>
-		</div>
+								
+		        		<div class="row">
+	<div class="col-md-offset-2 col-md-6 col-md-offset-2 col-md-6">
+		<h4><a href="http://erickdotphp.github.io/blog/2016/03/16/%E4%BD%BF%E7%94%A8digital-ocean%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AAword-press/">使用Digital Ocean快速生成一个Word Press</a></h4>
 	</div>
-	<div class="row">
-		<div class="col-md-offset-1 col-md-10">
-			<br>
-			
-
-<h3 id="全部删除mysql-mariadb:b67bc1b681b2f1df56e313dd51c88107">全部删除MySQL/MariaDB</h3>
-
-<p>MySQL 已经不再包含在 CentOS 7 的源中，而改用了 MariaDB;</p>
-
-<ul>
-<li><p>使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
-如果存在，使用rpm -e &ndash;nodeps mariadb-*全部删除：</p></li>
-
-<li><p>使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
-如果存在，使用yum remove mysql mysql-server mysql-libs compat-mysql51全部删除；</p></li>
-</ul>
-
-<h3 id="添加mariadb的yum源:b67bc1b681b2f1df56e313dd51c88107">添加MariaDB的yum源</h3>
-
-<ul>
-<li>创建 /etc/yum.repos.d/MariaDB.repo：</li>
-<li>添加yum源,该文件中添加如图所示内容：</li>
-</ul>
-
-<pre><code># MariaDB 10.1 CentOS repository list - created 2015-11-19 02:26 UTC
-# http://mariadb.org/mariadb/repositories/
-[mariadb]
-name = MariaDB
-baseurl = http://yum.mariadb.org/10.0/centos7-amd64
-gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-gpgcheck=1
-</code></pre>
-
-<h3 id="安装-mariadb:b67bc1b681b2f1df56e313dd51c88107">安装 MariaDB</h3>
-
-<p><code>$ yum install MariaDB-server MariaDB-client</code></p>
-
-<h3 id="启动-配置mariadb:b67bc1b681b2f1df56e313dd51c88107">启动、配置MariaDB</h3>
-
-<p><code>$ service mysql start</code></p>
-
-<p><code>$ mysql_secure_installation</code></p>
-
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<hr>
-		</div>
+	<div class="col-md-4 col-md-4">
+		<h4>2016年03月16日</h4>
 	</div>
 </div>
+
+		        	
+			    
+		    </ul>
+		</div>
+    </div>
+	<div class="row">
+		<hr>
+	</div>
 
     <div class="container">
         <div class="row col-md-12">
@@ -158,6 +117,9 @@ gpgcheck=1
                         <a href="https://www.flickr.com/photos/erickdotphp" target="_blank">
                         <i class="fa fa-flickr fa-2x"></i></a>
                     
+                    
+                        <a href="http://erickdotphp.github.io/tags/word-press/index.xml" target="_blank">
+                        <i class="fa fa-rss-square fa-2x"></i></a>
                     
                 </div>
             </footer>

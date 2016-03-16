@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Centos7 上 安装 mariadb">
+    <meta name="description" content="使用Digital Ocean快速生成一个Word Press">
     <meta name="author" content="erickdotphp">
 
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Centos7 上 安装 mariadb &middot; Erick BLog</title>
+    <title>使用Digital Ocean快速生成一个Word Press &middot; Erick BLog</title>
 
    	
     
@@ -55,18 +55,18 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10">
-			<h3>Centos7 上 安装 mariadb</h3>
-				<span class="label label-primary">2016年02月01日</span> in 
+			<h3>使用Digital Ocean快速生成一个Word Press</h3>
+				<span class="label label-primary">2016年03月16日</span> in 
 				
 					
-					<a href="/categories/env">env</a>
+					<a href="/categories/tool">tool</a>
 				 using tags
 				
 					
-					<a href="/tags/mariadb">Mariadb</a>
+					<a href="/tags/digital-ocean">Digital Ocean</a>
 				
 					 , 
-					<a href="/tags/mysql">Mysql</a>
+					<a href="/tags/word-press">Word Press</a>
 				
 			</small>
 		</div>
@@ -76,43 +76,18 @@
 			<br>
 			
 
-<h3 id="全部删除mysql-mariadb:b67bc1b681b2f1df56e313dd51c88107">全部删除MySQL/MariaDB</h3>
+<h4 id="第一步-创建droplet:5bfba050f84083c3854094a5899dcb4e">第一步 创建Droplet</h4>
 
-<p>MySQL 已经不再包含在 CentOS 7 的源中，而改用了 MariaDB;</p>
+<p>选择 <em>One Click Apps</em> 标签
+选择 <em>Word Press</em></p>
 
-<ul>
-<li><p>使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
-如果存在，使用rpm -e &ndash;nodeps mariadb-*全部删除：</p></li>
+<p>完成之后的配置</p>
 
-<li><p>使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
-如果存在，使用yum remove mysql mysql-server mysql-libs compat-mysql51全部删除；</p></li>
-</ul>
+<h4 id="第二步-通过ssh配置word-press:5bfba050f84083c3854094a5899dcb4e">第二步 通过SSH配置Word Press</h4>
 
-<h3 id="添加mariadb的yum源:b67bc1b681b2f1df56e313dd51c88107">添加MariaDB的yum源</h3>
+<p><code>$ ssh root@droplet.ip.address</code></p>
 
-<ul>
-<li>创建 /etc/yum.repos.d/MariaDB.repo：</li>
-<li>添加yum源,该文件中添加如图所示内容：</li>
-</ul>
-
-<pre><code># MariaDB 10.1 CentOS repository list - created 2015-11-19 02:26 UTC
-# http://mariadb.org/mariadb/repositories/
-[mariadb]
-name = MariaDB
-baseurl = http://yum.mariadb.org/10.0/centos7-amd64
-gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-gpgcheck=1
-</code></pre>
-
-<h3 id="安装-mariadb:b67bc1b681b2f1df56e313dd51c88107">安装 MariaDB</h3>
-
-<p><code>$ yum install MariaDB-server MariaDB-client</code></p>
-
-<h3 id="启动-配置mariadb:b67bc1b681b2f1df56e313dd51c88107">启动、配置MariaDB</h3>
-
-<p><code>$ service mysql start</code></p>
-
-<p><code>$ mysql_secure_installation</code></p>
+<p>参考<a href="https://www.digitalocean.com/community/tutorials/one-click-install-wordpress-on-ubuntu-14-04-with-digitalocean">这里</a></p>
 
 		</div>
 	</div>
