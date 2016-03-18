@@ -156,6 +156,51 @@
 			<div class="row">
 				
 				<div class="col-md-offset-1 col-md-10">
+					<h3><a href="http://erickdotphp.github.io/blog/2016/03/18/%E5%85%B3%E4%BA%8Elaravel-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%92%8C%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/">关于Laravel 源码分析和一些小技巧</a></h3>
+						<small><span class="label label-primary">
+							
+								2016年03月18日
+							</span>&nbsp;in
+							
+								
+								<a href="/categories/coding">coding</a>
+							 using tags
+							
+								
+							<a href="/tags/laravel">Laravel</a>
+						
+					</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-10">
+					<br>
+					
+	  					
+	  		  				Laravel 的多语言是可以覆盖的，app.php里面定义的fallback_locale是基础语言包，如果一个词在当前语言包里面没有的时候就会去基础语言包里面找 Laravel 的 Cookie是经过加密的，任何本地改动都会造成cookie失效 赋值方法是 Cookie:queue(name,value,min); 取值方法 $request-&gt;cookie[name]; 如果想不加密，就还是用PHP原生方法吧 Kernel中定义的web中间件有四个 EncryptCookies 加密和解谜Cookie AddQueuedCookiesToResponse 写入Cookie 就是之前queueinquiry的 StartSession 相当于session_start VerifyCsrfToken 方式CSRF攻击的 api的就只有ThrottleRequests一个，主要是用来限制单位时间内请求次数的防止被刷
+					  		<br>
+						  	<a href="http://erickdotphp.github.io/blog/2016/03/18/%E5%85%B3%E4%BA%8Elaravel-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%92%8C%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/">
+						  	
+						  		Read more
+						  	</a>
+					  	
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<hr>
+				</div>
+			</div>
+		
+	
+
+        
+            	
+		
+			<div class="row">
+				
+				<div class="col-md-offset-1 col-md-10">
 					<h3><a href="http://erickdotphp.github.io/blog/2016/03/16/php-ssh2-%E6%89%A9%E5%B1%95/">PHP SSH2 扩展</a></h3>
 						<small><span class="label label-primary">
 							
@@ -462,51 +507,6 @@
 	  		  				大概原理 首先hugo，用来生成博客的静态文件 hugo是用go语言写的，效率比较高 把生成好的静态页面通过github pages 上传到github上 就做好了 安装 可以直接下载可执行文件 linux windows都有 官网地址 https://gohugo.io/ 创建新的站点 $ hugo new site blog 会生成一个文件夹，里面的config.toml是配置文件 这是一个TOML文件，全称是Tom’s Obvious, Minimal Language，这是它的作者GitHub联合创始人Tom Preston-Werner 觉得YAML不够优雅，捣鼓出来的一个新格式。如果你不喜欢这种格式，你可以将config.toml替换为YAML格式的config.yaml，或者json格式的config.json。hugo都支持。 创建新页面 cd 到 blog下 $ hugo new about.md 这样会把文件生成在contents目录下 也可以放在文件夹下 $ hugo new post/first.md md就是markdown格式，很方便 默认是没有模板的，可以去下载模板 地址是 这里 找好模板之后 创建themes文件夹 $ mkdir themes $ git clone https://github.com/spf13/模板名.git 启动本地服务器 $ hugo server --theme=base16 --buildDrafts --watch watch 是监控文章更新 buildDrafts是生成content里面的页面 生成静态站点 在blog目录下 $ hugo --theme=base16 --buildDrafts 生成好以后把public里面的文件上传到github上就可以了
 					  		<br>
 						  	<a href="http://erickdotphp.github.io/blog/2016/03/13/%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E6%98%AF%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BA%E8%B5%B7%E6%9D%A5%E7%9A%84/">
-						  	
-						  		Read more
-						  	</a>
-					  	
-					
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<hr>
-				</div>
-			</div>
-		
-	
-
-        
-            	
-		
-			<div class="row">
-				
-				<div class="col-md-offset-1 col-md-10">
-					<h3><a href="http://erickdotphp.github.io/blog/2016/02/01/git%E7%9A%84%E5%B8%B8%E7%94%A8%E4%B9%88%E5%91%BD%E4%BB%A4/">Git的常用么命令</a></h3>
-						<small><span class="label label-primary">
-							
-								2016年02月01日
-							</span>&nbsp;in
-							
-								
-								<a href="/categories/tool">tool</a>
-							 using tags
-							
-								
-							<a href="/tags/git">git</a>
-						
-					</small>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-offset-1 col-md-10">
-					<br>
-					
-	  					
-	  		  				生成密钥 ssh-keygen 添加公钥到git账户 检测是否成功 ssh -T git@github.com 获取代码 git clone git://github.com:xxxx/test.git 以gitreadonly方式克隆到本地，只可以读 git clone git@github.com:xxx/test.git ##以SSH方式克隆到本地，可以读写 git clone https://github.com/xxx/test.git ##以https方式克隆到本地，可以读写 git fetch git@github.com:xxx/xxx.git ##获取到本地但不合并 git pull git@github.com:xxx/xxx.git ##获取并合并内容到本地 本地配置 git config &ndash;global user.name &lsquo;ed&rsquo; git config &ndash;global user.email &lsquo;erickdotphp@gmail.com&rsquo; #全局联系方式，可选 新建Git项目并提交到Github $ mkdir testdir &amp; cd testdir $ touch README.md git init #初始化一个本地库 git add README.md #添加文件到本地仓库 git rm README.md #本地倒库内删除 git commit -m &ldquo;first commit&rdquo; #提交到本地库并备注，此时变更仍在本地。 git commit -a
-					  		<br>
-						  	<a href="http://erickdotphp.github.io/blog/2016/02/01/git%E7%9A%84%E5%B8%B8%E7%94%A8%E4%B9%88%E5%91%BD%E4%BB%A4/">
 						  	
 						  		Read more
 						  	</a>

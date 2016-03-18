@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Git的常用么命令">
+    <meta name="description" content="关于Laravel 源码分析和一些小技巧">
     <meta name="author" content="erickdotphp">
 
     <meta name="keyword" content="">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Git的常用么命令 &middot; Erick BLog</title>
+    <title>关于Laravel 源码分析和一些小技巧 &middot; Erick BLog</title>
 
    	
     
@@ -55,15 +55,15 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10">
-			<h3>Git的常用么命令</h3>
-				<span class="label label-primary">2016年02月01日</span> in 
+			<h3>关于Laravel 源码分析和一些小技巧</h3>
+				<span class="label label-primary">2016年03月18日</span> in 
 				
 					
-					<a href="/categories/tool">tool</a>
+					<a href="/categories/coding">coding</a>
 				 using tags
 				
 					
-					<a href="/tags/git">git</a>
+					<a href="/tags/laravel">Laravel</a>
 				
 			</small>
 		</div>
@@ -71,42 +71,32 @@
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10">
 			<br>
-			
+			<p>Laravel 的多语言是可以覆盖的，app.php里面定义的fallback_locale是基础语言包，如果一个词在当前语言包里面没有的时候就会去基础语言包里面找</p>
 
-<h4 id="生成密钥:1c1ef82aae62aeea8eedcb5f455b129b">生成密钥</h4>
+<p>Laravel 的 Cookie是经过加密的，任何本地改动都会造成cookie失效
+赋值方法是</p>
 
-<p><code>ssh-keygen</code></p>
+<pre><code>Cookie:queue(name,value,min);
+</code></pre>
 
-<h4 id="检测是否成功:1c1ef82aae62aeea8eedcb5f455b129b">检测是否成功</h4>
+<p>取值方法</p>
 
-<p><code>$ ssh -T git@github.com</code></p>
+<pre><code>$request-&gt;cookie[name];
+</code></pre>
 
-<h4 id="本地配置用户名和邮箱:1c1ef82aae62aeea8eedcb5f455b129b">本地配置用户名和邮箱</h4>
+<p>如果想不加密，就还是用PHP原生方法吧</p>
 
-<p><code>$ git config --global user.name 'ed'</code>
-<code>$ git config --global user.email 'erickdotphp@gmail.com'</code></p>
+<p>Kernel中定义的web中间件有四个</p>
 
-<h4 id="初始化:1c1ef82aae62aeea8eedcb5f455b129b">初始化</h4>
+<p>EncryptCookies 加密和解谜Cookie</p>
 
-<p><code>$ git init</code></p>
+<p>AddQueuedCookiesToResponse 写入Cookie 就是之前queueinquiry的</p>
 
-<h4 id="添加readme:1c1ef82aae62aeea8eedcb5f455b129b">添加README</h4>
+<p>StartSession 相当于session_start</p>
 
-<p><code>$ git add README.md</code></p>
+<p>VerifyCsrfToken 方式CSRF攻击的</p>
 
-<h4 id="自动提交所有变化文件:1c1ef82aae62aeea8eedcb5f455b129b">自动提交所有变化文件</h4>
-
-<p><code>$ git commit -a -m &quot;comment&quot;</code></p>
-
-<p>不自动提交的话需要<code>$ git add 文件名或者-A</code></p>
-
-<h4 id="忽略某个文件更新的命令:1c1ef82aae62aeea8eedcb5f455b129b">忽略某个文件更新的命令</h4>
-
-<p><code>$ git update-index --assume-unchanged</code></p>
-
-<p>####忽略权限修改</p>
-
-<p><code>$ git config core.filemode false</code></p>
+<p>api的就只有ThrottleRequests一个，主要是用来限制单位时间内请求次数的防止被刷</p>
 
 		</div>
 	</div>

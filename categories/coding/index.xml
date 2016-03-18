@@ -154,5 +154,44 @@
         
       
     
+      
+        
+          <item>
+            <title>关于Laravel 源码分析和一些小技巧</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/18/%E5%85%B3%E4%BA%8Elaravel-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%92%8C%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/</link>
+            <pubDate>Fri, 18 Mar 2016 13:30:55 +0800</pubDate>
+            <author>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/18/%E5%85%B3%E4%BA%8Elaravel-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%E5%92%8C%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/</guid>
+            <description>&lt;p&gt;Laravel 的多语言是可以覆盖的，app.php里面定义的fallback_locale是基础语言包，如果一个词在当前语言包里面没有的时候就会去基础语言包里面找&lt;/p&gt;
+
+&lt;p&gt;Laravel 的 Cookie是经过加密的，任何本地改动都会造成cookie失效
+赋值方法是&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Cookie:queue(name,value,min);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;取值方法&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$request-&amp;gt;cookie[name];
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果想不加密，就还是用PHP原生方法吧&lt;/p&gt;
+
+&lt;p&gt;Kernel中定义的web中间件有四个&lt;/p&gt;
+
+&lt;p&gt;EncryptCookies 加密和解谜Cookie&lt;/p&gt;
+
+&lt;p&gt;AddQueuedCookiesToResponse 写入Cookie 就是之前queueinquiry的&lt;/p&gt;
+
+&lt;p&gt;StartSession 相当于session_start&lt;/p&gt;
+
+&lt;p&gt;VerifyCsrfToken 方式CSRF攻击的&lt;/p&gt;
+
+&lt;p&gt;api的就只有ThrottleRequests一个，主要是用来限制单位时间内请求次数的防止被刷&lt;/p&gt;
+</description>
+          </item>
+        
+      
+    
   </channel>
 </rss>
