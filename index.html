@@ -60,6 +60,102 @@
 			<div class="row">
 				
 				<div class="col-md-offset-1 col-md-10">
+					<h3><a href="http://erickdotphp.github.io/blog/2016/03/18/lumen%E5%92%8Claravel%E7%94%A8%E6%B3%95%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%E6%95%B4%E7%90%86%E4%B8%80/">Lumen和Laravel用法上的区别整理（一）</a></h3>
+						<small><span class="label label-primary">
+							
+								2016年03月18日
+							</span>&nbsp;in
+							
+								
+								<a href="/categories/coding">coding</a>
+							 using tags
+							
+								
+							<a href="/tags/lumen">Lumen</a>
+						
+								 , 
+							<a href="/tags/laravel">Laravel</a>
+						
+					</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-10">
+					<br>
+					
+	  					
+	  		  				在把Lumen代码迁移到Laravel框架的时候，遇到了一些问题，虽然Lumen是基于Laravel的，但是也有一些不兼容的地方需要注意。在这里整理了一些Lumen和Laravel框架用法上的区别. PS:这次迁移是从Lumen5.1迁移到Laravel5.2版本 路由 一般的路由 Lumen是这样写的 $app-&gt;get('/', [ 'uses' =&gt; 'IndexController@getIndex' ]); 而Laravel是这样的 Route::get('/', [ 'uses' =&gt; 'IndexController@getIndex' ]); 有参数并且需要正则的路由 Lumen: $app-&gt;get('/docs/{id:[0-9]+}', [ 'uses' =&gt; 'SupportController@getQuestionDetail', 'as' =&gt; 'question_detail' ]); Laravel: Route::get('/docs/{id}', [ 'uses' =&gt; 'SupportController@getQuestionDetail', 'as' =&gt; 'question_detail' ])-&gt;where('id', '[0-9]+'); 或者可以直接在RouteServiceProvider里面定义全局正则 public function boot(Router $router) { // $router-&gt;pattern('id', '[0-9]+'); parent::boot($router); } Namespace 路由组里面的Namespace Lumen: $app-&gt;group(['namespace' =&gt; 'App\Http\Controllers\Admin', Laravel: Route::group(['namespace' =&gt; 'Admin', 路由多文件 Lumen是在bootstrap/app.php里面: $app-&gt;group(['namespace' =&gt; 'App\Http\Controllers'], function ($app) { require
+					  		<br>
+						  	<a href="http://erickdotphp.github.io/blog/2016/03/18/lumen%E5%92%8Claravel%E7%94%A8%E6%B3%95%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%E6%95%B4%E7%90%86%E4%B8%80/">
+						  	
+						  		Read more
+						  	</a>
+					  	
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<hr>
+				</div>
+			</div>
+		
+	
+
+        
+            	
+		
+			<div class="row">
+				
+				<div class="col-md-offset-1 col-md-10">
+					<h3><a href="http://erickdotphp.github.io/blog/2016/03/18/lumen%E5%92%8Claravel%E7%94%A8%E6%B3%95%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%E6%95%B4%E7%90%86%E4%BA%8C/">Lumen和Laravel用法上的区别整理（二）</a></h3>
+						<small><span class="label label-primary">
+							
+								2016年03月18日
+							</span>&nbsp;in
+							
+								
+								<a href="/categories/coding">coding</a>
+							 using tags
+							
+								
+							<a href="/tags/lumen">Lumen</a>
+						
+								 , 
+							<a href="/tags/laravel">Laravel</a>
+						
+					</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-10">
+					<br>
+					
+	  					
+	  		  				接前文 配置 app.php Lumen是在bootsrap文件夹下面 Laravel是在config里面 这里包括两者都包括了Service Provider的注册和alias的声明只是在写法上略有不同 中间件的定义 Lumen是直接写在app.php里面的 Laravel是写在Kernel.php里面，另外Laravel支持组的概念例如 protected $middlewareGroups = [ 'web' =&gt; [ \App\Http\Middleware\EncryptCookies::class, \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class, \Illuminate\Session\Middleware\StartSession::class, \Illuminate\View\Middleware\ShareErrorsFromSession::class, \App\Http\Middleware\VerifyCsrfToken::class, ], 'api' =&gt; [ 'throttle:60,1', ], ]; 待续&hellip;
+					  		<br>
+						  	<a href="http://erickdotphp.github.io/blog/2016/03/18/lumen%E5%92%8Claravel%E7%94%A8%E6%B3%95%E4%B8%8A%E7%9A%84%E5%8C%BA%E5%88%AB%E6%95%B4%E7%90%86%E4%BA%8C/">
+						  	
+						  		Read more
+						  	</a>
+					  	
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<hr>
+				</div>
+			</div>
+		
+	
+
+        
+            	
+		
+			<div class="row">
+				
+				<div class="col-md-offset-1 col-md-10">
 					<h3><a href="http://erickdotphp.github.io/blog/2016/03/16/php-ssh2-%E6%89%A9%E5%B1%95/">PHP SSH2 扩展</a></h3>
 						<small><span class="label label-primary">
 							
@@ -411,96 +507,6 @@
 	  		  				生成密钥 ssh-keygen 添加公钥到git账户 检测是否成功 ssh -T git@github.com 获取代码 git clone git://github.com:xxxx/test.git 以gitreadonly方式克隆到本地，只可以读 git clone git@github.com:xxx/test.git ##以SSH方式克隆到本地，可以读写 git clone https://github.com/xxx/test.git ##以https方式克隆到本地，可以读写 git fetch git@github.com:xxx/xxx.git ##获取到本地但不合并 git pull git@github.com:xxx/xxx.git ##获取并合并内容到本地 本地配置 git config &ndash;global user.name &lsquo;ed&rsquo; git config &ndash;global user.email &lsquo;erickdotphp@gmail.com&rsquo; #全局联系方式，可选 新建Git项目并提交到Github $ mkdir testdir &amp; cd testdir $ touch README.md git init #初始化一个本地库 git add README.md #添加文件到本地仓库 git rm README.md #本地倒库内删除 git commit -m &ldquo;first commit&rdquo; #提交到本地库并备注，此时变更仍在本地。 git commit -a
 					  		<br>
 						  	<a href="http://erickdotphp.github.io/blog/2016/02/01/git%E7%9A%84%E5%B8%B8%E7%94%A8%E4%B9%88%E5%91%BD%E4%BB%A4/">
-						  	
-						  		Read more
-						  	</a>
-					  	
-					
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<hr>
-				</div>
-			</div>
-		
-	
-
-        
-            	
-		
-			<div class="row">
-				
-				<div class="col-md-offset-1 col-md-10">
-					<h3><a href="http://erickdotphp.github.io/blog/2016/02/01/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-composer/">Centos7 上 安装 Composer</a></h3>
-						<small><span class="label label-primary">
-							
-								2016年02月01日
-							</span>&nbsp;in
-							
-								
-								<a href="/categories/env">env</a>
-							 using tags
-							
-								
-							<a href="/tags/composer">Composer</a>
-						
-					</small>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-offset-1 col-md-10">
-					<br>
-					
-	  					
-	  		  				安装前请确保 环境中有PHP 可以用php -v查看 下载 $ curl -sS https://getcomposer.org/installer| php -- --install-dir=/home 移动到可执行目录 $ mv composer.phar /usr/local/bin/composer 配置环境变量 $ export PATH=$PATH:/usr/local/bin
-					  		<br>
-						  	<a href="http://erickdotphp.github.io/blog/2016/02/01/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-composer/">
-						  	
-						  		Read more
-						  	</a>
-					  	
-					
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<hr>
-				</div>
-			</div>
-		
-	
-
-        
-            	
-		
-			<div class="row">
-				
-				<div class="col-md-offset-1 col-md-10">
-					<h3><a href="http://erickdotphp.github.io/blog/2016/02/01/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE-sublime-text3/">Centos7 上 安装和配置 Sublime Text3</a></h3>
-						<small><span class="label label-primary">
-							
-								2016年02月01日
-							</span>&nbsp;in
-							
-								
-								<a href="/categories/tool">tool</a>
-							 using tags
-							
-								
-							<a href="/tags/sublime">sublime</a>
-						
-					</small>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-offset-1 col-md-10">
-					<br>
-					
-	  					
-	  		  				下载最新的包 http://www.sublimetext.com/3 下载tarball $ tar jxvf sublime_text_3_build_3083_x64.tar.bz2 -C /opt 移动到系统目录 $ mv sublime_text_3 /opt/ 创建连接 $ ln -s /opt/sublime_text_3/sublime_text /usr/bin/sublime 移动到系统目录下 $ cp /opt/sublime_text_3/sublime_text.desktop /usr/share/applications 修改配置文件 $ cd /usr/share/applications $ vim sublime_text.desktop [Desktop Entry] Version=1.0 Type=Application Name=Sublime Text GenericName=Text Editor Comment=Sophisticated text editor for code, markup and prose Exec=/opt/sublime_text_3/sublime_text %F Terminal=false MimeType=text/plain; Icon=/opt/sublime_text_3/Icon/48x48/sublime-text.png Categories=TextEditor;Development; StartupNotify=true Actions=Window;Document; [Desktop Action Window] Name=New Window Exec=/opt/sublime_text_3/sublime_text -n OnlyShowIn=Unity; [Desktop Action Document] Name=New File Exec=/opt/sublime_text_3/sublime_text
-					  		<br>
-						  	<a href="http://erickdotphp.github.io/blog/2016/02/01/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE-sublime-text3/">
 						  	
 						  		Read more
 						  	</a>
