@@ -439,6 +439,26 @@ txt 的文件下载到/var/www/local_dir（本地目录）&lt;/p&gt;
 &lt;code&gt;scp  -r local_dir username@servername:remote_dir&lt;/code&gt;
 例如：scp -r test  root@192.168.0.101:/var/www/   把当前目录下的test目录上传到服务器的/var/www/ 目录&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h4 id=&#34;通过rz:34fe9f2d9cc3cd7e319ca75e7da08332&#34;&gt;通过rz&lt;/h4&gt;
+
+&lt;p&gt;安装&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ yum install lrzsz&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;rz上传&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;$ rz -y&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;-y 覆盖&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;sz下载&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;$ sz filename&lt;/code&gt;&lt;/p&gt;
 </description>
           </item>
         

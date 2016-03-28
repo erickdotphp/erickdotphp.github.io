@@ -60,6 +60,96 @@
 			<div class="row">
 				
 				<div class="col-md-offset-1 col-md-10">
+					<h3><a href="http://erickdotphp.github.io/blog/2016/03/14/git-%E5%A4%9A%E8%BF%9C%E7%AB%AF%E9%97%AE%E9%A2%98/">Git 多远端问题</a></h3>
+						<small><span class="label label-primary">
+							
+								2016年03月14日
+							</span>&nbsp;in
+							
+								
+								<a href="/categories/tool">tool</a>
+							 using tags
+							
+								
+							<a href="/tags/git">git</a>
+						
+					</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-10">
+					<br>
+					
+	  					
+	  		  				如果需要在同一套代码中控制多个远程版本 查看当前的远端 $ git remote -v 增加远端 $ git remote add 远端名 远端git地址 这样推送和拉取的之后只要在后面加上远端名和分支名就可以 拉取远端 $ git pull inter master 推送远端 $ git push inter master
+					  		<br>
+						  	<a href="http://erickdotphp.github.io/blog/2016/03/14/git-%E5%A4%9A%E8%BF%9C%E7%AB%AF%E9%97%AE%E9%A2%98/">
+						  	
+						  		Read more
+						  	</a>
+					  	
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<hr>
+				</div>
+			</div>
+		
+	
+
+        
+            	
+		
+			<div class="row">
+				
+				<div class="col-md-offset-1 col-md-10">
+					<h3><a href="http://erickdotphp.github.io/blog/2016/03/13/%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E6%98%AF%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BA%E8%B5%B7%E6%9D%A5%E7%9A%84/">这个博客是怎么搭建起来的</a></h3>
+						<small><span class="label label-primary">
+							
+								2016年03月13日
+							</span>&nbsp;in
+							
+								
+								<a href="/categories/tool">tool</a>
+							 using tags
+							
+								
+							<a href="/tags/hugo">hugo</a>
+						
+					</small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-10">
+					<br>
+					
+	  					
+	  		  				大概原理 首先hugo，用来生成博客的静态文件 hugo是用go语言写的，效率比较高 把生成好的静态页面通过github pages 上传到github上 就做好了 安装 可以直接下载可执行文件 linux windows都有 官网地址 https://gohugo.io/ 创建新的站点 $ hugo new site blog 会生成一个文件夹，里面的config.toml是配置文件 这是一个TOML文件，全称是Tom’s Obvious, Minimal Language，这是它的作者GitHub联合创始人Tom Preston-Werner 觉得YAML不够优雅，捣鼓出来的一个新格式。如果你不喜欢这种格式，你可以将config.toml替换为YAML格式的config.yaml，或者json格式的config.json。hugo都支持。 创建新页面 cd 到 blog下 $ hugo new about.md 这样会把文件生成在contents目录下 也可以放在文件夹下 $ hugo new post/first.md md就是markdown格式，很方便 默认是没有模板的，可以去下载模板 地址是 这里 找好模板之后 创建themes文件夹 $ mkdir themes $ git clone https://github.com/spf13/模板名.git 启动本地服务器 $ hugo server --theme=base16 --buildDrafts --watch watch 是监控文章更新 buildDrafts是生成content里面的页面 生成静态站点 在blog目录下 $ hugo --theme=base16 --buildDrafts 生成好以后把public里面的文件上传到github上就可以了
+					  		<br>
+						  	<a href="http://erickdotphp.github.io/blog/2016/03/13/%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E6%98%AF%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BA%E8%B5%B7%E6%9D%A5%E7%9A%84/">
+						  	
+						  		Read more
+						  	</a>
+					  	
+					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<hr>
+				</div>
+			</div>
+		
+	
+
+        
+            	
+		
+			<div class="row">
+				
+				<div class="col-md-offset-1 col-md-10">
 					<h3><a href="http://erickdotphp.github.io/blog/2016/02/01/git%E7%9A%84%E5%B8%B8%E7%94%A8%E4%B9%88%E5%91%BD%E4%BB%A4/">Git的常用么命令</a></h3>
 						<small><span class="label label-primary">
 							
@@ -360,7 +450,7 @@
 					<br>
 					
 	  					
-	  		  				Linux 文件传输 从服务器上下载文件 scp username@servername:/path/filename /var/www/local_dir（本地目录） 例如scp root@192.168.0.101:/var/www/test.txt 把192.168.0.101上的/var/www/test. txt 的文件下载到/var/www/local_dir（本地目录） 上传本地文件到服务器 scp /path/filename username@servername:/path 例如scp /var/www/test.php root@192.168.0.101:/var/www/ 把本机/var/www/目录下的test.php文件上传到192.168.0.101这台服务器上的/var/www/目录中 从服务器下载整个目录 scp -r username@servername:/var/www/remote_dir/（远程目录） /var/www/local_dir（本地目录） 例如:scp -r root@192.168.0.101:/var/www/test /var/www/ 上传目录到服务器 scp -r local_dir username@servername:remote_dir 例如：scp -r test root@192.168.0.101:/var/www/ 把当前目录下的test目录上传到服务器的/var/www/ 目录
+	  		  				Linux 文件传输 从服务器上下载文件 scp username@servername:/path/filename /var/www/local_dir（本地目录） 例如scp root@192.168.0.101:/var/www/test.txt 把192.168.0.101上的/var/www/test. txt 的文件下载到/var/www/local_dir（本地目录） 上传本地文件到服务器 scp /path/filename username@servername:/path 例如scp /var/www/test.php root@192.168.0.101:/var/www/ 把本机/var/www/目录下的test.php文件上传到192.168.0.101这台服务器上的/var/www/目录中 从服务器下载整个目录 scp -r username@servername:/var/www/remote_dir/（远程目录） /var/www/local_dir（本地目录） 例如:scp -r root@192.168.0.101:/var/www/test /var/www/ 上传目录到服务器 scp -r local_dir username@servername:remote_dir 例如：scp -r test root@192.168.0.101:/var/www/ 把当前目录下的test目录上传到服务器的/var/www/ 目录 通过rz 安装 $ yum install lrzsz rz上传 $ rz -y -y 覆盖 sz下载 $ sz filename
 					  		<br>
 						  	<a href="http://erickdotphp.github.io/blog/2016/02/01/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
 						  	

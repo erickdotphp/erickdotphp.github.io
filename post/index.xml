@@ -7,8 +7,127 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</managingEditor>
     <webMaster>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</webMaster>
-    <lastBuildDate>Fri, 18 Mar 2016 13:30:55 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Mar 2016 10:13:51 +0800</lastBuildDate>
     <atom:link href="http://erickdotphp.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+      
+        
+          <item>
+            <title>关于Laravel 的 Facades</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/23/%E5%85%B3%E4%BA%8Elaravel-%E7%9A%84-facades/</link>
+            <pubDate>Wed, 23 Mar 2016 10:13:51 +0800</pubDate>
+            <author>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/23/%E5%85%B3%E4%BA%8Elaravel-%E7%9A%84-facades/</guid>
+            <description>
+
+&lt;p&gt;Laravel的Facades 是在service provider的基础上，声名aliases，使得这个类可以在任何地方直接调用而不再需要通过App获取&lt;/p&gt;
+
+&lt;h4 id=&#34;第一步:fc03adb00e0b0df4693e9b0a4cf59594&#34;&gt;第一步&lt;/h4&gt;
+
+&lt;p&gt;建立service provider 不再赘述&lt;/p&gt;
+
+&lt;h4 id=&#34;第二步:fc03adb00e0b0df4693e9b0a4cf59594&#34;&gt;第二步&lt;/h4&gt;
+</description>
+          </item>
+        
+      
+    
+      
+        
+          <item>
+            <title>关于Laravel 的Service Provider</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/22/%E5%85%B3%E4%BA%8Elaravel-%E7%9A%84service-provider/</link>
+            <pubDate>Tue, 22 Mar 2016 14:19:55 +0800</pubDate>
+            <author>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/22/%E5%85%B3%E4%BA%8Elaravel-%E7%9A%84service-provider/</guid>
+            <description>
+
+&lt;p&gt;Laravel的服务提供者是非常重要的机制
+它最大的特点是可以按需加载
+在app.php里面，比如当前环境是测试环境，可以定义需要加载的提供者，上到生产环境中，又可以加载另外一些提供者。&lt;/p&gt;
+
+&lt;p&gt;创建一个服务提供者的过程如下&lt;/p&gt;
+
+&lt;h3 id=&#34;第一步:270f53b4cbb2dc65d4141ed1eb00f702&#34;&gt;第一步&lt;/h3&gt;
+
+&lt;p&gt;创建Services目录，里面写一个Service，这是我们最终代码逻辑要放的地方。&lt;/p&gt;
+
+&lt;p&gt;当然也可以建立Contracts文件夹定义约束它的接口。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;p&gt;Pay.php&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;namespace App\Services;
+
+
+class Pay
+{
+   
+
+    public function __construct($app)
+    {
+    }
+    
+    public function test()
+    {
+        echo &#39;Hello, I Am Test!&#39;;exit;
+    }
+    
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;第二步:270f53b4cbb2dc65d4141ed1eb00f702&#34;&gt;第二步&lt;/h3&gt;
+
+&lt;p&gt;在Providers目录下新建一个我们的提供者，在需要加载的时候提供一个单例给app，具体的操作可以分为绑定，单例等等，详见手册。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;p&gt;Services\PayServiceProvider.php&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+
+class PayServiceProvider extends ServiceProvider
+{
+    public function boot()
+    {
+        //
+    }
+
+    public function register()
+    {
+        $this-&amp;gt;app-&amp;gt;singleton(&#39;PayService&#39;, function ($app) {
+            return new \App\Services\Pay($app);
+        });
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;第三步:270f53b4cbb2dc65d4141ed1eb00f702&#34;&gt;第三步&lt;/h3&gt;
+
+&lt;p&gt;把服务提供者的加载放到app.php里面，在需要的时候加载它&lt;/p&gt;
+
+&lt;p&gt;app.php&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    &#39;providers&#39; =&amp;gt; [
+        App\Providers\PayServiceProvider::class,
+    ],
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;测试:270f53b4cbb2dc65d4141ed1eb00f702&#34;&gt;测试&lt;/h3&gt;
+
+&lt;p&gt;这样我们就可以随时调用这个新的Service了&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$pay = \App::make(&#39;PayService&#39;);
+$pay-&amp;gt;test();
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+          </item>
+        
+      
     
       
         
@@ -698,128 +817,6 @@ OnlyShowIn=Unity;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;这些都做完以后 sublime的快捷方式会出现在   应用程序=&amp;gt;编程 里面&lt;/p&gt;
-</description>
-          </item>
-        
-      
-    
-      
-        
-          <item>
-            <title>Centos7 上 安装 mariadb</title>
-            <link>http://erickdotphp.github.io/blog/2016/02/01/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-mariadb/</link>
-            <pubDate>Mon, 01 Feb 2016 11:30:55 +0800</pubDate>
-            <author>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</author>
-            <guid>http://erickdotphp.github.io/blog/2016/02/01/centos7-%E4%B8%8A-%E5%AE%89%E8%A3%85-mariadb/</guid>
-            <description>
-
-&lt;h3 id=&#34;全部删除mysql-mariadb:b67bc1b681b2f1df56e313dd51c88107&#34;&gt;全部删除MySQL/MariaDB&lt;/h3&gt;
-
-&lt;p&gt;MySQL 已经不再包含在 CentOS 7 的源中，而改用了 MariaDB;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
-如果存在，使用rpm -e &amp;ndash;nodeps mariadb-*全部删除：&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;使用rpm -qa | grep mariadb搜索 MariaDB 现有的包：
-如果存在，使用yum remove mysql mysql-server mysql-libs compat-mysql51全部删除；&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;添加mariadb的yum源:b67bc1b681b2f1df56e313dd51c88107&#34;&gt;添加MariaDB的yum源&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;创建 /etc/yum.repos.d/MariaDB.repo：&lt;/li&gt;
-&lt;li&gt;添加yum源,该文件中添加如图所示内容：&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;# MariaDB 10.1 CentOS repository list - created 2015-11-19 02:26 UTC
-# http://mariadb.org/mariadb/repositories/
-[mariadb]
-name = MariaDB
-baseurl = http://yum.mariadb.org/10.0/centos7-amd64
-gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-gpgcheck=1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;安装-mariadb:b67bc1b681b2f1df56e313dd51c88107&#34;&gt;安装 MariaDB&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;$ yum install MariaDB-server MariaDB-client&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;启动-配置mariadb:b67bc1b681b2f1df56e313dd51c88107&#34;&gt;启动、配置MariaDB&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;$ service mysql start&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ mysql_secure_installation&lt;/code&gt;&lt;/p&gt;
-</description>
-          </item>
-        
-      
-    
-      
-        
-          <item>
-            <title>Lumen 环境搭建</title>
-            <link>http://erickdotphp.github.io/blog/2016/02/01/lumen-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
-            <pubDate>Mon, 01 Feb 2016 11:30:55 +0800</pubDate>
-            <author>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</author>
-            <guid>http://erickdotphp.github.io/blog/2016/02/01/lumen-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
-            <description>
-
-&lt;h3 id=&#34;安装composer:8b0d77d2d0ed0248257bdb90ac2bef73&#34;&gt;安装composer&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;$ curl -sS https://getcomposer.org/installer | php -- --install-dir=lumen&lt;/code&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;全局使用:8b0d77d2d0ed0248257bdb90ac2bef73&#34;&gt;全局使用&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;$ mv composer.phar /usr/local/bin/composer&lt;/code&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;配置path:8b0d77d2d0ed0248257bdb90ac2bef73&#34;&gt;配置PATH&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;$ export PATH=~/.composer/vendor/bin:$PATH&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;安装lumen:8b0d77d2d0ed0248257bdb90ac2bef73&#34;&gt;安装lumen&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;$ composer global require &amp;quot;laravel/lumen-installer&amp;quot;&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;设置nginx:8b0d77d2d0ed0248257bdb90ac2bef73&#34;&gt;设置nginx&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;server {
-listen  80;
-server_name www.lumen.loc;
-set $root_path &#39;/home/wwwroot/lumen/public&#39;;  
-root $root_path;
-index index.php index.html index.htm;  
-location / {
-    try_files $uri $uri/ /index.php?$query_string;
-}
-location ~ (index|get|static|report|404|503)\.php$ {
-    try_files $uri =404;
-    fastcgi_pass   fastcgi_backend;
-
-    fastcgi_param  PHP_FLAG  &amp;quot;session.auto_start=off \n suhosin.session.cryptua=off&amp;quot;;
-    fastcgi_param  PHP_VALUE &amp;quot;memory_limit=256M \n max_execution_time=600&amp;quot;;
-    fastcgi_read_timeout 600s;
-    fastcgi_connect_timeout 600s;
-    fastcgi_index  index.php;
-    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-    include        fastcgi_params;
-}
-    location ~* ^/(css|img|js|flv|swf|download)/(.+)$ {
-        root $root_path;  
-    }
-    location ~ /\.ht {
-        deny all;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;修改hosts:8b0d77d2d0ed0248257bdb90ac2bef73&#34;&gt;修改hosts&lt;/h3&gt;
-
-&lt;p&gt;/etc/hosts&lt;/p&gt;
-
-&lt;h3 id=&#34;composer-重新加载类库:8b0d77d2d0ed0248257bdb90ac2bef73&#34;&gt;composer 重新加载类库&lt;/h3&gt;
-
-&lt;p&gt;php composer.phar dump-autoload&lt;/p&gt;
 </description>
           </item>
         

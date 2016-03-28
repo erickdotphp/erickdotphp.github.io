@@ -7,8 +7,127 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</managingEditor>
     <webMaster>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</webMaster>
-    <lastBuildDate>Fri, 18 Mar 2016 13:30:55 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 Mar 2016 10:13:51 +0800</lastBuildDate>
     <atom:link href="http://erickdotphp.github.io/categories/coding/index.xml" rel="self" type="application/rss+xml" />
+    
+      
+        
+          <item>
+            <title>关于Laravel 的 Facades</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/23/%E5%85%B3%E4%BA%8Elaravel-%E7%9A%84-facades/</link>
+            <pubDate>Wed, 23 Mar 2016 10:13:51 +0800</pubDate>
+            <author>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/23/%E5%85%B3%E4%BA%8Elaravel-%E7%9A%84-facades/</guid>
+            <description>
+
+&lt;p&gt;Laravel的Facades 是在service provider的基础上，声名aliases，使得这个类可以在任何地方直接调用而不再需要通过App获取&lt;/p&gt;
+
+&lt;h4 id=&#34;第一步:fc03adb00e0b0df4693e9b0a4cf59594&#34;&gt;第一步&lt;/h4&gt;
+
+&lt;p&gt;建立service provider 不再赘述&lt;/p&gt;
+
+&lt;h4 id=&#34;第二步:fc03adb00e0b0df4693e9b0a4cf59594&#34;&gt;第二步&lt;/h4&gt;
+</description>
+          </item>
+        
+      
+    
+      
+        
+          <item>
+            <title>关于Laravel 的Service Provider</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/22/%E5%85%B3%E4%BA%8Elaravel-%E7%9A%84service-provider/</link>
+            <pubDate>Tue, 22 Mar 2016 14:19:55 +0800</pubDate>
+            <author>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/22/%E5%85%B3%E4%BA%8Elaravel-%E7%9A%84service-provider/</guid>
+            <description>
+
+&lt;p&gt;Laravel的服务提供者是非常重要的机制
+它最大的特点是可以按需加载
+在app.php里面，比如当前环境是测试环境，可以定义需要加载的提供者，上到生产环境中，又可以加载另外一些提供者。&lt;/p&gt;
+
+&lt;p&gt;创建一个服务提供者的过程如下&lt;/p&gt;
+
+&lt;h3 id=&#34;第一步:270f53b4cbb2dc65d4141ed1eb00f702&#34;&gt;第一步&lt;/h3&gt;
+
+&lt;p&gt;创建Services目录，里面写一个Service，这是我们最终代码逻辑要放的地方。&lt;/p&gt;
+
+&lt;p&gt;当然也可以建立Contracts文件夹定义约束它的接口。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;p&gt;Pay.php&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;namespace App\Services;
+
+
+class Pay
+{
+   
+
+    public function __construct($app)
+    {
+    }
+    
+    public function test()
+    {
+        echo &#39;Hello, I Am Test!&#39;;exit;
+    }
+    
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;第二步:270f53b4cbb2dc65d4141ed1eb00f702&#34;&gt;第二步&lt;/h3&gt;
+
+&lt;p&gt;在Providers目录下新建一个我们的提供者，在需要加载的时候提供一个单例给app，具体的操作可以分为绑定，单例等等，详见手册。&lt;/p&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+
+&lt;p&gt;Services\PayServiceProvider.php&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+
+class PayServiceProvider extends ServiceProvider
+{
+    public function boot()
+    {
+        //
+    }
+
+    public function register()
+    {
+        $this-&amp;gt;app-&amp;gt;singleton(&#39;PayService&#39;, function ($app) {
+            return new \App\Services\Pay($app);
+        });
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;第三步:270f53b4cbb2dc65d4141ed1eb00f702&#34;&gt;第三步&lt;/h3&gt;
+
+&lt;p&gt;把服务提供者的加载放到app.php里面，在需要的时候加载它&lt;/p&gt;
+
+&lt;p&gt;app.php&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    &#39;providers&#39; =&amp;gt; [
+        App\Providers\PayServiceProvider::class,
+    ],
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;测试:270f53b4cbb2dc65d4141ed1eb00f702&#34;&gt;测试&lt;/h3&gt;
+
+&lt;p&gt;这样我们就可以随时调用这个新的Service了&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$pay = \App::make(&#39;PayService&#39;);
+$pay-&amp;gt;test();
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+          </item>
+        
+      
     
       
         

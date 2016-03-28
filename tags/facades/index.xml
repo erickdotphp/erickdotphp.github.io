@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Facades on Erick BLog</title>
+    <link>http://erickdotphp.github.io/tags/facades/</link>
+    <description>Recent content in Facades on Erick BLog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</managingEditor>
+    <webMaster>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</webMaster>
+    <lastBuildDate>Wed, 23 Mar 2016 10:13:51 +0800</lastBuildDate>
+    <atom:link href="http://erickdotphp.github.io/tags/facades/index.xml" rel="self" type="application/rss+xml" />
+    
+      
+        
+          <item>
+            <title>关于Laravel 的 Facades</title>
+            <link>http://erickdotphp.github.io/blog/2016/03/23/%E5%85%B3%E4%BA%8Elaravel-%E7%9A%84-facades/</link>
+            <pubDate>Wed, 23 Mar 2016 10:13:51 +0800</pubDate>
+            <author>erickdotphp&lt;at&gt;gmail&lt;dot&gt;com (erickdotphp)</author>
+            <guid>http://erickdotphp.github.io/blog/2016/03/23/%E5%85%B3%E4%BA%8Elaravel-%E7%9A%84-facades/</guid>
+            <description>
+
+&lt;p&gt;Laravel的Facades 是在service provider的基础上，声名aliases，使得这个类可以在任何地方直接调用而不再需要通过App获取&lt;/p&gt;
+
+&lt;h4 id=&#34;第一步:fc03adb00e0b0df4693e9b0a4cf59594&#34;&gt;第一步&lt;/h4&gt;
+
+&lt;p&gt;建立service provider 不再赘述&lt;/p&gt;
+
+&lt;h4 id=&#34;第二步:fc03adb00e0b0df4693e9b0a4cf59594&#34;&gt;第二步&lt;/h4&gt;
+</description>
+          </item>
+        
+      
+    
+  </channel>
+</rss>
